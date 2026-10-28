@@ -1044,6 +1044,90 @@
   /* ------------------------------------------------------------------------
      نظرات محصول: «نمایش نظرات بیشتر» و دکمه‌ی «مفید بود»
      ------------------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------------------
+     راهنمای سایز: تبدیل سانتی‌متر/اینچ در جدول‌ها و سایزیاب
+     اعداد جدول در ویژگی data-cm (مثلاً "82-86") نوشته می‌شوند.
+     ------------------------------------------------------------------------ */
+  // جدول اندازه‌ی بدن برای سایزیاب (حد بالای هر سایز، سانتی‌متر)
+  const SIZE_CHART = {
+    women: { sizes: ['S', 'M', 'L', 'XL', 'XXL'], nums: ['۳۶', '۳۸', '۴۰', '۴۲', '۴۴'], chest: [86, 90, 96, 102, 108], waist: [68, 72, 78, 84, 90], hip: [94, 98, 104, 110, 116] },
+    men: { sizes: ['S', 'M', 'L', 'XL', 'XXL'], nums: ['۴۶', '۴۸', '۵۰', '۵۲', '۵۴'], chest: [94, 100, 106, 112, 118], waist: [82, 88, 94, 100, 106] },
+    kids: { sizes: ['۲ سال', '۴ سال', '۶ سال', '۸ سال', '۱۰ سال'], height: [92, 104, 116, 128, 140] },
+  };
+  const toEnNum = (text) => parseFloat(String(text).replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[٫,]/g, '.'));
+
+  function initSizeGuide() {
+    // واحد اندازه
+    const cells = document.querySelectorAll('[data-cm]');
+    const unitBtns = document.querySelectorAll('[data-sg-unit]');
+    const renderUnit = (unit) => {
+      cells.forEach((cell) => {
+        const parts = cell.dataset.cm.split('-').map(Number);
+        const vals = parts.map((v) => (unit === 'in' ? (Math.round((v / 2.54) * 10) / 10).toString() : String(v)));
+        cell.textContent = toFa(vals.join(' تا ')).replace(/\./g, '٫');
+      });
+      unitBtns.forEach((b) => {
+        const on = b.dataset.sgUnit === unit;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+    };
+    if (cells.length) renderUnit('cm');
+    unitBtns.forEach((b) => b.addEventListener('click', () => renderUnit(b.dataset.sgUnit)));
+
+    // سایزیاب
+    const form = document.querySelector('[data-size-finder]');
+    if (!form) return;
+    const result = form.querySelector('[data-sg-result]');
+    const fieldsFor = { women: ['chest', 'waist', 'hip'], men: ['chest', 'waist'], kids: ['height'] };
+    const who = () => form.querySelector('input[name="sg-who"]:checked').value;
+    const syncFields = () => {
+      form.querySelectorAll('[data-sg-field]').forEach((f) => {
+        f.hidden = !fieldsFor[who()].includes(f.dataset.sgField);
+      });
+      result.hidden = true;
+    };
+    form.querySelectorAll('input[name="sg-who"]').forEach((r) => r.addEventListener('change', syncFields));
+    syncFields();
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const chart = SIZE_CHART[who()];
+      let index = -1;
+      let missing = false;
+      fieldsFor[who()].forEach((key) => {
+        const input = form.querySelector(`[name="${key}"]`);
+        const value = toEnNum(input.value);
+        if (!value) {
+          missing = true;
+          input.setAttribute('aria-invalid', 'true');
+          return;
+        }
+        input.removeAttribute('aria-invalid');
+        // بزرگ‌ترین سایز لازم بین همه‌ی اندازه‌ها انتخاب می‌شود
+        let i = chart[key].findIndex((max) => value <= max);
+        if (i === -1) i = chart[key].length;
+        index = Math.max(index, i);
+      });
+      result.hidden = false;
+      if (missing) {
+        result.className = 'sg-result is-error';
+        result.textContent = 'لطفاً همه‌ی اندازه‌ها را به سانتی‌متر وارد کنید.';
+        return;
+      }
+      result.className = 'sg-result';
+      if (index >= chart.sizes.length) {
+        result.innerHTML = '<strong>اندازه‌ها از بزرگ‌ترین سایز جدول بیشترند.</strong><span>برای مدل‌های گشاد یا سفارشی با مشاوران ما تماس بگیرید.</span>';
+        return;
+      }
+      const size = chart.sizes[index];
+      const num = chart.nums ? ` (سایز عددی ${chart.nums[index]})` : '';
+      const tip = who() === 'kids' ? 'بچه‌ها زود رشد می‌کنند؛ اگر نزدیک سایز بعدی است، بزرگ‌تر را بردارید.' : 'برای مدل‌های جذب، یک سایز بزرگ‌تر را هم در نظر بگیرید.';
+      result.innerHTML = `<span>سایز پیشنهادی شما</span><strong>${escapeHtml(size)}</strong><span>${num ? escapeHtml(num.trim()) + ' · ' : ''}${tip}</span>`;
+    });
+  }
+
   function initReviews() {
     document.querySelectorAll('[data-reviews-more]').forEach((btn) =>
       btn.addEventListener('click', () => {
@@ -1647,6 +1731,7 @@
   initSliders();
   initRails();
   initReviews();
+  initSizeGuide();
   initReviewForm();
   initNewsletter();
   initCountdown();
