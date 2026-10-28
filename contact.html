@@ -299,7 +299,7 @@
   <!-- پنل جست‌وجو (در هدر وسط‌چین و موبایل) -->
   <div class="search-panel" id="search-panel" data-search-panel hidden>
     <div class="container-site">
-      <form role="search" action="search.html" method="get">
+      <form role="search" action="shop.html" method="get">
         <div class="search-field">
           <label class="sr-only" for="panel-q">جست‌وجو در فروشگاه</label>
           <input id="panel-q" type="search" name="q" placeholder="جست‌وجوی مانتو، پیراهن، کیف…" autocomplete="off">
@@ -329,7 +329,7 @@
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="بستن منو"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
   <div class="drawer-body">
-    <form role="search" action="search.html" method="get">
+    <form role="search" action="shop.html" method="get">
       <div class="search-field">
         <label class="sr-only" for="menu-q">جست‌وجو در فروشگاه</label>
         <input id="menu-q" type="search" name="q" placeholder="جست‌وجوی مانتو، پیراهن، کیف…" autocomplete="off">
@@ -491,37 +491,38 @@
 
     <div class="contact-grid">
       <!-- ===== شروع: فرم تماس ===== -->
-      <form class="account-form" data-validate novalidate data-contact-form>
+      <!-- برای دریافت واقعی پیام‌ها، آدرس سرویس فرم را در action بگذارید؛ مثال: action="https://formspree.io/f/xxxxxxx" method="post" (راهنما: Help.pdf) -->
+      <form class="account-form" method="post" data-validate novalidate data-contact-form>
         <div class="form-grid">
           <div class="field">
             <label for="ct-name">نام و نام خانوادگی</label>
-            <input id="ct-name" type="text" required>
+            <input id="ct-name" name="name" type="text" required>
             <p class="form-error" id="ct-name-error" hidden></p>
           </div>
           <div class="field">
             <label for="ct-phone">موبایل</label>
-            <input id="ct-phone" type="tel" dir="ltr" data-phone required>
+            <input id="ct-phone" name="phone" type="tel" dir="ltr" data-phone required>
             <p class="form-error" id="ct-phone-error" hidden></p>
           </div>
           <div class="field">
             <label for="ct-email">ایمیل (اختیاری)</label>
-            <input id="ct-email" type="email" dir="ltr">
+            <input id="ct-email" name="email" type="email" dir="ltr">
             <p class="form-error" id="ct-email-error" hidden></p>
           </div>
           <div class="field">
             <label for="ct-subject">موضوع</label>
-            <select id="ct-subject" required>
+            <select id="ct-subject" name="subject" required>
               <option value="">انتخاب کنید</option>
-              <option value="order">پیگیری سفارش</option>
-              <option value="product">سوال درباره‌ی محصول</option>
-              <option value="return">بازگشت و تعویض</option>
-              <option value="other">موضوع دیگر</option>
+              <option value="پیگیری سفارش">پیگیری سفارش</option>
+              <option value="سوال درباره‌ی محصول">سوال درباره‌ی محصول</option>
+              <option value="بازگشت و تعویض">بازگشت و تعویض</option>
+              <option value="موضوع دیگر">موضوع دیگر</option>
             </select>
             <p class="form-error" id="ct-subject-error" hidden></p>
           </div>
           <div class="field field-wide">
             <label for="ct-message">پیام شما</label>
-            <textarea id="ct-message" rows="5" required></textarea>
+            <textarea id="ct-message" name="message" rows="5" required></textarea>
             <p class="form-error" id="ct-message-error" hidden></p>
           </div>
         </div>

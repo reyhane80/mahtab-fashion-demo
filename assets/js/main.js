@@ -710,10 +710,20 @@
     const params = new URLSearchParams(location.search);
     const hasTags = cards.some((c) => c.dataset.tags);
     const urlTags = [];
-    params.forEach((value, key) => { if (!['sort', 'sale', 'page'].includes(key) && value) urlTags.push(value); });
+    params.forEach((value, key) => { if (!['sort', 'sale', 'page', 'q'].includes(key) && value) urlTags.push(value); });
+    // جستجو از فرم هدر: shop.html?q=پالتو ؛ در نام، دسته، برند و رنگ محصول جستجو می‌شود
+    const normalizeFa = (text) => String(text || '').toLowerCase().replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/[\u200c\u200f\u200e]/g, ' ').replace(/\s+/g, ' ').trim();
+    const urlQuery = normalizeFa(params.get('q'));
+    const queryWords = urlQuery ? urlQuery.split(' ') : [];
+    document.querySelectorAll('input[name="q"]').forEach((input) => { if (params.get('q')) input.value = params.get('q'); });
     const urlSale = params.get('sale') === '1';
     if (sortSelect && params.get('sort') && [...sortSelect.options].some((o) => o.value === params.get('sort'))) sortSelect.value = params.get('sort');
-    if ((urlTags.length && hasTags) || urlSale || params.get('sort')) {
+    if (queryWords.length) {
+      const title = document.querySelector('.shop-head .section-title');
+      if (title) title.textContent = `نتیجه‌ی جستجو: «${params.get('q').trim()}»`;
+      const head = document.querySelector('.shop-head-count');
+      if (head && !head.querySelector('[data-clear-url]')) head.insertAdjacentHTML('beforeend', ' · <a href="shop.html" data-clear-url>نمایش همه‌ی محصولات</a>');
+    } else if ((urlTags.length && hasTags) || urlSale || params.get('sort')) {
       const q = location.search;
       // عنوان صفحه: نام همان دسته از روی لینک‌های منو (به‌جز «مشاهده‌ی همه»)، یا از فهرست data-filter-labels
       let labels = {};
@@ -745,6 +755,10 @@
       if (cats.length && !cats.includes(card.dataset.cat)) return false;
       if (urlTags.length && hasTags && !urlTags.every((t) => (card.dataset.tags || '').split('|').includes(t))) return false;
       if (urlSale && !(card.dataset.badges || '').split('|').includes('sale')) return false;
+      if (queryWords.length) {
+        const text = normalizeFa([card.dataset.productName, card.dataset.cat, card.dataset.brand, (card.dataset.colors || '').replace(/\|/g, ' ')].join(' '));
+        if (!queryWords.every((w) => text.includes(w))) return false;
+      }
       if (brands.length && !brands.includes(card.dataset.brand)) return false;
       if (colors.length) {
         const cardColors = (card.dataset.colors || '').split('|');
@@ -863,6 +877,11 @@
 
     document.querySelectorAll('[data-filters-reset]').forEach((button) =>
       button.addEventListener('click', () => {
+        // جستجو یا فیلتر نشانی فعال است: برگشت به همه‌ی محصولات
+        if (queryWords.length || (urlTags.length && hasTags) || urlSale) {
+          location.href = 'shop.html';
+          return;
+        }
         document.querySelectorAll('[data-filter] input:checked').forEach((input) => (input.checked = false));
         page = 1;
         if (priceBox) {
@@ -1169,6 +1188,11 @@
           fields.find((f) => f.getAttribute('aria-invalid') === 'true').focus();
           return;
         }
+        // با action واقعی (مثلاً سرویس فرم آنلاین) نظر به همان آدرس ارسال می‌شود
+        if (hasRealAction(form)) {
+          form.submit();
+          return;
+        }
         form.hidden = true;
         const success = form.querySelector('[data-review-success]');
         if (success) {
@@ -1185,7 +1209,7 @@
        required          الزامی          type="email"      ایمیل معتبر
        data-phone        موبایل ایرانی   data-min          حداقل طول
        data-match="id"   باید با مقدار فیلد دیگر یکسان باشد (فقط اگر خودش پر است)
-     بعد از اعتبارسنجی موفق، رویداد mahtab:valid-submit روی خود فرم ارسال می‌شود؛
+     بعد از اعتبارسنجی موفق، اگر فرم action واقعی داشته باشد ارسال می‌شود؛ وگرنه رویداد mahtab:valid-submit روی خود فرم ارسال می‌شود؛
      ثبت واقعی داده (ارسال به سرور یا ذخیره‌ی محلی) در هر صفحه جداگانه انجام می‌شود.
      ------------------------------------------------------------------------ */
   function initFormValidation() {
@@ -1248,6 +1272,11 @@
         });
         if (invalid.length) {
           invalid[0].focus();
+          return;
+        }
+        // فرم‌هایی که action واقعی دارند (مثلاً فرم تماس متصل به سرویس فرم آنلاین) بعد از اعتبارسنجی واقعاً ارسال می‌شوند
+        if (hasRealAction(form)) {
+          form.submit();
           return;
         }
         form.dispatchEvent(new CustomEvent('mahtab:valid-submit', { bubbles: true }));

@@ -299,7 +299,7 @@
   <!-- پنل جست‌وجو (در هدر وسط‌چین و موبایل) -->
   <div class="search-panel" id="search-panel" data-search-panel hidden>
     <div class="container-site">
-      <form role="search" action="search.html" method="get">
+      <form role="search" action="shop.html" method="get">
         <div class="search-field">
           <label class="sr-only" for="panel-q">جست‌وجو در فروشگاه</label>
           <input id="panel-q" type="search" name="q" placeholder="جست‌وجوی مانتو، پیراهن، کیف…" autocomplete="off">
@@ -329,7 +329,7 @@
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="بستن منو"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
   <div class="drawer-body">
-    <form role="search" action="search.html" method="get">
+    <form role="search" action="shop.html" method="get">
       <div class="search-field">
         <label class="sr-only" for="menu-q">جست‌وجو در فروشگاه</label>
         <input id="menu-q" type="search" name="q" placeholder="جست‌وجوی مانتو، پیراهن، کیف…" autocomplete="off">
@@ -532,21 +532,21 @@
         </li>
       </ul>
 
-      <form class="comment-form" data-validate novalidate data-comment-form>
+      <form class="comment-form" method="post" data-validate novalidate data-comment-form>
         <div class="form-grid">
           <div class="field">
             <label for="cm-name">نام شما</label>
-            <input id="cm-name" type="text" required>
+            <input id="cm-name" name="name" type="text" required>
             <p class="form-error" id="cm-name-error" hidden></p>
           </div>
           <div class="field">
             <label for="cm-email">ایمیل (منتشر نمی‌شود)</label>
-            <input id="cm-email" type="email" dir="ltr" required>
+            <input id="cm-email" name="email" type="email" dir="ltr" required>
             <p class="form-error" id="cm-email-error" hidden></p>
           </div>
           <div class="field field-wide">
             <label for="cm-text">نظر شما</label>
-            <textarea id="cm-text" rows="4" required></textarea>
+            <textarea id="cm-text" name="comment" rows="4" required></textarea>
             <p class="form-error" id="cm-text-error" hidden></p>
           </div>
         </div>
