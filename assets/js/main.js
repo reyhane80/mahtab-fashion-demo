@@ -620,6 +620,7 @@
       items.forEach((el) => el.classList.add('is-visible'));
       return;
     }
+    document.documentElement.classList.add('reveal-ready');
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
