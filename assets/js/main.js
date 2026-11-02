@@ -740,13 +740,25 @@
       if (head && !head.querySelector('[data-clear-url]')) head.insertAdjacentHTML('beforeend', ' · <a href="shop.html" data-clear-url>نمایش همه‌ی محصولات</a>');
     }
 
+    // اگر دسته‌ی نشانی صفحه در درخت دسته‌بندی کناری هست، همان گزینه تیک بخورد و شاخه‌اش باز شود (قابل برداشتن توسط کاربر)
+    const tree = document.querySelector('[data-filter="tag"]');
+    if (tree && hasTags) {
+      for (let i = urlTags.length - 1; i >= 0; i--) {
+        const box = tree.querySelector(`input[value="${CSS.escape(urlTags[i])}"]`);
+        if (!box) continue;
+        box.checked = true;
+        for (let d = box.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+        urlTags.splice(i, 1);
+      }
+    }
+
     const checkedValues = (name) => Array.from(document.querySelectorAll(`[data-filter="${name}"] input:checked`)).map((i) => i.value);
 
     const priceBounds = priceBox ? { min: parseInt(priceBox.dataset.min, 10), max: parseInt(priceBox.dataset.max, 10) } : null;
-    const currentPriceRange = () => [
-      Math.max(priceBounds.min, parseInt(priceMinInput.value, 10) || priceBounds.min),
-      Math.min(priceBounds.max, parseInt(priceMaxInput.value, 10) || priceBounds.max),
-    ];
+    // بازه‌ی قیمت انتخاب‌شده (منبع اصلی؛ اسلایدرها و کادرهای عددی فقط آن را نشان می‌دهند)
+    const priceState = priceBounds ? { lo: priceBounds.min, hi: priceBounds.max } : null;
+    const currentPriceRange = () => [priceState.lo, priceState.hi];
+    const parsePrice = (text) => parseInt(String(text).replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[^\d]/g, ''), 10);
 
     const matches = (card) => {
       const cats = checkedValues('cat');
@@ -754,6 +766,9 @@
       const colors = checkedValues('color');
       const sizes = checkedValues('size');
       if (cats.length && !cats.includes(card.dataset.cat)) return false;
+      // دسته‌بندی درختی کنار فروشگاه (برچسب‌های data-tags؛ هر کدام از گزینه‌های تیک‌خورده کافی است)
+      const tags = checkedValues('tag');
+      if (tags.length && !tags.some((t) => (card.dataset.tags || '').split('|').includes(t))) return false;
       if (urlTags.length && hasTags && !urlTags.every((t) => (card.dataset.tags || '').split('|').includes(t))) return false;
       if (urlSale && !(card.dataset.badges || '').split('|').includes('sale')) return false;
       if (queryWords.length) {
@@ -826,40 +841,53 @@
       renderPagination(pages);
     };
 
-    document.querySelectorAll('[data-filter] input, [data-price-filter] input').forEach((input) =>
+    document.querySelectorAll('[data-filter] input').forEach((input) =>
       input.addEventListener('change', () => {
         page = 1;
-        syncPriceInputs(input);
         render();
       })
     );
     if (sortSelect) sortSelect.addEventListener('change', () => { page = 1; render(); });
 
-    function syncPriceInputs(from) {
+    // قیمت: اسلایدرها و کادرهای عددی (با جداکننده‌ی فارسی) همیشه با هم هماهنگ‌اند
+    function setPriceRange(lo, hi, changed) {
       if (!priceBox) return;
-      let [lo, hi] = currentPriceRange();
+      lo = Number.isFinite(lo) ? lo : priceBounds.min;
+      hi = Number.isFinite(hi) ? hi : priceBounds.max;
+      lo = Math.min(Math.max(lo, priceBounds.min), priceBounds.max);
+      hi = Math.min(Math.max(hi, priceBounds.min), priceBounds.max);
       if (lo > hi) {
-        if (from === sliderMin || from === priceMinInput) hi = lo;
+        if (changed === 'min') hi = lo;
         else lo = hi;
       }
-      priceMinInput.value = lo;
-      priceMaxInput.value = hi;
+      priceState.lo = lo;
+      priceState.hi = hi;
       sliderMin.value = lo;
       sliderMax.value = hi;
+      priceMinInput.value = formatPrice(lo);
+      priceMaxInput.value = formatPrice(hi);
       const range = priceBounds.max - priceBounds.min || 1;
       priceBox.style.setProperty('--p1', `${((lo - priceBounds.min) / range) * 100}%`);
       priceBox.style.setProperty('--p2', `${((hi - priceBounds.min) / range) * 100}%`);
     }
 
     if (priceBox) {
-      [priceMinInput, priceMaxInput, sliderMin, sliderMax].forEach((input) =>
-        input.addEventListener('input', () => {
-          page = 1;
-          syncPriceInputs(input);
-          render();
-        })
-      );
-      syncPriceInputs(null);
+      sliderMin.addEventListener('input', () => { setPriceRange(parseInt(sliderMin.value, 10), priceState.hi, 'min'); page = 1; render(); });
+      sliderMax.addEventListener('input', () => { setPriceRange(priceState.lo, parseInt(sliderMax.value, 10), 'max'); page = 1; render(); });
+      const fromField = (field, which) => {
+        const v = parsePrice(field.value);
+        if (which === 'min') setPriceRange(v, priceState.hi, 'min');
+        else setPriceRange(priceState.lo, v, 'max');
+        page = 1;
+        render();
+      };
+      priceMinInput.addEventListener('change', () => fromField(priceMinInput, 'min'));
+      priceMaxInput.addEventListener('change', () => fromField(priceMaxInput, 'max'));
+      [priceMinInput, priceMaxInput].forEach((field) => {
+        field.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); field.dispatchEvent(new Event('change')); } });
+        field.addEventListener('focus', () => field.select());
+      });
+      setPriceRange(priceBounds.min, priceBounds.max);
     }
 
     if (paginationEl) {
@@ -885,11 +913,7 @@
         }
         document.querySelectorAll('[data-filter] input:checked').forEach((input) => (input.checked = false));
         page = 1;
-        if (priceBox) {
-          priceMinInput.value = priceBounds.min;
-          priceMaxInput.value = priceBounds.max;
-          syncPriceInputs(null);
-        }
+        if (priceBox) setPriceRange(priceBounds.min, priceBounds.max);
         render();
       })
     );
@@ -1146,6 +1170,141 @@
       const tip = who() === 'kids' ? 'بچه‌ها زود رشد می‌کنند؛ اگر نزدیک سایز بعدی است، بزرگ‌تر را بردارید.' : 'برای مدل‌های جذب، یک سایز بزرگ‌تر را هم در نظر بگیرید.';
       result.innerHTML = `<span>سایز پیشنهادی شما</span><strong>${escapeHtml(size)}</strong><span>${num ? escapeHtml(num.trim()) + ' · ' : ''}${tip}</span>`;
     });
+  }
+
+
+  /* ------------------------------------------------------------------------
+     پیشنهادهای جست‌وجو: با تایپ در هر کادر جست‌وجو، محصولات مرتبط زیر آن نمایش داده می‌شوند.
+     فهرست محصولات (assets/js/search-<دمو>.js) فقط بار اول تایپ بارگذاری می‌شود.
+     ------------------------------------------------------------------------ */
+  const normalizeSearch = (text) => String(text || '').toLowerCase().replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/[‌‏‎]/g, ' ').replace(/\s+/g, ' ').trim();
+  let searchIndexPromise = null;
+  const loadSearchIndex = () => {
+    if (!searchIndexPromise) {
+      searchIndexPromise = new Promise((resolve) => {
+        const script = document.createElement('script');
+        script.src = `${ASSETS}js/search-${DEMO}.js`;
+        script.onload = () => resolve((window.MAHTAB_SEARCH || []).map((item) => ({ ...item, t: normalizeSearch(`${item.n} ${item.c} ${item.b} ${item.k}`) })));
+        script.onerror = () => resolve([]);
+        document.head.appendChild(script);
+      });
+    }
+    return searchIndexPromise;
+  };
+
+  function initSearchSuggest() {
+    document.querySelectorAll('form[role="search"]').forEach((form, formIndex) => {
+      const input = form.querySelector('input[name="q"]');
+      if (!input) return;
+      const box = document.createElement('div');
+      box.className = 'search-suggest';
+      box.id = `search-suggest-${formIndex}`;
+      box.setAttribute('role', 'listbox');
+      box.hidden = true;
+      form.appendChild(box);
+      form.classList.add('has-suggest');
+      input.setAttribute('role', 'combobox');
+      input.setAttribute('aria-autocomplete', 'list');
+      input.setAttribute('aria-controls', box.id);
+      input.setAttribute('aria-expanded', 'false');
+      let active = -1;
+      let timer = null;
+
+      const close = () => {
+        box.hidden = true;
+        active = -1;
+        input.setAttribute('aria-expanded', 'false');
+        input.removeAttribute('aria-activedescendant');
+      };
+      const options = () => Array.from(box.querySelectorAll('[role="option"]'));
+      const highlight = (index) => {
+        const list = options();
+        list.forEach((el, i) => el.classList.toggle('is-active', i === index));
+        active = index;
+        if (list[index]) input.setAttribute('aria-activedescendant', list[index].id);
+        else input.removeAttribute('aria-activedescendant');
+      };
+
+      const show = async () => {
+        const q = normalizeSearch(input.value);
+        if (q.length < 2) return close();
+        const index = await loadSearchIndex();
+        const words = q.split(' ');
+        const found = index.filter((item) => words.every((w) => item.t.includes(w)));
+        const all = `${form.getAttribute('action') || 'shop.html'}?q=${encodeURIComponent(input.value.trim())}`;
+        if (!found.length) {
+          box.innerHTML = `<p class="search-suggest-empty">محصولی با «${escapeHtml(input.value.trim())}» پیدا نشد. نام دسته یا رنگ را امتحان کنید؛ مثلاً «پالتو» یا «مشکی».</p>`;
+        } else {
+          box.innerHTML = found.slice(0, 6).map((item, i) => `<a role="option" id="${box.id}-o${i}" class="search-suggest-item" href="${item.u}">
+  <img src="${ASSETS}${item.i}" alt="" width="48" height="64" loading="lazy">
+  <span class="search-suggest-text"><strong>${escapeHtml(item.n)}</strong><small>${escapeHtml(item.c)}${item.b ? ` · ${escapeHtml(item.b)}` : ''}</small></span>
+  <span class="search-suggest-price">${item.o ? `<del>${formatPrice(item.o)}</del>` : ''}${formatPrice(item.p)} <small>تومان</small></span>
+</a>`).join('') + `<a class="search-suggest-all" href="${all}">نمایش همه‌ی ${toFa(found.length)} نتیجه برای «${escapeHtml(input.value.trim())}» <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>`;
+        }
+        box.hidden = false;
+        active = -1;
+        input.setAttribute('aria-expanded', 'true');
+      };
+
+      input.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(show, 120);
+      });
+      input.addEventListener('focus', () => { loadSearchIndex(); if (input.value.trim().length >= 2) show(); });
+      input.addEventListener('keydown', (event) => {
+        if (box.hidden) return;
+        const list = options();
+        if (event.key === 'ArrowDown') { event.preventDefault(); highlight(Math.min(list.length - 1, active + 1)); }
+        else if (event.key === 'ArrowUp') { event.preventDefault(); highlight(Math.max(-1, active - 1)); }
+        else if (event.key === 'Enter' && list[active]) { event.preventDefault(); list[active].click(); }
+        else if (event.key === 'Escape') { event.stopPropagation(); close(); }
+      });
+      document.addEventListener('click', (event) => { if (!form.contains(event.target)) close(); });
+    });
+  }
+
+
+  /* ------------------------------------------------------------------------
+     مجله: فیلتر مقاله‌ها بر اساس دسته (دکمه‌های بالای صفحه)
+     ------------------------------------------------------------------------ */
+  function initBlogFilter() {
+    const bar = document.querySelector('[data-blog-filter]');
+    if (!bar) return;
+    const items = Array.from(document.querySelectorAll('[data-blog-item]'));
+    const empty = document.querySelector('[data-blog-empty]');
+    bar.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-blog-cat]');
+      if (!btn) return;
+      const cat = btn.dataset.blogCat;
+      bar.querySelectorAll('[data-blog-cat]').forEach((b) => {
+        b.classList.toggle('is-active', b === btn);
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      let shown = 0;
+      items.forEach((item) => {
+        const on = !cat || item.dataset.cat === cat;
+        item.hidden = !on;
+        if (on) shown++;
+      });
+      if (empty) empty.hidden = shown !== 0;
+    });
+  }
+
+
+  /* ------------------------------------------------------------------------
+     صفحه‌های راهنما (قوانین، حریم خصوصی، سوالات): فهرست بخش‌ها از روی تیترها
+     ------------------------------------------------------------------------ */
+  function initDocToc() {
+    const doc = document.querySelector('[data-doc]');
+    const toc = document.querySelector('[data-doc-toc]');
+    if (!doc || !toc) return;
+    const heads = Array.from(doc.querySelectorAll('h2'));
+    if (heads.length < 3) return;
+    toc.querySelector('ol').innerHTML = heads.map((h, i) => {
+      if (!h.id) h.id = `doc-${i + 1}`;
+      return `<li><a href="#${h.id}">${escapeHtml(h.textContent.trim())}</a></li>`;
+    }).join('');
+    toc.hidden = false;
   }
 
   function initReviews() {
@@ -1522,12 +1681,12 @@
     const emptyMsg = document.querySelector('[data-compare-page-empty]');
 
     const ROWS = [
-      { label: 'قیمت', get: (p) => `${priceHtml(p.salePrice || p.finalPrice || p.price)} تومان` },
-      { label: 'امتیاز', get: (p) => (p.rating ? `${toFa(p.rating)} از ۵ (${toFa(p.reviews || 0)} نظر)` : '—') },
-      { label: 'دسته', get: (p) => p.category || '—' },
-      { label: 'برند', get: (p) => p.brand || '—' },
-      { label: 'رنگ‌ها', get: (p) => (p.colors ? p.colors.map((c) => c.name).join('، ') : '—') },
-      { label: 'سایزها', get: (p) => (p.sizes ? p.sizes.join('، ') : '—') },
+      { label: 'قیمت', get: (p) => `<strong class="compare-price">${priceHtml(p.salePrice || p.finalPrice || p.price)}</strong> تومان` },
+      { label: 'امتیاز', get: (p) => (p.rating ? `<span class="compare-rate"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>${toFa(p.rating)}</span> <small>(${toFa(p.reviews || 0)} نظر)</small>` : '—') },
+      { label: 'دسته', get: (p) => escapeHtml(p.category || '—') },
+      { label: 'برند', get: (p) => escapeHtml(p.brand || '—') },
+      { label: 'رنگ‌ها', get: (p) => (p.colors ? `<span class="compare-swatches">${p.colors.map((c) => `<span title="${escapeHtml(c.name)}"><i style="background:${c.hex}"></i>${escapeHtml(c.name)}</span>`).join('')}</span>` : '—') },
+      { label: 'سایزها', get: (p) => (p.sizes ? `<span class="compare-chips">${p.sizes.map((z) => `<span>${escapeHtml(z)}</span>`).join('')}</span>` : '—') },
     ];
 
     const render = () => {
@@ -1543,8 +1702,7 @@
         .map(
           (p) => `<th scope="col">
   <button type="button" class="icon-btn compare-remove" data-compare-remove="${p.id}" aria-label="حذف ${escapeHtml(p.name)} از مقایسه">${'<svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>'}</button>
-  <img src="${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}" alt="" width="140" height="140" loading="lazy">
-  <a href="product-${p.image}.html">${escapeHtml(p.name)}</a>
+  <a class="compare-card" href="product-${p.image}.html"><img src="${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}" alt="" width="720" height="960" loading="lazy"><span>${escapeHtml(p.name)}</span></a>
 </th>`
         )
         .join('')}</tr>`;
@@ -1557,6 +1715,8 @@
             `<td data-product data-product-id="${p.id}" data-product-name="${escapeHtml(p.name)}" data-product-price="${p.salePrice || p.finalPrice || p.price}" data-product-image="${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}"><button type="button" class="btn btn-sm btn-primary" data-add-to-cart><span data-cart-label>افزودن به سبد</span></button></td>`
         )
         .join('')}</tr>`;
+      table.style.setProperty('--cols', items.length);
+      table.dataset.cols = items.length;
       table.innerHTML = `<caption class="sr-only">مقایسه‌ی ویژگی‌های محصولات انتخاب‌شده</caption><thead>${head}</thead><tbody>${rows}${addRow}</tbody>`;
       // کارت‌ها هر بار از نو ساخته می‌شوند؛ دکمه‌ی «افزودن به سبد» باید دوباره فعال شود
       rebindAddToCart(table);
@@ -1762,6 +1922,9 @@
   initRails();
   initReviews();
   initSizeGuide();
+  initSearchSuggest();
+  initBlogFilter();
+  initDocToc();
   initReviewForm();
   initNewsletter();
   initCountdown();

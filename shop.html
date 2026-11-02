@@ -60,18 +60,26 @@
   <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.6" cy="7.4" r=".9" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 4.5 3.5 11l5.5 2 2 6 3-3.5 4.5 3.5Z"/><path d="m9 13 8-5.5"/></symbol>
   <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.3 8.8c.2 2.6 2.4 4.9 5 5.4l1.1-1.3-1.7-.9-.8.8c-1-.4-1.9-1.3-2.4-2.4l.8-.8-.8-1.8Z" fill="currentColor" stroke="none"/></symbol>
+  <!-- آیکون‌های چهره‌ی کاربران (به‌جای حرف اول نام در نظرات) -->
+  <symbol id="i-av1" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M4 20.2c.9-4.1 4.2-6.4 8-6.4s7.1 2.3 8 6.4c.1.5-.3.8-.8.8H4.8c-.5 0-.9-.3-.8-.8Z"/></symbol>
+  <symbol id="i-av2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M8.4 14.2c.9 1.3 2.2 2 3.6 2s2.7-.7 3.6-2"/><path d="M9 9.6v.6M15 9.6v.6" stroke-width="2.4"/></symbol>
+  <symbol id="i-av3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5.5 8.5h13l-1 11.5h-11Z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-av4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.3 4.7 13a4.7 4.7 0 0 1 6.6-6.6l.7.7.7-.7A4.7 4.7 0 0 1 19.3 13Z"/></symbol>
 </svg>
 
   <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
 
 <!-- ===== شروع: نوار بالای صفحه ===== -->
 <div class="topbar" id="top">
-  <div class="container-site topbar-inner">
-    <p class="topbar-text">ارسال رایگان برای خریدهای بالای ۲ میلیون تومان · تعویض تا ۷ روز</p>
-    <ul role="list" class="topbar-links" aria-label="پیوندهای سریع">
-      <li><a href="track-order.html">پیگیری سفارش</a></li>
-      <li><a href="faq.html">سوالات متداول</a></li>
-      <li><a href="contact.html">تماس با ما</a></li>
+  
+  <div class="topbar-marquee" aria-label="اطلاعیه‌ها">
+    <ul role="list" class="topbar-track">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
     </ul>
   </div>
 </div>
@@ -497,84 +505,96 @@
         <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="بستن فیلترها"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
       </div>
 
-      <div class="filter-group">
-        <h3 class="filter-title">محدوده‌ی قیمت</h3>
+      <!-- هر گروه فیلتر یک آکاردئون است (details/summary)؛ با کلیک باز و بسته می‌شود -->
+
+      <details class="filter-acc" open>
+        <summary class="filter-acc-head"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg> دسته‌بندی محصولات</summary>
+        <div class="filter-tree" data-filter="tag">
+
+          <details class="tree-node">
+            <summary>زنانه</summary>
+            <div class="tree-body">
+              <label class="filter-check tree-all"><input type="checkbox" value="women"><span>همه‌ی زنانه</span></label>
+
+              <p class="tree-col">پوشاک</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="women-coat"><span>مانتو و پالتو</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-dress"><span>پیراهن و تونیک</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-blouse"><span>شومیز و بلوز</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-pants"><span>شلوار و جین</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-skirt"><span>دامن</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-knit"><span>بافت و ژاکت</span></label></li>
+              </ul>
+
+              <p class="tree-col">کیف و کفش</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="women-bag"><span>کیف دستی</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-backpack"><span>کوله و کراس‌بادی</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-shoe"><span>کفش روزمره</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-boot"><span>بوت و نیم‌بوت</span></label></li>
+              </ul>
+
+              <p class="tree-col">اکسسوری</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="women-scarf"><span>شال و روسری</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-belt"><span>کمربند</span></label></li><li><label class="filter-check"><input type="checkbox" value="women-sunglasses"><span>عینک آفتابی</span></label></li>
+              </ul>
+
+            </div>
+          </details>
+
+          <details class="tree-node">
+            <summary>مردانه</summary>
+            <div class="tree-body">
+              <label class="filter-check tree-all"><input type="checkbox" value="men"><span>همه‌ی مردانه</span></label>
+
+              <p class="tree-col">پوشاک</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="men-jacket"><span>کت و کاپشن</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-shirt"><span>پیراهن</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-tshirt"><span>تی‌شرت و پولو</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-pants"><span>شلوار و جین</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-hoodie"><span>هودی و سویشرت</span></label></li>
+              </ul>
+
+              <p class="tree-col">کفش و اکسسوری</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="men-formal-shoe"><span>کفش رسمی</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-sneaker"><span>کتانی</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-bag"><span>کیف و کوله</span></label></li><li><label class="filter-check"><input type="checkbox" value="men-belt"><span>کمربند و کیف پول</span></label></li>
+              </ul>
+
+            </div>
+          </details>
+
+          <details class="tree-node">
+            <summary>بچگانه</summary>
+            <div class="tree-body">
+              <label class="filter-check tree-all"><input type="checkbox" value="kids"><span>همه‌ی بچگانه</span></label>
+
+              <p class="tree-col">دخترانه</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="girls-dress"><span>پیراهن و سارافون</span></label></li><li><label class="filter-check"><input type="checkbox" value="girls-set"><span>ست لباس</span></label></li><li><label class="filter-check"><input type="checkbox" value="girls-shoe"><span>کفش</span></label></li>
+              </ul>
+
+              <p class="tree-col">پسرانه</p>
+              <ul class="filter-list" role="list">
+                <li><label class="filter-check"><input type="checkbox" value="boys-set"><span>تی‌شرت و شلوار</span></label></li><li><label class="filter-check"><input type="checkbox" value="boys-jacket"><span>کاپشن</span></label></li><li><label class="filter-check"><input type="checkbox" value="boys-shoe"><span>کفش</span></label></li>
+              </ul>
+
+            </div>
+          </details>
+
+          <details class="tree-node">
+            <summary>کیف، کفش و اکسسوری</summary>
+            <div class="tree-body">
+              <label class="filter-check"><input type="checkbox" value="bags-shoes"><span>کیف و کفش</span></label>
+              <label class="filter-check"><input type="checkbox" value="accessories"><span>اکسسوری</span></label>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="filter-acc" open>
+        <summary class="filter-acc-head"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg> محدوده‌ی قیمت</summary>
         <div class="price-range" data-price-filter data-min="380000" data-max="6080000">
-          <div class="price-range-fields">
-            <label class="sr-only" for="price-min">حداقل قیمت</label>
-            <input type="number" id="price-min" inputmode="numeric" data-price-min value="380000" min="380000" max="6080000">
-            <span aria-hidden="true">تا</span>
-            <label class="sr-only" for="price-max">حداکثر قیمت</label>
-            <input type="number" id="price-max" inputmode="numeric" data-price-max value="6080000" min="380000" max="6080000">
-          </div>
+          <div class="price-range-track" aria-hidden="true"><i></i></div>
           <input type="range" class="price-slider" data-price-slider-min aria-label="حداقل قیمت" min="380000" max="6080000" value="380000" step="10000">
           <input type="range" class="price-slider" data-price-slider-max aria-label="حداکثر قیمت" min="380000" max="6080000" value="6080000" step="10000">
+          <div class="price-range-fields">
+            <label class="price-field"><span>از</span><input type="text" id="price-min" inputmode="numeric" data-price-min value="380000" aria-label="حداقل قیمت (تومان)"><em>تومان</em></label>
+            <label class="price-field"><span>تا</span><input type="text" id="price-max" inputmode="numeric" data-price-max value="6080000" aria-label="حداکثر قیمت (تومان)"><em>تومان</em></label>
+          </div>
         </div>
-      </div>
+      </details>
 
-      <div class="filter-group">
-        <h3 class="filter-title">دسته‌بندی</h3>
-        <ul class="filter-list" role="list" data-filter="cat">
-
-          <li><label class="filter-check"><input type="checkbox" value="مانتو و پالتو"><span>مانتو و پالتو</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="پیراهن و تونیک"><span>پیراهن و تونیک</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="شومیز و بلوز"><span>شومیز و بلوز</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="بافت و ژاکت"><span>بافت و ژاکت</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="شلوار زنانه"><span>شلوار زنانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="دامن"><span>دامن</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کیف زنانه"><span>کیف زنانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کفش زنانه"><span>کفش زنانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="بوت و نیم‌بوت"><span>بوت و نیم‌بوت</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="شال و روسری"><span>شال و روسری</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کمربند زنانه"><span>کمربند زنانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="عینک آفتابی"><span>عینک آفتابی</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کت و کاپشن"><span>کت و کاپشن</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="پیراهن مردانه"><span>پیراهن مردانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="تی‌شرت و پولو"><span>تی‌شرت و پولو</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="هودی و سویشرت"><span>هودی و سویشرت</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="شلوار مردانه"><span>شلوار مردانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کفش رسمی"><span>کفش رسمی</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کتانی"><span>کتانی</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کیف مردانه"><span>کیف مردانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کمربند و کیف پول"><span>کمربند و کیف پول</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="پیراهن دخترانه"><span>پیراهن دخترانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="ست دخترانه"><span>ست دخترانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کفش دخترانه"><span>کفش دخترانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="ست پسرانه"><span>ست پسرانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کاپشن بچگانه"><span>کاپشن بچگانه</span></label></li>
-
-          <li><label class="filter-check"><input type="checkbox" value="کفش پسرانه"><span>کفش پسرانه</span></label></li>
-
-        </ul>
-      </div>
-
-      <div class="filter-group">
-        <h3 class="filter-title">برند</h3>
+      <details class="filter-acc">
+        <summary class="filter-acc-head"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> برند</summary>
         <ul class="filter-list" role="list" data-filter="brand">
 
           <li><label class="filter-check"><input type="checkbox" value="آتلیه نیلا"><span>آتلیه نیلا</span></label></li>
@@ -590,14 +610,14 @@
           <li><label class="filter-check"><input type="checkbox" value="پرنیان"><span>پرنیان</span></label></li>
 
         </ul>
-      </div>
+      </details>
 
-      <div class="filter-group">
-        <h3 class="filter-title">رنگ</h3>
+      <details class="filter-acc">
+        <summary class="filter-acc-head"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg> رنگ</summary>
         <ul class="filter-swatches" role="list" data-filter="color">
 
           <li>
-            <label class="filter-swatch" style="--sw:#B08A66">
+            <label class="filter-swatch" style="--sw:#B08A66" title="شتری">
               <input type="checkbox" value="شتری">
               <span aria-hidden="true"></span>
               <span class="sr-only">شتری</span>
@@ -605,7 +625,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#1D1D1D">
+            <label class="filter-swatch" style="--sw:#1D1D1D" title="مشکی">
               <input type="checkbox" value="مشکی">
               <span aria-hidden="true"></span>
               <span class="sr-only">مشکی</span>
@@ -613,7 +633,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#8C8C88">
+            <label class="filter-swatch" style="--sw:#8C8C88" title="طوسی">
               <input type="checkbox" value="طوسی">
               <span aria-hidden="true"></span>
               <span class="sr-only">طوسی</span>
@@ -621,7 +641,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#3C8250">
+            <label class="filter-swatch" style="--sw:#3C8250" title="سبز">
               <input type="checkbox" value="سبز">
               <span aria-hidden="true"></span>
               <span class="sr-only">سبز</span>
@@ -629,7 +649,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#3CA0AA">
+            <label class="filter-swatch" style="--sw:#3CA0AA" title="فیروزه‌ای">
               <input type="checkbox" value="فیروزه‌ای">
               <span aria-hidden="true"></span>
               <span class="sr-only">فیروزه‌ای</span>
@@ -637,7 +657,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#ECE4D4">
+            <label class="filter-swatch" style="--sw:#ECE4D4" title="شیری">
               <input type="checkbox" value="شیری">
               <span aria-hidden="true"></span>
               <span class="sr-only">شیری</span>
@@ -645,7 +665,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#222A42">
+            <label class="filter-swatch" style="--sw:#222A42" title="سرمه‌ای">
               <input type="checkbox" value="سرمه‌ای">
               <span aria-hidden="true"></span>
               <span class="sr-only">سرمه‌ای</span>
@@ -653,7 +673,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#C4C4C2">
+            <label class="filter-swatch" style="--sw:#C4C4C2" title="طوسی روشن">
               <input type="checkbox" value="طوسی روشن">
               <span aria-hidden="true"></span>
               <span class="sr-only">طوسی روشن</span>
@@ -661,7 +681,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#C8B296">
+            <label class="filter-swatch" style="--sw:#C8B296" title="بژ">
               <input type="checkbox" value="بژ">
               <span aria-hidden="true"></span>
               <span class="sr-only">بژ</span>
@@ -669,7 +689,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#404042">
+            <label class="filter-swatch" style="--sw:#404042" title="زغالی">
               <input type="checkbox" value="زغالی">
               <span aria-hidden="true"></span>
               <span class="sr-only">زغالی</span>
@@ -677,7 +697,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#A0BEDE">
+            <label class="filter-swatch" style="--sw:#A0BEDE" title="آبی روشن">
               <input type="checkbox" value="آبی روشن">
               <span aria-hidden="true"></span>
               <span class="sr-only">آبی روشن</span>
@@ -685,7 +705,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#345C96">
+            <label class="filter-swatch" style="--sw:#345C96" title="آبی">
               <input type="checkbox" value="آبی">
               <span aria-hidden="true"></span>
               <span class="sr-only">آبی</span>
@@ -693,7 +713,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#DECEB4">
+            <label class="filter-swatch" style="--sw:#DECEB4" title="کرم">
               <input type="checkbox" value="کرم">
               <span aria-hidden="true"></span>
               <span class="sr-only">کرم</span>
@@ -701,7 +721,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#F4F4F2">
+            <label class="filter-swatch" style="--sw:#F4F4F2" title="سفید">
               <input type="checkbox" value="سفید">
               <span aria-hidden="true"></span>
               <span class="sr-only">سفید</span>
@@ -709,7 +729,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#731E28">
+            <label class="filter-swatch" style="--sw:#731E28" title="زرشکی">
               <input type="checkbox" value="زرشکی">
               <span aria-hidden="true"></span>
               <span class="sr-only">زرشکی</span>
@@ -717,7 +737,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#5F3C28">
+            <label class="filter-swatch" style="--sw:#5F3C28" title="قهوه‌ای">
               <input type="checkbox" value="قهوه‌ای">
               <span aria-hidden="true"></span>
               <span class="sr-only">قهوه‌ای</span>
@@ -725,7 +745,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#3E4A3A">
+            <label class="filter-swatch" style="--sw:#3E4A3A" title="زیتونی">
               <input type="checkbox" value="زیتونی">
               <span aria-hidden="true"></span>
               <span class="sr-only">زیتونی</span>
@@ -733,7 +753,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#AA6937">
+            <label class="filter-swatch" style="--sw:#AA6937" title="عسلی">
               <input type="checkbox" value="عسلی">
               <span aria-hidden="true"></span>
               <span class="sr-only">عسلی</span>
@@ -741,7 +761,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#789682">
+            <label class="filter-swatch" style="--sw:#789682" title="یشمی">
               <input type="checkbox" value="یشمی">
               <span aria-hidden="true"></span>
               <span class="sr-only">یشمی</span>
@@ -749,7 +769,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#6E5096">
+            <label class="filter-swatch" style="--sw:#6E5096" title="بنفش">
               <input type="checkbox" value="بنفش">
               <span aria-hidden="true"></span>
               <span class="sr-only">بنفش</span>
@@ -757,7 +777,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#E6E2DC">
+            <label class="filter-swatch" style="--sw:#E6E2DC" title="شفاف">
               <input type="checkbox" value="شفاف">
               <span aria-hidden="true"></span>
               <span class="sr-only">شفاف</span>
@@ -765,7 +785,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#BE2828">
+            <label class="filter-swatch" style="--sw:#BE2828" title="قرمز">
               <input type="checkbox" value="قرمز">
               <span aria-hidden="true"></span>
               <span class="sr-only">قرمز</span>
@@ -773,7 +793,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#E2EF2C">
+            <label class="filter-swatch" style="--sw:#E2EF2C" title="فسفری">
               <input type="checkbox" value="فسفری">
               <span aria-hidden="true"></span>
               <span class="sr-only">فسفری</span>
@@ -781,7 +801,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#D7E646">
+            <label class="filter-swatch" style="--sw:#D7E646" title="لیمویی">
               <input type="checkbox" value="لیمویی">
               <span aria-hidden="true"></span>
               <span class="sr-only">لیمویی</span>
@@ -789,7 +809,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#F2B8A8">
+            <label class="filter-swatch" style="--sw:#F2B8A8" title="صورتی">
               <input type="checkbox" value="صورتی">
               <span aria-hidden="true"></span>
               <span class="sr-only">صورتی</span>
@@ -797,7 +817,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#E3D3B6">
+            <label class="filter-swatch" style="--sw:#E3D3B6" title="شامپاینی">
               <input type="checkbox" value="شامپاینی">
               <span aria-hidden="true"></span>
               <span class="sr-only">شامپاینی</span>
@@ -805,7 +825,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#C89628">
+            <label class="filter-swatch" style="--sw:#C89628" title="خردلی">
               <input type="checkbox" value="خردلی">
               <span aria-hidden="true"></span>
               <span class="sr-only">خردلی</span>
@@ -813,7 +833,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#EBC83C">
+            <label class="filter-swatch" style="--sw:#EBC83C" title="زرد">
               <input type="checkbox" value="زرد">
               <span aria-hidden="true"></span>
               <span class="sr-only">زرد</span>
@@ -821,7 +841,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#B4532A">
+            <label class="filter-swatch" style="--sw:#B4532A" title="آجری">
               <input type="checkbox" value="آجری">
               <span aria-hidden="true"></span>
               <span class="sr-only">آجری</span>
@@ -829,7 +849,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#DC6E28">
+            <label class="filter-swatch" style="--sw:#DC6E28" title="نارنجی">
               <input type="checkbox" value="نارنجی">
               <span aria-hidden="true"></span>
               <span class="sr-only">نارنجی</span>
@@ -837,7 +857,7 @@
           </li>
 
           <li>
-            <label class="filter-swatch" style="--sw:#3A3A3A">
+            <label class="filter-swatch" style="--sw:#3A3A3A" title="ذغالی">
               <input type="checkbox" value="ذغالی">
               <span aria-hidden="true"></span>
               <span class="sr-only">ذغالی</span>
@@ -845,10 +865,10 @@
           </li>
 
         </ul>
-      </div>
+      </details>
 
-      <div class="filter-group">
-        <h3 class="filter-title">سایز</h3>
+      <details class="filter-acc">
+        <summary class="filter-acc-head"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز</summary>
         <ul class="filter-chips" role="list" data-filter="size">
 
           <li><label class="filter-chip"><input type="checkbox" value="S"><span>S</span></label></li>
@@ -934,7 +954,7 @@
           <li><label class="filter-chip"><input type="checkbox" value="فری‌سایز"><span>فری‌سایز</span></label></li>
 
         </ul>
-      </div>
+      </details>
 
       <button type="button" class="btn btn-outline btn-block" data-filters-reset>حذف همه‌ی فیلترها</button>
     </aside>
@@ -19189,10 +19209,10 @@
           <li><a href="contact.html#social" aria-label="واتس‌اپ"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
         </ul>
 
-        <!-- محل نمادهای اعتماد: کد یا تصویر نمادهای سایت خود را به‌جای این دو کادر قرار دهید -->
+        <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
         <ul role="list" class="trust-slots" aria-label="نمادهای اعتماد">
-          <li class="trust-slot">محل نماد اعتماد</li>
-          <li class="trust-slot">محل نماد ساماندهی</li>
+          <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="نمونه‌ی نماد اعتماد" width="120" height="120" loading="lazy"></li>
+          <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="نمونه‌ی نماد ساماندهی" width="120" height="120" loading="lazy"></li>
         </ul>
       </div>
     </div>

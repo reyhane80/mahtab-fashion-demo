@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#ffffff"/>
+  <circle cx="60" cy="48" r="26" fill="none" stroke="#2f6b8f" stroke-width="5"/>
+  <path d="M60 30l5 10 11 1.6-8 7.8 2 11L60 55l-10 5.4 2-11-8-7.8L55 40z" fill="#2f6b8f"/>
+  <text x="60" y="94" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="700" fill="#24323d">نماد اعتماد</text>
+  <text x="60" y="110" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="9" fill="#5b6b78">کسب‌وکار اینترنتی</text>
+  <g transform="rotate(-30 60 60)" opacity="0.28"><rect x="-10" y="50" width="140" height="20" fill="#d23c3c"/><text x="60" y="65" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="800" fill="#fff">نمونه · TEST</text></g>
+</svg>
