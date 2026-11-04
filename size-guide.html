@@ -499,6 +499,7 @@
       <h1 class="sg-title">سایز درست، <em>بار اول</em></h1>
       <p class="sg-lead">با یک متر خیاطی و دو دقیقه وقت، اندازه‌هایتان را بگیرید و با جدول‌های زیر یا سایزیاب، سایز مناسب هر مدل را پیدا کنید. اگر باز هم مطمئن نبودید، تعویض سایز تا ۷ روز رایگان است.</p>
       <ul role="list" class="sg-chips">
+        <li><a href="#sg-fit"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> فرم لباس</a></li>
         <li><a href="#sg-measure"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> نحوه‌ی اندازه‌گیری</a></li>
         <li><a href="#sg-finder"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> سایزیاب</a></li>
         <li><a href="#sg-tables"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg> جدول سایزها</a></li>
@@ -510,11 +511,27 @@
   </section>
   <!-- ===== پایان: معرفی ===== -->
 
+  <!-- ===== شروع: نوع فرم لباس ===== -->
+  <section class="section sg-fit-sec" id="sg-fit" aria-labelledby="sg-fit-title">
+    <div class="container-site">
+      <div class="section-head head-center reveal">
+        <h2 class="section-title" id="sg-fit-title">۱. اول فرم لباس را بشناسید</h2>
+        <p class="section-sub">هر مدل با یک فرم دوخته شده؛ فرم لباس تعیین می‌کند سایز همیشگی‌تان را بردارید یا یکی بزرگ‌تر و کوچک‌تر.</p>
+      </div>
+      <ul role="list" class="sg-fits">
+        <li class="reveal" style="--tone:var(--tone-2)"><img class="sg-fit-img" src="assets/images/clothing/products/m-pants-062.webp" alt="" width="720" height="960" loading="lazy"><h3>جذب (Slim)</h3><p>دقیقاً هم‌اندازه‌ی بدن دوخته شده؛ اگر راحتی را ترجیح می‌دهید یک سایز بزرگ‌تر بردارید.</p></li>
+        <li class="reveal" style="--d:80ms;--tone:var(--tone-3)"><img class="sg-fit-img" src="assets/images/clothing/products/m-shirt-520.webp" alt="" width="720" height="960" loading="lazy"><h3>معمولی (Regular)</h3><p>کمی فضای آزاد دارد؛ سایز همیشگی خودتان را انتخاب کنید.</p></li>
+        <li class="reveal" style="--d:160ms;--tone:var(--tone-4)"><img class="sg-fit-img" src="assets/images/clothing/products/hoodie.webp" alt="" width="720" height="960" loading="lazy"><h3>گشاد (Oversize)</h3><p>عمداً بزرگ‌تر دوخته شده؛ برای ظاهر مرتب‌تر یک سایز کوچک‌تر را امتحان کنید.</p></li>
+      </ul>
+    </div>
+  </section>
+  <!-- ===== پایان: نوع فرم لباس ===== -->
+
   <!-- ===== شروع: نحوه‌ی اندازه‌گیری ===== -->
-  <section class="section" id="sg-measure" aria-labelledby="sg-measure-title">
+  <section class="section pt-0" id="sg-measure" aria-labelledby="sg-measure-title">
     <div class="container-site">
       <div class="section-head reveal">
-        <h2 class="section-title" id="sg-measure-title">چطور اندازه بگیریم؟</h2>
+        <h2 class="section-title" id="sg-measure-title">۲. اندازه‌هایتان را بگیرید</h2>
       </div>
       <div class="sg-measure">
         <figure class="sg-figure reveal">
@@ -548,7 +565,7 @@
     <div class="container-site">
       <div class="sg-finder reveal">
         <div class="sg-finder-head">
-          <h2 class="section-title" id="sg-finder-title">سایزیاب</h2>
+          <h2 class="section-title" id="sg-finder-title">۳. سایزیاب</h2>
           <p>اندازه‌هایتان را به سانتی‌متر وارد کنید تا سایز پیشنهادی را ببینید.</p>
         </div>
         <form class="sg-form" data-size-finder novalidate>
@@ -576,7 +593,7 @@
   <section class="section pt-0" id="sg-tables" aria-labelledby="sg-tables-title">
     <div class="container-site">
       <div class="section-head reveal">
-        <h2 class="section-title" id="sg-tables-title">جدول سایزها</h2>
+        <h2 class="section-title" id="sg-tables-title">۴. جدول سایزها</h2>
         <div class="sg-unit" role="group" aria-label="واحد اندازه">
           <button type="button" class="is-active" data-sg-unit="cm" aria-pressed="true">سانتی‌متر</button>
           <button type="button" data-sg-unit="in" aria-pressed="false">اینچ</button>
@@ -674,21 +691,6 @@
     </div>
   </section>
   <!-- ===== پایان: جدول سایزها ===== -->
-
-  <!-- ===== شروع: نوع فرم لباس ===== -->
-  <section class="section pt-0" aria-labelledby="sg-fit-title">
-    <div class="container-site">
-      <div class="section-head reveal">
-        <h2 class="section-title" id="sg-fit-title">فرم لباس را هم در نظر بگیرید</h2>
-      </div>
-      <ul role="list" class="sg-fits">
-        <li class="reveal" style="--tone:var(--tone-2)"><span class="sg-fit-shape sg-fit-slim" aria-hidden="true"></span><h3>جذب (Slim)</h3><p>دقیقاً هم‌اندازه‌ی بدن دوخته شده؛ اگر راحتی را ترجیح می‌دهید یک سایز بزرگ‌تر بردارید.</p></li>
-        <li class="reveal" style="--d:80ms;--tone:var(--tone-3)"><span class="sg-fit-shape sg-fit-regular" aria-hidden="true"></span><h3>معمولی (Regular)</h3><p>کمی فضای آزاد دارد؛ سایز همیشگی خودتان را انتخاب کنید.</p></li>
-        <li class="reveal" style="--d:160ms;--tone:var(--tone-4)"><span class="sg-fit-shape sg-fit-over" aria-hidden="true"></span><h3>گشاد (Oversize)</h3><p>عمداً بزرگ‌تر دوخته شده؛ برای ظاهر مرتب‌تر یک سایز کوچک‌تر را امتحان کنید.</p></li>
-      </ul>
-    </div>
-  </section>
-  <!-- ===== پایان: نوع فرم لباس ===== -->
 
   <!-- ===== شروع: مشاوره ===== -->
   <section class="section pt-0" aria-labelledby="sg-help-title">

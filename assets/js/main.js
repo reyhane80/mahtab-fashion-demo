@@ -1307,6 +1307,32 @@
     toc.hidden = false;
   }
 
+
+  /* ------------------------------------------------------------------------
+     لوک‌بوک: کلیک یا رفتن ماوس روی نقطه‌ی عکس، ردیف همان محصول را برجسته می‌کند
+     (بدون پرش صفحه؛ فقط اگر ردیف دیده نمی‌شود، آرام کمی اسکرول می‌شود)
+     ------------------------------------------------------------------------ */
+  function initHotspots() {
+    document.querySelectorAll('.hotspot[href^="#"]').forEach((spot) => {
+      const target = () => document.getElementById(spot.getAttribute('href').slice(1));
+      const activate = (scroll) => {
+        const item = target();
+        if (!item) return;
+        const scope = spot.closest('section') || document;
+        scope.querySelectorAll('.hotspot.is-active, .look-item.is-active').forEach((el) => el.classList.remove('is-active'));
+        spot.classList.add('is-active');
+        item.classList.add('is-active');
+        if (scroll) {
+          const r = item.getBoundingClientRect();
+          if (r.top < 80 || r.bottom > window.innerHeight) item.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+        }
+      };
+      spot.addEventListener('click', (event) => { event.preventDefault(); activate(true); });
+      spot.addEventListener('mouseenter', () => activate(false));
+      spot.addEventListener('focus', () => activate(false));
+    });
+  }
+
   function initReviews() {
     document.querySelectorAll('[data-reviews-more]').forEach((btn) =>
       btn.addEventListener('click', () => {
@@ -1925,6 +1951,7 @@
   initSearchSuggest();
   initBlogFilter();
   initDocToc();
+  initHotspots();
   initReviewForm();
   initNewsletter();
   initCountdown();
