@@ -518,12 +518,27 @@
         <h2 class="section-title" id="cats-title">خرید بر اساس دسته</h2>
         <a class="link-more" href="shop.html">همه‌ی محصولات <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-      <ul class="cat-row" role="list">
-        <li class="reveal"><a class="cat-tile" href="shop.html?cat=women"><img src="assets/images/clothing/home/cat-women.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="cat-tile-name">زنانه</span></a></li>
-        <li class="reveal" style="--d:60ms"><a class="cat-tile" href="shop.html?cat=men"><img src="assets/images/clothing/home/cat-men.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="cat-tile-name">مردانه</span></a></li>
-        <li class="reveal" style="--d:120ms"><a class="cat-tile" href="shop.html?cat=kids"><img src="assets/images/clothing/home/cat-kids.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="cat-tile-name">بچگانه</span></a></li>
-        <li class="reveal" style="--d:180ms"><a class="cat-tile" href="shop.html?cat=bags-shoes"><img src="assets/images/clothing/home/cat-bags.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="cat-tile-name">کیف و کفش</span></a></li>
-        <li class="reveal" style="--d:240ms"><a class="cat-tile" href="shop.html?cat=accessories"><img src="assets/images/clothing/home/cat-accessories.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"><span class="cat-tile-name">اکسسوری</span></a></li>
+      <ul class="fc-cats" role="list">
+        <li class="fc-big"><a class="fc-cat" href="shop.html?cat=women">
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-women.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>زنانه</strong><small>مانتو، پیراهن، بافت و کفش</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        </a></li>
+        <li class=""><a class="fc-cat" href="shop.html?cat=men">
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-men.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>مردانه</strong><small>کت، پیراهن و کتانی</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        </a></li>
+        <li class=""><a class="fc-cat" href="shop.html?cat=kids">
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-kids.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>بچگانه</strong><small>دخترانه و پسرانه</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        </a></li>
+        <li class=""><a class="fc-cat" href="shop.html?cat=bags-shoes">
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-bags.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>کیف و کفش</strong><small>کیف دستی، بوت و کتانی</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        </a></li>
+        <li class=""><a class="fc-cat" href="shop.html?cat=accessories">
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-accessories.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>اکسسوری</strong><small>شال، عینک و کمربند</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        </a></li>
       </ul>
     </div>
   </section>
@@ -575,6 +590,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۳</strong> (۸۸ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -582,9 +601,7 @@
         <span><span class="price-now"><span class="num">۲<span class="num-sep">٬</span>۱۵۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن">
-        <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف کراس‌بادی سرمه‌ای به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -621,15 +638,17 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۱</strong> (۹۶ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: طوسی روشن، زغالی، آبی روشن">
+      <li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#404042" title="زغالی"></span></li><li><span class="swatch" style="background:#A0BEDE" title="آبی روشن"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
         <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۶۷۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: طوسی روشن، زغالی، آبی روشن">
-        <li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#404042" title="زغالی"></span></li><li><span class="swatch" style="background:#A0BEDE" title="آبی روشن"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کاپشن پفی سفید به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -666,15 +685,17 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۴</strong> (۹۷ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: طوسی روشن، طوسی، سبز">
+      <li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#8C8C8A" title="طوسی"></span></li><li><span class="swatch" style="background:#3C8250" title="سبز"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
         <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۲۳۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: طوسی روشن، طوسی، سبز">
-        <li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#8C8C8A" title="طوسی"></span></li><li><span class="swatch" style="background:#3C8250" title="سبز"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن پولو زیپ‌دار آبی یخی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -711,15 +732,17 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۱۳۲ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی روشن">
+      <li><span class="swatch" style="background:#C8B296" title="بژ"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
         <span><span class="price-now"><span class="num">۸۰۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی روشن">
-        <li><span class="swatch" style="background:#C8B296" title="بژ"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن پولوشرت کرم به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -761,6 +784,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۹۷ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی">
+      <li><span class="swatch" style="background:#D9CBB6" title="بژ"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -768,9 +795,7 @@
         <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۱۹۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی">
-        <li><span class="swatch" style="background:#D9CBB6" title="بژ"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن هودی پنبه‌ای اورسایز به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -807,15 +832,17 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۱۴۰ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: مشکی، فیروزه‌ای">
+      <li><span class="swatch" style="background:#191919" title="مشکی"></span></li><li><span class="swatch" style="background:#3CA0AA" title="فیروزه‌ای"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
         <span><span class="price-now"><span class="num">۳<span class="num-sep">٬</span>۰۳۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: مشکی، فیروزه‌ای">
-        <li><span class="swatch" style="background:#191919" title="مشکی"></span></li><li><span class="swatch" style="background:#3CA0AA" title="فیروزه‌ای"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن چکمه‌ی بلند مشکی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -852,15 +879,17 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۱۲۸ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سفید، کرم">
+      <li><span class="swatch" style="background:#F4F4F2" title="سفید"></span></li><li><span class="swatch" style="background:#E9DFCC" title="کرم"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
         <span><span class="price-now"><span class="num">۲<span class="num-sep">٬</span>۱۹۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: سفید، کرم">
-        <li><span class="swatch" style="background:#F4F4F2" title="سفید"></span></li><li><span class="swatch" style="background:#E9DFCC" title="کرم"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کتانی چرم سفید به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -899,6 +928,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۹ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، زغالی، شیری">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#404042" title="زغالی"></span></li><li><span class="swatch" style="background:#ECE4D4" title="شیری"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -906,9 +939,7 @@
         <span><span class="price-now"><span class="num">۲<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، زغالی، شیری">
-        <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#404042" title="زغالی"></span></li><li><span class="swatch" style="background:#ECE4D4" title="شیری"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن بادگیر طرح‌دار بچگانه به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -948,6 +979,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۶۴ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: شتری، مشکی، طوسی">
+      <li><span class="swatch" style="background:#B08A66" title="شتری"></span></li><li><span class="swatch" style="background:#1D1D1D" title="مشکی"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -955,9 +990,7 @@
         <span><span class="price-now"><span class="num">۳<span class="num-sep">٬</span>۸۸۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: شتری، مشکی، طوسی">
-        <li><span class="swatch" style="background:#B08A66" title="شتری"></span></li><li><span class="swatch" style="background:#1D1D1D" title="مشکی"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن پالتو بلند پشمی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -994,6 +1027,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۲</strong> (۶۵ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سبز، فیروزه‌ای">
+      <li><span class="swatch" style="background:#3C8250" title="سبز"></span></li><li><span class="swatch" style="background:#3CA0AA" title="فیروزه‌ای"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -1001,9 +1038,7 @@
         <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۹۲۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: سبز، فیروزه‌ای">
-        <li><span class="swatch" style="background:#3C8250" title="سبز"></span></li><li><span class="swatch" style="background:#3CA0AA" title="فیروزه‌ای"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کاپشن پفی سبز به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -1042,6 +1077,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۳</strong> (۸۸ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -1049,9 +1088,7 @@
         <span><span class="price-now"><span class="num">۲<span class="num-sep">٬</span>۱۵۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن">
-        <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف کراس‌بادی سرمه‌ای به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
@@ -1090,6 +1127,10 @@
 
     <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۹۷ نظر)</p>
 
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی">
+      <li><span class="swatch" style="background:#D9CBB6" title="بژ"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
+    </ul>
+
     <div class="p-foot">
       <div class="price" data-card-price>
 
@@ -1097,9 +1138,7 @@
         <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۱۹۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
 
-      <ul role="list" class="swatches" aria-label="رنگ‌ها: بژ، طوسی">
-        <li><span class="swatch" style="background:#D9CBB6" title="بژ"></span></li><li><span class="swatch" style="background:#8C8C88" title="طوسی"></span></li>
-      </ul>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن هودی پنبه‌ای اورسایز به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
 
     </div>
   </div>
