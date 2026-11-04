@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="demo-clothing" data-demo="clothing">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home (layout 2: Boutique) | Mahtab | Fashion Store</title>
+  <meta name="description" content="Mahtab online fashion store for women, men and kids: autumn collection, deal of the week, best sellers and customer reviews">
+  <meta name="theme-color" content="#F6F4F0">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- فونت‌ها (داخل فایل CSS جاسازی شده‌اند تا بدون سرور هم کار کنند) -->
+
+  <link rel="preload" href="assets/css/fonts/vazirmatn.css" as="style">
+  <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- آیکون‌ها (طراحی اختصاصی قالب، خطی ۲۴×۲۴). استفاده: <svg class="icon"><use href="#i-search"/></svg> -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-logo" viewBox="0 0 40 40"><path d="M25.5 6.5a14 14 0 1 0 8 23.6A11.5 11.5 0 0 1 25.5 6.5Z" fill="currentColor"/><path d="M29.5 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.75"/><path d="M4.75 20c.9-3.6 3.8-5.5 7.25-5.5s6.35 1.9 7.25 5.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" class="i-heart"><path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z"/></symbol>
+  <symbol id="i-compare" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 4 7l3 3M4 7h12M17 14l3 3-3 3M20 17H8"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 8h14l-1 12H6Z"/><path d="M9 10V7a3 3 0 0 1 6 0v3" stroke-linecap="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M10 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-5 5 5-5 5 5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a10 10 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 6.5h11v9H3ZM14 9.5h3.5l3 3v3H14Z"/><circle cx="7" cy="17.5" r="1.8" fill="currentColor" stroke="none"/><circle cx="17" cy="17.5" r="1.8" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5 4.5 8.5 8 12"/><path d="M4.5 8.5H14a5.5 5.5 0 0 1 0 11h-4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 19 6v5.5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6Z"/><path d="m9 12 2.2 2.2L15.5 10" stroke-linecap="round"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2"/><path d="M4.5 13.5h3v5h-1.5a1.5 1.5 0 0 1-1.5-1.5ZM19.5 13.5h-3v5h1.5a1.5 1.5 0 0 0 1.5-1.5ZM16.5 18.5c0 1.5-1.5 2-4 2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="5.5" width="16" height="14" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 9h16v3.5H4ZM5.5 12.5h13V20h-13ZM12 9v11"/><path d="M12 9C10.5 5 7 5 7.5 7.5 8 9 12 9 12 9Zm0 0c1.5-4 5-4 4.5-1.5C16 9 12 9 12 9Z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5a6 6 0 0 1-6-6c0-4 3.5-5.5 4-10 3 2 3 5 3 6.5 1-1 1.5-2 1.6-3.2C17 9.5 18 12 18 14.5a6 6 0 0 1-6 6Z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 20h10M5 7h14"/><path d="m5 7-2.5 6a2.5 2.5 0 0 0 5 0Zm14 0-2.5 6a2.5 2.5 0 0 0 5 0Z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 8 12 4l8 4v8.5L12 20.5 4 16.5Z"/><path d="m4 8 8 4 8-4M12 12v8.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Z"/><path d="M5 19c3-4 6-7 9-9"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12.5" rx="1.5"/><path d="M7 10.5h6M7 14h10" stroke-linecap="round"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 8h3.5L9 5.5h6L16.5 8H20v11H4Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5s6 6.5 6 10.5a6 6 0 0 1-12 0c0-4 6-10.5 6-10.5Z"/></symbol>
+  <symbol id="i-certificate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="12" rx="1.5"/><path d="M7 8.5h10M7 12h5" stroke-linecap="round"/><circle cx="16" cy="15.5" r="2.3"/><path d="m14.8 17.5-.8 3 2-1 2 1-.8-3"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M15.5 4.5 19.5 8.5 9 19H5v-4Z"/><path d="m13 7 4 4"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12.5" rx="2"/><path d="M3.5 10h17"/><path d="M7 15h3" stroke-linecap="round"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.6" cy="7.4" r=".9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 4.5 3.5 11l5.5 2 2 6 3-3.5 4.5 3.5Z"/><path d="m9 13 8-5.5"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.3 8.8c.2 2.6 2.4 4.9 5 5.4l1.1-1.3-1.7-.9-.8.8c-1-.4-1.9-1.3-2.4-2.4l.8-.8-.8-1.8Z" fill="currentColor" stroke="none"/></symbol>
+  <!-- آیکون‌های چهره‌ی کاربران (به‌جای حرف اول نام در نظرات) -->
+  <symbol id="i-av1" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M4 20.2c.9-4.1 4.2-6.4 8-6.4s7.1 2.3 8 6.4c.1.5-.3.8-.8.8H4.8c-.5 0-.9-.3-.8-.8Z"/></symbol>
+  <symbol id="i-av2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M8.4 14.2c.9 1.3 2.2 2 3.6 2s2.7-.7 3.6-2"/><path d="M9 9.6v.6M15 9.6v.6" stroke-width="2.4"/></symbol>
+  <symbol id="i-av3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5.5 8.5h13l-1 11.5h-11Z"/><path d="M9 10.5V7a3 3 0 0 1 6 0v3.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-av4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.3 4.7 13a4.7 4.7 0 0 1 6.6-6.6l.7.7.7-.7A4.7 4.7 0 0 1 19.3 13Z"/></symbol>
+</svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ===== شروع: نوار بالای صفحه ===== -->
+<div class="topbar" id="top">
+  
+  <div class="topbar-marquee" aria-label="Announcements">
+    <ul role="list" class="topbar-track">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
+    </ul>
+  </div>
+</div>
+<!-- ===== پایان: نوار بالای صفحه ===== -->
+
+<!-- ===== شروع: هدر ===== -->
+<header class="site-header header--centered" id="site-header">
+  <div class="container-site header-main">
+
+    <div class="header-start">
+      <button type="button" class="icon-btn header-burger" data-drawer-open="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+      <button type="button" class="icon-btn header-search-toggle" data-search-toggle aria-controls="search-panel" aria-expanded="false" aria-label="Search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="search-toggle-label" aria-hidden="true">Search</span>
+      </button>
+    </div>
+
+    <a class="logo" href="index.html" aria-label="Mahtab, home page">
+  <svg class="logo-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+  <span class="logo-text">
+    <span class="logo-name">Mahtab</span>
+    <span class="logo-tag">Fashion</span>
+  </span>
+</a>
+
+    <div class="header-actions">
+      <a class="icon-btn desk-only" href="login.html" aria-label="Sign in or register"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></a>
+      <a class="icon-btn desk-only" href="compare.html" aria-label="Compare products">
+        <svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg><span class="count-badge" data-compare-count hidden></span>
+      </a>
+      <a class="icon-btn desk-only" href="wishlist.html" aria-label="Wishlist">
+        <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span class="count-badge" data-wish-count hidden></span>
+      </a>
+      <button type="button" class="icon-btn" data-drawer-open="mini-cart" aria-controls="mini-cart" aria-expanded="false" aria-label="Cart, empty" data-cart-open>
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span class="count-badge" data-cart-count hidden></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- منوی اصلی دسکتاپ؛ گزینه‌های دارای مگامنو با کلیک یا نگه داشتن ماوس باز می‌شوند -->
+  <nav class="main-nav" aria-label="Main menu">
+    <ul class="container-site main-nav-list">
+
+      <li class="main-nav-item">
+
+        <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-0" data-mega-trigger>
+          Women <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="mega" id="mega-0" data-mega>
+          <div class="container-site mega-inner">
+            <div class="mega-columns">
+              <div class="mega-head">
+                <p class="mega-title font-heading">Women</p>
+                <a class="mega-all" href="shop.html?cat=women">View all <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Fashion</p>
+                <ul>
+                  <li><a href="shop.html?cat=women-coat">Coats &amp; Jackets</a></li><li><a href="shop.html?cat=women-dress">Dresses &amp; Tunics</a></li><li><a href="shop.html?cat=women-blouse">Shirts &amp; Blouses</a></li><li><a href="shop.html?cat=women-pants">Trousers &amp; Jeans</a></li><li><a href="shop.html?cat=women-skirt">Skirts</a></li><li><a href="shop.html?cat=women-knit">Knitwear &amp; Cardigans</a></li>
+                </ul>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Bags &amp; Shoes</p>
+                <ul>
+                  <li><a href="shop.html?cat=women-bag">Handbags</a></li><li><a href="shop.html?cat=women-backpack">Backpacks &amp; Crossbody</a></li><li><a href="shop.html?cat=women-shoe">Everyday Shoes</a></li><li><a href="shop.html?cat=women-boot">Boots &amp; Ankle Boots</a></li>
+                </ul>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Accessories</p>
+                <ul>
+                  <li><a href="shop.html?cat=women-scarf">Scarves &amp; Shawls</a></li><li><a href="shop.html?cat=women-belt">Belts</a></li><li><a href="shop.html?cat=women-sunglasses">Sunglasses</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="mega-promos">
+
+              <a class="promo-card" href="shop.html?collection=autumn">
+                <img src="assets/images/clothing/promo/promo-autumn.webp" alt="" width="600" height="750" loading="lazy" decoding="async">
+                <span class="promo-card-body">
+                  <span class="promo-card-title block">Autumn Collection</span>
+                  <span class="promo-card-text block">Warm colors, soft fabrics</span>
+                </span>
+              </a>
+
+              <a class="promo-card" href="shop.html?cat=women-knit">
+                <img src="assets/images/clothing/promo/promo-knit.webp" alt="" width="600" height="750" loading="lazy" decoding="async">
+                <span class="promo-card-body">
+                  <span class="promo-card-title block">Hand-Knitted Sweaters</span>
+                  <span class="promo-card-text block">Up to 30% off</span>
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-1" data-mega-trigger>
+          Men <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="mega" id="mega-1" data-mega>
+          <div class="container-site mega-inner">
+            <div class="mega-columns">
+              <div class="mega-head">
+                <p class="mega-title font-heading">Men</p>
+                <a class="mega-all" href="shop.html?cat=men">View all <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Fashion</p>
+                <ul>
+                  <li><a href="shop.html?cat=men-jacket">Blazers &amp; Jackets</a></li><li><a href="shop.html?cat=men-shirt">Shirts</a></li><li><a href="shop.html?cat=men-tshirt">T-Shirts &amp; Polos</a></li><li><a href="shop.html?cat=men-pants">Trousers &amp; Jeans</a></li><li><a href="shop.html?cat=men-hoodie">Hoodies &amp; Sweatshirts</a></li>
+                </ul>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Shoes &amp; Accessories</p>
+                <ul>
+                  <li><a href="shop.html?cat=men-formal-shoe">Dress Shoes</a></li><li><a href="shop.html?cat=men-sneaker">Sneakers</a></li><li><a href="shop.html?cat=men-bag">Bags &amp; Backpacks</a></li><li><a href="shop.html?cat=men-belt">Belts &amp; Wallets</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="mega-promos">
+
+              <a class="promo-card" href="shop.html?collection=formal">
+                <img src="assets/images/clothing/promo/promo-formal.webp" alt="" width="600" height="750" loading="lazy" decoding="async">
+                <span class="promo-card-body">
+                  <span class="promo-card-title block">Formal Style</span>
+                  <span class="promo-card-text block">Blazers, shirts and matching shoes</span>
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-2" data-mega-trigger>
+          Kids <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="mega" id="mega-2" data-mega>
+          <div class="container-site mega-inner">
+            <div class="mega-columns">
+              <div class="mega-head">
+                <p class="mega-title font-heading">Kids</p>
+                <a class="mega-all" href="shop.html?cat=kids">View all <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Girls</p>
+                <ul>
+                  <li><a href="shop.html?cat=girls-dress">Dresses &amp; Pinafores</a></li><li><a href="shop.html?cat=girls-set">Outfit Sets</a></li><li><a href="shop.html?cat=girls-shoe">Shoes</a></li>
+                </ul>
+              </div>
+
+              <div class="mega-col">
+                <p class="mega-col-title">Boys</p>
+                <ul>
+                  <li><a href="shop.html?cat=boys-set">T-Shirts &amp; Trousers</a></li><li><a href="shop.html?cat=boys-jacket">Jackets</a></li><li><a href="shop.html?cat=boys-shoe">Shoes</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="mega-promos">
+
+              <a class="promo-card" href="shop.html?cat=kids">
+                <img src="assets/images/clothing/promo/promo-kids.webp" alt="" width="600" height="750" loading="lazy" decoding="async">
+                <span class="promo-card-body">
+                  <span class="promo-card-title block">Back to School</span>
+                  <span class="promo-card-text block">Comfy, durable sets</span>
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <a class="main-nav-link" href="shop.html?sort=newest">New In</a>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <a class="main-nav-link is-accent" href="shop.html?sale=1">Sale</a>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <a class="main-nav-link" href="blog.html">Journal</a>
+
+      </li>
+
+      <li class="main-nav-item">
+
+        <a class="main-nav-link" href="contact.html">Contact</a>
+
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- پنل جست‌وجو (در هدر وسط‌چین و موبایل) -->
+  <div class="search-panel" id="search-panel" data-search-panel hidden>
+    <div class="container-site">
+      <form role="search" action="shop.html" method="get">
+        <div class="search-field">
+          <label class="sr-only" for="panel-q">Search the store</label>
+          <input id="panel-q" type="search" name="q" placeholder="Search coats, dresses, bags…" autocomplete="off">
+          <button type="submit" aria-label="Search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+        </div>
+      </form>
+      <p class="search-hints">
+        <span>Popular searches:</span>
+        <a href="shop.html?cat=women">Womenswear</a><a href="shop.html?cat=men">Menswear</a><a href="shop.html?cat=kids">Kidswear</a><a href="shop.html?cat=bags-shoes">Bags &amp; Shoes</a>
+      </p>
+    </div>
+  </div>
+</header>
+<!-- ===== پایان: هدر ===== -->
+
+<!-- ===== شروع: منوی موبایل (کشوی سمت راست) ===== -->
+<div class="drawer drawer-start" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" data-drawer inert>
+  <div class="drawer-head">
+    <a class="logo" href="index.html" aria-label="Mahtab, home page">
+  <svg class="logo-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+  <span class="logo-text">
+    <span class="logo-name">Mahtab</span>
+    <span class="logo-tag">Fashion</span>
+  </span>
+</a>
+
+    <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="Close menu"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer-body">
+    <form role="search" action="shop.html" method="get">
+      <div class="search-field">
+        <label class="sr-only" for="menu-q">Search the store</label>
+        <input id="menu-q" type="search" name="q" placeholder="Search coats, dresses, bags…" autocomplete="off">
+        <button type="submit" aria-label="Search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+      </div>
+    </form>
+
+    <ul class="m-nav">
+
+      <li>
+
+        <button type="button" class="m-nav-link" aria-expanded="false" aria-controls="m-sub-0" data-disclosure>
+          Women <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="m-sub" id="m-sub-0" hidden>
+
+          <p class="m-sub-title">Fashion</p>
+          <ul><li><a href="shop.html?cat=women-coat">Coats &amp; Jackets</a></li><li><a href="shop.html?cat=women-dress">Dresses &amp; Tunics</a></li><li><a href="shop.html?cat=women-blouse">Shirts &amp; Blouses</a></li><li><a href="shop.html?cat=women-pants">Trousers &amp; Jeans</a></li><li><a href="shop.html?cat=women-skirt">Skirts</a></li><li><a href="shop.html?cat=women-knit">Knitwear &amp; Cardigans</a></li></ul>
+
+          <p class="m-sub-title">Bags &amp; Shoes</p>
+          <ul><li><a href="shop.html?cat=women-bag">Handbags</a></li><li><a href="shop.html?cat=women-backpack">Backpacks &amp; Crossbody</a></li><li><a href="shop.html?cat=women-shoe">Everyday Shoes</a></li><li><a href="shop.html?cat=women-boot">Boots &amp; Ankle Boots</a></li></ul>
+
+          <p class="m-sub-title">Accessories</p>
+          <ul><li><a href="shop.html?cat=women-scarf">Scarves &amp; Shawls</a></li><li><a href="shop.html?cat=women-belt">Belts</a></li><li><a href="shop.html?cat=women-sunglasses">Sunglasses</a></li></ul>
+
+          <a class="m-all" href="shop.html?cat=women">View all Women</a>
+        </div>
+
+      </li>
+
+      <li>
+
+        <button type="button" class="m-nav-link" aria-expanded="false" aria-controls="m-sub-1" data-disclosure>
+          Men <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="m-sub" id="m-sub-1" hidden>
+
+          <p class="m-sub-title">Fashion</p>
+          <ul><li><a href="shop.html?cat=men-jacket">Blazers &amp; Jackets</a></li><li><a href="shop.html?cat=men-shirt">Shirts</a></li><li><a href="shop.html?cat=men-tshirt">T-Shirts &amp; Polos</a></li><li><a href="shop.html?cat=men-pants">Trousers &amp; Jeans</a></li><li><a href="shop.html?cat=men-hoodie">Hoodies &amp; Sweatshirts</a></li></ul>
+
+          <p class="m-sub-title">Shoes &amp; Accessories</p>
+          <ul><li><a href="shop.html?cat=men-formal-shoe">Dress Shoes</a></li><li><a href="shop.html?cat=men-sneaker">Sneakers</a></li><li><a href="shop.html?cat=men-bag">Bags &amp; Backpacks</a></li><li><a href="shop.html?cat=men-belt">Belts &amp; Wallets</a></li></ul>
+
+          <a class="m-all" href="shop.html?cat=men">View all Men</a>
+        </div>
+
+      </li>
+
+      <li>
+
+        <button type="button" class="m-nav-link" aria-expanded="false" aria-controls="m-sub-2" data-disclosure>
+          Kids <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="m-sub" id="m-sub-2" hidden>
+
+          <p class="m-sub-title">Girls</p>
+          <ul><li><a href="shop.html?cat=girls-dress">Dresses &amp; Pinafores</a></li><li><a href="shop.html?cat=girls-set">Outfit Sets</a></li><li><a href="shop.html?cat=girls-shoe">Shoes</a></li></ul>
+
+          <p class="m-sub-title">Boys</p>
+          <ul><li><a href="shop.html?cat=boys-set">T-Shirts &amp; Trousers</a></li><li><a href="shop.html?cat=boys-jacket">Jackets</a></li><li><a href="shop.html?cat=boys-shoe">Shoes</a></li></ul>
+
+          <a class="m-all" href="shop.html?cat=kids">View all Kids</a>
+        </div>
+
+      </li>
+
+      <li>
+
+        <a class="m-nav-link" href="shop.html?sort=newest">New In</a>
+
+      </li>
+
+      <li>
+
+        <a class="m-nav-link is-accent" href="shop.html?sale=1">Sale</a>
+
+      </li>
+
+      <li>
+
+        <a class="m-nav-link" href="blog.html">Journal</a>
+
+      </li>
+
+      <li>
+
+        <a class="m-nav-link" href="contact.html">Contact</a>
+
+      </li>
+
+    </ul>
+
+    <ul class="m-links">
+      <li><a href="login.html"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> Sign in / Register</a></li>
+      <li><a href="wishlist.html"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg> Wishlist</a></li>
+      <li><a href="compare.html"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg> Compare</a></li>
+      <li><a href="track-order.html"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Track order</a></li>
+    </ul>
+
+    <p class="m-contact">Support: <a href="tel:+15551234567" dir="ltr">+1 (555) 123-4567</a><br>Mon – Sat, 9 am – 9 pm</p>
+  </div>
+</div>
+<!-- ===== پایان: منوی موبایل ===== -->
+
+<!-- ===== شروع: سبد خرید کشویی (mini-cart) =====
+     سبد سمت کاربر است و در حافظه‌ی مرورگر (localStorage) ذخیره می‌شود؛ هر دمو سبد جداگانه دارد.
+     برای پرداخت واقعی، آن را به فروشگاه یا سیستم سفارش خود وصل کنید (راهنما را ببینید). -->
+<div class="drawer drawer-end" id="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title" data-drawer data-mini-cart inert>
+  <div class="drawer-head">
+    <h2 class="drawer-title" id="mini-cart-title">Shopping cart <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
+    <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <div class="drawer-body">
+    <ul class="cart-items" role="list" data-cart-items aria-label="Cart items"></ul>
+    <div class="cart-empty" data-cart-empty>
+      <svg class="cart-empty-art" viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M30 46h60l-5 54H35Z"/>
+        <path d="M46 52V40a14 14 0 0 1 28 0v12" fill="none"/>
+        <path d="M86 26a12 12 0 1 0 8 20 9.5 9.5 0 0 1-8-20Z"/>
+      </svg>
+      <p class="cart-empty-title">Your cart is empty</p>
+      <p class="cart-empty-text">You haven't added any products to your cart yet.</p>
+      <a href="shop.html" class="btn btn-primary" data-drawer-close>Browse products</a>
+    </div>
+  </div>
+
+  <div class="drawer-foot" data-cart-foot>
+    <div class="cart-total">
+      <span>Total</span>
+      <p><span class="cart-total-amount" data-cart-total>0</span> <span class="text-sm"></span></p>
+    </div>
+    <p class="cart-note">Shipping is calculated at checkout.</p>
+    <div class="cart-buttons">
+      <a href="cart.html" class="btn btn-outline">View cart</a>
+      <a href="checkout.html" class="btn btn-primary">Checkout</a>
+    </div>
+  </div>
+  <p class="sr-only" aria-live="polite" data-cart-status></p>
+</div>
+<div class="drawer-overlay" data-drawer-overlay></div>
+<!-- ===== پایان: سبد خرید کشویی ===== -->
+
+<main id="main" class="home-b">
+
+  <!-- ===== شروع: اسلایدر بزرگ (هر اسلاید: یک تصویر در images/clothing/home/slide-*.webp و متن روی آن) ===== -->
+  <section class="b-hero" aria-roledescription="carousel" aria-label="Store collections" data-slider>
+    <div class="b-slides">
+      <div class="b-slide is-active" role="group" aria-roledescription="Slide" aria-label="1 of 3" data-slide>
+        <div class="b-collage" role="img" aria-label="Women's autumn collection: coats, dresses and boots">
+          <span class="b-col-big"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" fetchpriority="high"></span>
+          <span><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="720" height="960" loading="lazy"></span>
+        </div>
+        <div class="container-site b-slide-body">
+          <p class="b-eyebrow">Autumn Collection 2026</p>
+          <h1 class="b-slide-title">Women's, warm and well-fitted</h1>
+          <p class="b-slide-lead">Coats, dresses and boots of the season, with free shipping on orders over $100.</p>
+          <a class="btn btn-primary" href="shop.html?cat=women">Shop women <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="b-slide" role="group" aria-roledescription="Slide" aria-label="2 of 3" data-slide hidden>
+        <div class="b-collage" role="img" aria-label="Men's collection: jackets, blazers and dress shoes">
+          <span class="b-col-big"><img src="assets/images/clothing/products/m-shirt-520.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span><img src="assets/images/clothing/products/m-pants-095.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="720" height="960" loading="lazy"></span>
+        </div>
+        <div class="container-site b-slide-body">
+          <p class="b-eyebrow">Men's formal style</p>
+          <h2 class="b-slide-title">Blazers, jackets and matching shoes</h2>
+          <p class="b-slide-lead">For workdays and evenings out: precise tailoring and durable fabrics.</p>
+          <a class="btn btn-primary" href="shop.html?cat=men">Shop men <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="b-slide" role="group" aria-roledescription="Slide" aria-label="3 of 3" data-slide hidden>
+        <div class="b-collage" role="img" aria-label="Kids' collection: girls' sets, jackets and sandals">
+          <span class="b-col-big"><img src="assets/images/clothing/products/g-set-149.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span><img src="assets/images/clothing/products/g-dress-466.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span><img src="assets/images/clothing/products/g-set-331.webp" alt="" width="720" height="960" loading="lazy"></span>
+        </div>
+        <div class="container-site b-slide-body">
+          <p class="b-eyebrow">Back to School</p>
+          <h2 class="b-slide-title">Kids, comfy and cheerful</h2>
+          <p class="b-slide-lead">Sets, jackets and shoes that keep up with kids at play.</p>
+          <a class="btn btn-primary" href="shop.html?cat=kids">Shop kids <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="container-site b-hero-nav">
+      <div class="b-dots" role="group" aria-label="Choose a slide">
+        <button type="button" aria-label="Slide 1" aria-pressed="true" data-slide-to="0"></button>
+        <button type="button" aria-label="Slide 2" aria-pressed="false" data-slide-to="1"></button>
+        <button type="button" aria-label="Slide 3" aria-pressed="false" data-slide-to="2"></button>
+      </div>
+      <div class="b-arrows">
+        <button type="button" class="b-arrow" aria-label="Previous slide" data-slide-prev><svg class="icon b-arrow-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <button type="button" class="b-arrow" aria-label="Next slide" data-slide-next><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </section>
+  <!-- ===== پایان: اسلایدر ===== -->
+
+  <!-- ===== شروع: مزایا ===== -->
+  <section class="b-perks" aria-label="Shopping perks">
+    <ul role="list" class="container-site b-perks-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><span><strong>Free shipping</strong>On orders over $100</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg><span><strong>7-day exchange</strong>No questions asked</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span><strong>Authenticity guarantee</strong>On every item</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><span><strong>Size advice</strong>Daily, 9 am – 9 pm</span></li>
+    </ul>
+  </section>
+  <!-- ===== پایان: مزایا ===== -->
+
+  <!-- ===== شروع: دسته‌های دایره‌ای ===== -->
+  <section class="section" aria-labelledby="b-cats-title">
+    <div class="container-site">
+      <div class="section-head head-center reveal">
+        <h2 class="section-title" id="b-cats-title">Popular categories</h2>
+        <p class="section-sub">The most-loved categories this season</p>
+        <a class="link-more" href="shop.html">All products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul role="list" class="b-circles">
+        <li><a href="shop.html?cat=women-coat"><span class="b-circle" style="--tone:var(--tone-1)"><img src="assets/images/clothing/products/coat.webp" alt="" width="900" height="1200" loading="lazy"></span>Coats & Jackets</a></li>
+        <li><a href="shop.html?cat=women-dress"><span class="b-circle" style="--tone:var(--tone-4)"><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="900" height="1200" loading="lazy"></span>Women's Dresses</a></li>
+        <li><a href="shop.html?cat=women-knit"><span class="b-circle" style="--tone:var(--tone-2)"><img src="assets/images/clothing/products/w-knit-060.webp" alt="" width="900" height="1200" loading="lazy"></span>Knitwear</a></li>
+        <li><a href="shop.html?cat=women-boot"><span class="b-circle" style="--tone:var(--tone-5)"><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="900" height="1200" loading="lazy"></span>Boots</a></li>
+        <li><a href="shop.html?cat=women-bag"><span class="b-circle" style="--tone:var(--tone-3)"><img src="assets/images/clothing/products/w-skirt-204.webp" alt="" width="900" height="1200" loading="lazy"></span>Women's Bags</a></li>
+        <li><a href="shop.html?cat=men-jacket"><span class="b-circle" style="--tone:var(--tone-4)"><img src="assets/images/clothing/products/m-jacket-266.webp" alt="" width="900" height="1200" loading="lazy"></span>Blazers & Jackets</a></li>
+        <li><a href="shop.html?cat=men-shirt"><span class="b-circle" style="--tone:var(--tone-1)"><img src="assets/images/clothing/products/m-shirt-521.webp" alt="" width="900" height="1200" loading="lazy"></span>Men's Shirts</a></li>
+        <li><a href="shop.html?cat=men-formal-shoe"><span class="b-circle" style="--tone:var(--tone-5)"><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="900" height="1200" loading="lazy"></span>Dress Shoes</a></li>
+        <li><a href="shop.html?cat=girls-dress"><span class="b-circle" style="--tone:var(--tone-2)"><img src="assets/images/clothing/products/g-dress-133.webp" alt="" width="900" height="1200" loading="lazy"></span>Girls' Dresses</a></li>
+        <li><a href="shop.html?cat=boys-jacket"><span class="b-circle" style="--tone:var(--tone-3)"><img src="assets/images/clothing/products/b-jacket-396.webp" alt="" width="900" height="1200" loading="lazy"></span>Kids' Jackets</a></li>
+      </ul>
+    </div>
+  </section>
+  <!-- ===== پایان: دسته‌های دایره‌ای ===== -->
+
+  <!-- ===== شروع: پیشنهاد ویژه (محصول با شناسه‌ی cl-men-blazer؛ برای تغییر، شناسه را عوض کنید) ===== -->
+
+  <section class="section pt-0" aria-labelledby="b-deal-title">
+    <div class="container-site b-deal reveal" data-product data-product-id="cl-men-blazer" data-product-name="Men&#39;s Blazer" data-product-price="180" data-product-image="assets/images/clothing/products/blazer.webp">
+      <a class="b-deal-media" href="product-blazer.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200" loading="lazy"></a>
+      <div class="b-deal-body">
+        <p class="b-eyebrow">Deal of the week</p>
+        <h2 class="b-deal-title" id="b-deal-title"><a href="product-blazer.html">Men&#39;s Blazer</a></h2>
+        <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (32 reviews)</p>
+        <p class="b-deal-text">A two-button blazer with a slim cut for formal and smart-casual looks.</p>
+        <p class="b-deal-price"><del><span class="num">$215</span></del> <strong><span class="num">$180</span></strong> <span></span></p>
+        <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+          <span><strong data-cd="days">00</strong>Days</span>
+          <span><strong data-cd="hours">00</strong>Hours</span>
+          <span><strong data-cd="minutes">00</strong>Min</span>
+          <span><strong data-cd="seconds">00</strong>Sec</span>
+        </div>
+        <div class="b-deal-actions">
+          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+          <a class="btn btn-outline" href="product-blazer.html">Product details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== پایان: پیشنهاد ویژه ===== -->
+
+  <!-- ===== شروع: پرفروش‌ها (اسلایدر افقی) ===== -->
+  <section class="section pt-0" aria-labelledby="b-best-title">
+    <div class="container-site">
+      <div class="section-head reveal">
+        <h2 class="section-title" id="b-best-title">Best sellers</h2>
+        <div class="b-rail-nav">
+          <button type="button" class="b-arrow" aria-label="Previous" data-rail-prev="b-best"><svg class="icon b-arrow-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" class="b-arrow" aria-label="Next" data-rail-next="b-best"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="b-rail" id="b-best" tabindex="0" aria-label="Best-selling products">
+        
+<article class="p-card" data-product data-product-id="cl-hoodie" data-product-name="Oversized Cotton Hoodie" data-product-price="60" data-product-image="assets/images/clothing/products/hoodie.webp"
+  data-cat="Hoodies &amp; Sweatshirts" data-brand="Sarv" data-price-sort="60" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="men|men-hoodie|casual|sport|autumn" data-colors="Beige|Gray" data-sizes="S|M|L|XL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-hoodie.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/hoodie.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">25% off</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Oversized Cotton Hoodie Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Oversized Cotton Hoodie Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · Hoodies &amp; Sweatshirts</p>
+    <h3 class="p-title"><a href="product-hoodie.html">Oversized Cotton Hoodie</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (97 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Beige, Gray">
+      <li><span class="swatch" style="background:#D9CBB6" title="Beige"></span></li><li><span class="swatch" style="background:#8C8C88" title="Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$80</span></del>
+        <span><span class="price-now"><span class="num">$60</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Oversized Cotton Hoodie to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-w-boot-318" data-product-name="Black Tall Boots" data-product-price="152" data-product-image="assets/images/clothing/products/w-boot-318.webp"
+  data-cat="Boots &amp; Ankle Boots" data-brand="Della Leather" data-price-sort="152" data-rating-sort="4.5" data-badges="bestseller" data-tags="women|bags-shoes|women-boot|autumn" data-colors="Black|Turquoise" data-sizes="37|38|39|40">
+  <div class="p-media">
+    <a class="p-media-link" href="product-w-boot-318.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/w-boot-318.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Black Tall Boots Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Black Tall Boots Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Boots &amp; Ankle Boots</p>
+    <h3 class="p-title"><a href="product-w-boot-318.html">Black Tall Boots</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (140 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Black, Turquoise">
+      <li><span class="swatch" style="background:#191919" title="Black"></span></li><li><span class="swatch" style="background:#3CA0AA" title="Turquoise"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$152</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Black Tall Boots to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-sneaker" data-product-name="White Leather Sneakers" data-product-price="110" data-product-image="assets/images/clothing/products/sneaker.webp"
+  data-cat="Sneakers" data-brand="Della Leather" data-price-sort="110" data-rating-sort="4.6" data-badges="bestseller" data-tags="men|women|bags-shoes|men-sneaker|women-shoe|sport|casual" data-colors="White|Cream" data-sizes="39|40|41|42|43">
+  <div class="p-media">
+    <a class="p-media-link" href="product-sneaker.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/sneaker.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add White Leather Sneakers Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add White Leather Sneakers Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Sneakers</p>
+    <h3 class="p-title"><a href="product-sneaker.html">White Leather Sneakers</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (128 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: White, Cream">
+      <li><span class="swatch" style="background:#F4F4F2" title="White"></span></li><li><span class="swatch" style="background:#E9DFCC" title="Cream"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$110</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add White Leather Sneakers to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-b-jacket-246" data-product-name="Kids&#39; Printed Windbreaker" data-product-price="111" data-product-image="assets/images/clothing/products/b-jacket-246.webp"
+  data-cat="Kids&#39; Jackets" data-brand="Sarvnaz" data-price-sort="111" data-rating-sort="4.6" data-badges="sale|bestseller" data-tags="kids|boys-jacket|autumn" data-colors="Navy|Charcoal|Ivory" data-sizes="2 yrs|4 yrs|6 yrs|8 yrs">
+  <div class="p-media">
+    <a class="p-media-link" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">20% off</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Kids&#39; Printed Windbreaker Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Kids&#39; Printed Windbreaker Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarvnaz · Kids&#39; Jackets</p>
+    <h3 class="p-title"><a href="product-b-jacket-246.html">Kids&#39; Printed Windbreaker</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (9 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Charcoal, Ivory">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#404042" title="Charcoal"></span></li><li><span class="swatch" style="background:#ECE4D4" title="Ivory"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$138</span></del>
+        <span><span class="price-now"><span class="num">$111</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Kids&#39; Printed Windbreaker to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-092" data-product-name="Leather Document Case" data-product-price="221" data-product-image="assets/images/clothing/products/m-bag-092.webp"
+  data-cat="Men&#39;s Bags" data-brand="Della Leather" data-price-sort="221" data-rating-sort="4.2" data-badges="sale|new|bestseller" data-tags="men|bags-shoes|men-bag|formal" data-colors="Navy|Light Gray|Cream">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-092.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">20% off</li>
+
+      <li class="badge badge-new">New</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Leather Document Case Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Leather Document Case Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Men&#39;s Bags</p>
+    <h3 class="p-title"><a href="product-m-bag-092.html">Leather Document Case</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.2</strong> (60 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Light Gray, Cream">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#DECEB4" title="Cream"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$276</span></del>
+        <span><span class="price-now"><span class="num">$221</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Leather Document Case to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-b-jacket-209" data-product-name="Quilted Hooded Jacket" data-product-price="122" data-product-image="assets/images/clothing/products/b-jacket-209.webp"
+  data-cat="Kids&#39; Jackets" data-brand="Kook" data-price-sort="122" data-rating-sort="4.2" data-badges="bestseller" data-tags="kids|boys-jacket|autumn" data-colors="Navy|Beige" data-sizes="2 yrs|4 yrs|6 yrs|8 yrs">
+  <div class="p-media">
+    <a class="p-media-link" href="product-b-jacket-209.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/b-jacket-209.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Quilted Hooded Jacket Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Quilted Hooded Jacket Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · Kids&#39; Jackets</p>
+    <h3 class="p-title"><a href="product-b-jacket-209.html">Quilted Hooded Jacket</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.2</strong> (138 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Beige">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C8B296" title="Beige"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$122</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Quilted Hooded Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-w-pants-271" data-product-name="Cream Mom Trousers" data-product-price="60" data-product-image="assets/images/clothing/products/w-pants-271.webp"
+  data-cat="Women&#39;s Trousers" data-brand="Sarvnaz" data-price-sort="60" data-rating-sort="4.4" data-badges="sale|new|bestseller" data-tags="women|women-pants|casual" data-colors="Light Gray|Navy" data-sizes="36|38|40|42|44">
+  <div class="p-media">
+    <a class="p-media-link" href="product-w-pants-271.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/w-pants-271.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">30% off</li>
+
+      <li class="badge badge-new">New</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Cream Mom Trousers Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Cream Mom Trousers Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarvnaz · Women&#39;s Trousers</p>
+    <h3 class="p-title"><a href="product-w-pants-271.html">Cream Mom Trousers</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (26 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Light Gray, Navy">
+      <li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#222A42" title="Navy"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$86</span></del>
+        <span><span class="price-now"><span class="num">$60</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Cream Mom Trousers to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-hoodie-450" data-product-name="Navy Zip Knit Cardigan" data-product-price="119" data-product-image="assets/images/clothing/products/m-hoodie-450.webp"
+  data-cat="Hoodies &amp; Sweatshirts" data-brand="Sarv" data-price-sort="119" data-rating-sort="4.7" data-badges="new|bestseller" data-tags="men|men-hoodie|casual|sport|autumn" data-colors="Navy|Black|Green" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-hoodie-450.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-hoodie-450.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Navy Zip Knit Cardigan Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Navy Zip Knit Cardigan Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · Hoodies &amp; Sweatshirts</p>
+    <h3 class="p-title"><a href="product-m-hoodie-450.html">Navy Zip Knit Cardigan</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.7</strong> (60 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Black, Green">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#191919" title="Black"></span></li><li><span class="swatch" style="background:#3C8250" title="Green"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$119</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Navy Zip Knit Cardigan to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-formal-463" data-product-name="Oxblood Leather Moccasins" data-product-price="118" data-product-image="assets/images/clothing/products/m-formal-463.webp"
+  data-cat="Dress Shoes" data-brand="Della Leather" data-price-sort="118" data-rating-sort="4.3" data-badges="bestseller" data-tags="men|bags-shoes|men-formal-shoe|formal" data-colors="Burgundy|Blue|Cream" data-sizes="41|42|43|44|45">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-formal-463.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-formal-463.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Oxblood Leather Moccasins Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Oxblood Leather Moccasins Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Dress Shoes</p>
+    <h3 class="p-title"><a href="product-m-formal-463.html">Oxblood Leather Moccasins</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.3</strong> (27 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Burgundy, Blue, Cream">
+      <li><span class="swatch" style="background:#731E28" title="Burgundy"></span></li><li><span class="swatch" style="background:#345C96" title="Blue"></span></li><li><span class="swatch" style="background:#DECEB4" title="Cream"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$118</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Oxblood Leather Moccasins to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-men-tshirt" data-product-name="Plain Cotton T-Shirt" data-product-price="35" data-product-image="assets/images/clothing/products/tshirt.webp"
+  data-cat="T-Shirts &amp; Polos" data-brand="Sarv" data-price-sort="35" data-rating-sort="4.5" data-badges="bestseller" data-tags="men|men-tshirt|casual|sport" data-colors="Black|White|Gray" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-tshirt.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/tshirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Plain Cotton T-Shirt Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Plain Cotton T-Shirt Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · T-Shirts &amp; Polos</p>
+    <h3 class="p-title"><a href="product-tshirt.html">Plain Cotton T-Shirt</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (87 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Black, White, Gray">
+      <li><span class="swatch" style="background:#1D1D1D" title="Black"></span></li><li><span class="swatch" style="background:#F4F4F2" title="White"></span></li><li><span class="swatch" style="background:#8C8C88" title="Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$35</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Plain Cotton T-Shirt to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== پایان: پرفروش‌ها ===== -->
+
+  <!-- ===== شروع: دو بنر زنانه و مردانه ===== -->
+  <section class="section pt-0" aria-label="Shop women and men">
+    <div class="container-site b-split">
+      <a class="b-split-card reveal" href="shop.html?cat=women" style="--tone:var(--tone-2)">
+        <img src="assets/images/clothing/home/gender-women.webp" alt="" width="700" height="1000" loading="lazy">
+        <span class="b-split-body"><span class="b-eyebrow">Women</span><span class="b-split-title">New dresses and tunics</span><span class="banner-link">View <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+      </a>
+      <a class="b-split-card b-split-rev reveal" href="shop.html?cat=men" style="--tone:var(--tone-4);--d:120ms">
+        <img src="assets/images/clothing/home/gender-men.webp" alt="" width="700" height="1000" loading="lazy">
+        <span class="b-split-body"><span class="b-eyebrow">Men</span><span class="b-split-title">Plaid shirts</span><span class="banner-link">View <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+      </a>
+    </div>
+  </section>
+  <!-- ===== پایان: دو بنر ===== -->
+
+  <!-- ===== شروع: جدیدترین‌ها ===== -->
+  <section class="section pt-0" aria-labelledby="b-new-title">
+    <div class="container-site">
+      <div class="section-head reveal">
+        <h2 class="section-title" id="b-new-title">New arrivals</h2>
+        <a class="link-more" href="shop.html?sort=newest">All new in <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="p-grid">
+<article class="p-card" data-product data-product-id="cl-m-bag-280" data-product-name="Navy Crossbody Bag" data-product-price="108" data-product-image="assets/images/clothing/products/m-bag-280.webp"
+  data-cat="Men&#39;s Bags" data-brand="Della Leather" data-price-sort="108" data-rating-sort="4.3" data-badges="sale|new" data-tags="men|bags-shoes|men-bag|formal" data-colors="Navy|Light Gray">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-280.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-280.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">25% off</li>
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Navy Crossbody Bag Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Navy Crossbody Bag Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Men&#39;s Bags</p>
+    <h3 class="p-title"><a href="product-m-bag-280.html">Navy Crossbody Bag</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.3</strong> (88 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Light Gray">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$144</span></del>
+        <span><span class="price-now"><span class="num">$108</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Navy Crossbody Bag to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-b-jacket-260" data-product-name="White Puffer Jacket" data-product-price="84" data-product-image="assets/images/clothing/products/b-jacket-260.webp"
+  data-cat="Kids&#39; Jackets" data-brand="Kook" data-price-sort="84" data-rating-sort="4.1" data-badges="new" data-tags="kids|boys-jacket|autumn" data-colors="Light Gray|Charcoal|Light Blue" data-sizes="2 yrs|4 yrs|6 yrs|8 yrs">
+  <div class="p-media">
+    <a class="p-media-link" href="product-b-jacket-260.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/b-jacket-260.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add White Puffer Jacket Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add White Puffer Jacket Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · Kids&#39; Jackets</p>
+    <h3 class="p-title"><a href="product-b-jacket-260.html">White Puffer Jacket</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.1</strong> (96 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Light Gray, Charcoal, Light Blue">
+      <li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#404042" title="Charcoal"></span></li><li><span class="swatch" style="background:#A0BEDE" title="Light Blue"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$84</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add White Puffer Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-tshirt-445" data-product-name="Ice Blue Zip Polo" data-product-price="62" data-product-image="assets/images/clothing/products/m-tshirt-445.webp"
+  data-cat="T-Shirts &amp; Polos" data-brand="Kook" data-price-sort="62" data-rating-sort="4.4" data-badges="new" data-tags="men|men-tshirt|casual|sport" data-colors="Light Gray|Gray|Green" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-tshirt-445.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-tshirt-445.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Ice Blue Zip Polo Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Ice Blue Zip Polo Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · T-Shirts &amp; Polos</p>
+    <h3 class="p-title"><a href="product-m-tshirt-445.html">Ice Blue Zip Polo</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (97 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Light Gray, Gray, Green">
+      <li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#8C8C8A" title="Gray"></span></li><li><span class="swatch" style="background:#3C8250" title="Green"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$62</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Ice Blue Zip Polo to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-tshirt-423" data-product-name="Cream Polo Shirt" data-product-price="40" data-product-image="assets/images/clothing/products/m-tshirt-423.webp"
+  data-cat="T-Shirts &amp; Polos" data-brand="Parnian" data-price-sort="40" data-rating-sort="4.6" data-badges="new" data-tags="men|men-tshirt|casual|sport" data-colors="Beige|Light Gray" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-tshirt-423.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-tshirt-423.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Cream Polo Shirt Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Cream Polo Shirt Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Parnian · T-Shirts &amp; Polos</p>
+    <h3 class="p-title"><a href="product-m-tshirt-423.html">Cream Polo Shirt</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (132 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Beige, Light Gray">
+      <li><span class="swatch" style="background:#C8B296" title="Beige"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$40</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Cream Polo Shirt to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-092" data-product-name="Leather Document Case" data-product-price="221" data-product-image="assets/images/clothing/products/m-bag-092.webp"
+  data-cat="Men&#39;s Bags" data-brand="Della Leather" data-price-sort="221" data-rating-sort="4.2" data-badges="sale|new|bestseller" data-tags="men|bags-shoes|men-bag|formal" data-colors="Navy|Light Gray|Cream">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-092.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">20% off</li>
+
+      <li class="badge badge-new">New</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Leather Document Case Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Leather Document Case Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Men&#39;s Bags</p>
+    <h3 class="p-title"><a href="product-m-bag-092.html">Leather Document Case</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.2</strong> (60 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Light Gray, Cream">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#DECEB4" title="Cream"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$276</span></del>
+        <span><span class="price-now"><span class="num">$221</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Leather Document Case to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-pants-041" data-product-name="Black Chinos" data-product-price="100" data-product-image="assets/images/clothing/products/m-pants-041.webp"
+  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="100" data-rating-sort="4.1" data-badges="new" data-tags="men|men-pants|casual" data-colors="Black|Gray" data-sizes="30|32|34|36|38">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-pants-041.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-pants-041.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Black Chinos Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Black Chinos Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · Men&#39;s Trousers</p>
+    <h3 class="p-title"><a href="product-m-pants-041.html">Black Chinos</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.1</strong> (13 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Black, Gray">
+      <li><span class="swatch" style="background:#191919" title="Black"></span></li><li><span class="swatch" style="background:#8C8C8A" title="Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$100</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Black Chinos to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-pleated-skirt" data-product-name="Long Pleated Skirt" data-product-price="80" data-product-image="assets/images/clothing/products/skirt.webp"
+  data-cat="Skirts" data-brand="Sarvnaz" data-price-sort="80" data-rating-sort="4.4" data-badges="new" data-tags="women|women-skirt|party|formal" data-colors="Navy|Black|Beige" data-sizes="S|M|L|XL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-skirt.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/skirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Long Pleated Skirt Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Long Pleated Skirt Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarvnaz · Skirts</p>
+    <h3 class="p-title"><a href="product-skirt.html">Long Pleated Skirt</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (27 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Black, Beige">
+      <li><span class="swatch" style="background:#22283A" title="Navy"></span></li><li><span class="swatch" style="background:#1D1D1D" title="Black"></span></li><li><span class="swatch" style="background:#CDB99B" title="Beige"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$80</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Long Pleated Skirt to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-men-jacket" data-product-name="Men&#39;s Cotton Jacket" data-product-price="165" data-product-image="assets/images/clothing/products/jacket.webp"
+  data-cat="Blazers &amp; Jackets" data-brand="Sarv" data-price-sort="165" data-rating-sort="4.6" data-badges="new" data-tags="men|men-jacket|autumn|casual" data-colors="Olive|Navy" data-sizes="M|L|XL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-jacket.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/jacket.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Men&#39;s Cotton Jacket Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Men&#39;s Cotton Jacket Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · Blazers &amp; Jackets</p>
+    <h3 class="p-title"><a href="product-jacket.html">Men&#39;s Cotton Jacket</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (42 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Olive, Navy">
+      <li><span class="swatch" style="background:#3E4A3A" title="Olive"></span></li><li><span class="swatch" style="background:#2B3550" title="Navy"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$165</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Men&#39;s Cotton Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  <!-- ===== پایان: جدیدترین‌ها ===== -->
+
+  <!-- ===== شروع: نظر مشتریان (از نظرات خود محصولات) ===== -->
+  <section class="section b-quotes" aria-labelledby="b-quotes-title">
+    <div class="container-site">
+      <div class="section-head head-center reveal">
+        <h2 class="section-title" id="b-quotes-title">What our customers say</h2>
+        <p class="section-sub">Real reviews from shoppers who have worn these products.</p>
+      </div>
+      <ul role="list" class="b-quotes-grid">
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>The stitching is neat and the color in daylight is just like the photo. Very happy with it.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-1" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av4"/></svg></span>
+            <span><strong>Shima Sadeghi</strong><a href="product-coat.html">Long Wool Coat</a></span>
+          </div>
+        </li>
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>The size was right and the color didn&#39;t fade after several washes.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
+            <span><strong>Arash Kazemi</strong><a href="product-b-jacket-378.html">Green Puffer Jacket</a></span>
+          </div>
+        </li>
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>True to size and comfortable from day one, no rubbing at all.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-3" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av4"/></svg></span>
+            <span><strong>Negar Kazemi</strong><a href="product-w-boot-497.html">Black Low-Heel Tall Boots</a></span>
+          </div>
+        </li>
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>Exactly what I wanted; the inside pockets are really practical.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
+            <span><strong>Hanieh Yazdani</strong><a href="product-m-bag-280.html">Navy Crossbody Bag</a></span>
+          </div>
+        </li>
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>Sturdy stitching, great for play and school. I&#39;ll order again.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av2"/></svg></span>
+            <span><strong>Parisa Sharifi</strong><a href="product-b-jacket-097.html">Black Puffer Jacket</a></span>
+          </div>
+        </li>
+
+        <li class="b-quote reveal">
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">5 out of 5</span>
+          <blockquote>Bright, pretty colors, exactly like the photo.</blockquote>
+          <div class="b-quote-foot">
+            <span class="pd-review-avatar av-tone-1" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av2"/></svg></span>
+            <span><strong>Kamran Kazemi</strong><a href="product-b-jacket-260.html">White Puffer Jacket</a></span>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+  <!-- ===== پایان: نظر مشتریان ===== -->
+
+  <!-- ===== شروع: خبرنامه ===== -->
+  <section class="section" aria-labelledby="b-news-title">
+    <div class="container-site b-news reveal">
+      <div>
+        <h2 class="b-news-title" id="b-news-title">10% off your first order</h2>
+        <p>Join our newsletter and be the first to hear about new collections and sales.</p>
+      </div>
+      <!-- برای ثبت واقعی ایمیل‌ها، ویژگی action را با آدرس سرویس خبرنامه‌ی خود به فرم اضافه کنید -->
+      <div>
+        <form class="b-news-form" method="post" data-newsletter novalidate>
+          <label class="sr-only" for="b-news-email">Your email</label>
+          <input id="b-news-email" type="email" name="email" dir="ltr" placeholder="email@example.com" required aria-describedby="b-news-error">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="form-error" id="b-news-error" data-newsletter-error hidden></p>
+        </form>
+        <p class="news-success" tabindex="-1" data-newsletter-success hidden>Thank you! You are subscribed.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== پایان: خبرنامه ===== -->
+
+</main>
+
+<!-- انتخاب طرح صفحه‌ی اصلی (فقط برای پیش‌نمایش). برای حذف، این بخش (nav.home-switch) را از صفحه‌ی اصلی پاک کنید.
+     برای استفاده از طرح ۲ یا ۳ به‌عنوان صفحه‌ی اصلی، کافی است نام index-2.html یا index-3.html را به index.html تغییر دهید. -->
+<nav class="home-switch" aria-label="Home page layouts">
+  <span class="home-switch-label">Home page layout</span>
+  <a href="index.html" title="Warm Classic">1</a><a href="index-2.html" title="Boutique" aria-current="page">2</a><a href="index-3.html" title="Dark Editorial">3</a>
+  <a class="home-switch-all" href="demos.html">All layouts</a>
+</nav>
+
+<!-- ===== شروع: فوتر ===== -->
+<footer class="site-footer">
+  <div class="container-site">
+    <ul role="list" class="footer-features" aria-label="Shopping perks">
+
+      <li class="feature">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
+        <span>
+          <span class="feature-title block">Free shipping</span>
+          <span class="feature-text block">On orders over $100</span>
+        </span>
+      </li>
+
+      <li class="feature">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span>
+        <span>
+          <span class="feature-title block">7-day exchange</span>
+          <span class="feature-text block">No questions asked, if the item is undamaged</span>
+        </span>
+      </li>
+
+      <li class="feature">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+        <span>
+          <span class="feature-title block">Authenticity guarantee</span>
+          <span class="feature-text block">Every item carries an original label</span>
+        </span>
+      </li>
+
+      <li class="feature">
+        <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg></span>
+        <span>
+          <span class="feature-title block">Size advice</span>
+          <span class="feature-text block">Available daily, 9 am – 9 pm</span>
+        </span>
+      </li>
+
+    </ul>
+
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="Mahtab, home page">
+  <svg class="logo-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+  <span class="logo-text">
+    <span class="logo-name">Mahtab</span>
+    <span class="logo-tag">Fashion</span>
+  </span>
+</a>
+
+        <p class="footer-about">Mahtab is a fashion store for ordinary days and special moments, with seasonal collections, careful tailoring and fast nationwide delivery.</p>
+        <ul class="footer-contact">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+15551234567" dir="ltr">+1 (555) 123-4567</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:info@example.com">info@example.com</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>12 Sample Street, Springfield</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Mon – Sat, 9 am – 9 pm</span></li>
+        </ul>
+      </div>
+
+      <nav aria-labelledby="footer-shop">
+        <h2 class="footer-title" id="footer-shop">Store</h2>
+        <ul class="footer-links">
+          <li><a href="shop.html?cat=women">Womenswear</a></li><li><a href="shop.html?cat=men">Menswear</a></li><li><a href="shop.html?cat=kids">Kidswear</a></li><li><a href="shop.html?cat=bags-shoes">Bags &amp; Shoes</a></li><li><a href="shop.html?cat=accessories">Accessories</a></li><li><a href="shop.html?sale=1">Season Sale</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-service">
+        <h2 class="footer-title" id="footer-service">Customer service</h2>
+        <ul class="footer-links">
+          <li><a href="track-order.html">Track order</a></li><li><a href="faq.html">FAQ</a></li><li><a href="terms.html#returns">Shipping &amp; returns</a></li><li><a href="account.html">My account</a></li><li><a href="wishlist.html">Wishlist</a></li><li><a href="compare.html">Compare products</a></li><li><a href="size-guide.html">Size guide</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="footer-info">
+        <h2 class="footer-title" id="footer-info">Mahtab</h2>
+        <ul class="footer-links">
+          <li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog.html">Journal</a></li><li><a href="terms.html">Terms &amp; conditions</a></li><li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-news">
+        <h2 class="footer-title">Newsletter</h2>
+        <p>Be the first to hear about new collections and special offers.</p>
+        <!-- برای ثبت واقعی ایمیل‌ها، ویژگی action را با آدرس سرویس خبرنامه‌ی خود به فرم اضافه کنید -->
+        <form class="news-form" method="post" novalidate data-newsletter>
+          <label class="sr-only" for="news-email">Your email</label>
+          <input id="news-email" type="email" name="email" dir="ltr" placeholder="Your email" autocomplete="email" aria-describedby="news-email-error">
+          <button type="submit">Subscribe</button>
+          <p class="form-error" id="news-email-error" data-newsletter-error hidden></p>
+        </form>
+        <p class="news-success" tabindex="-1" data-newsletter-success hidden>Thank you! You are subscribed.</p>
+
+        <!-- لینک صفحه‌های شبکه‌های اجتماعی خود را جایگزین کنید (فعلاً به صفحه‌ی تماس می‌روند) -->
+        <ul role="list" class="socials" aria-label="Social media">
+          <li><a href="contact.html#social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a href="contact.html#social" aria-label="Telegram"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
+          <li><a href="contact.html#social" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        </ul>
+
+        <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
+        <ul role="list" class="trust-slots" aria-label="Trust badges">
+          <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="Sample trust badge" width="120" height="120" loading="lazy"></li>
+          <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="Sample registration badge" width="120" height="120" loading="lazy"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container-site footer-bottom-inner">
+      <p>© 2026 Mahtab. All rights reserved.</p>
+      <p class="pay-list"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg> Secure payment with all major cards</p>
+      <a class="to-top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    </div>
+  </div>
+</footer>
+<!-- ===== پایان: فوتر ===== -->
+
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
+  <script src="assets/js/custom.js" defer></script>
+</body>
+</html>

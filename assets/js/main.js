@@ -1844,7 +1844,7 @@
       if (event.key === store.key('cart')) render();
     });
 
-    // کد تخفیف: فقط نمایشی (کد YALDA20 را به‌عنوان نمونه می‌پذیرد)
+    // کد تخفیف: فقط نمایشی (کد MAHTAB10 را به‌عنوان نمونه می‌پذیرد)
     const couponForm = document.querySelector('[data-coupon-form]');
     if (couponForm) {
       couponForm.addEventListener('submit', (event) => {
