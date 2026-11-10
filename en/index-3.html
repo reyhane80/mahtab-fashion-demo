@@ -23,6 +23,7 @@
   <!-- آیکون‌ها (طراحی اختصاصی قالب، خطی ۲۴×۲۴). استفاده: <svg class="icon"><use href="#i-search"/></svg> -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
   <symbol id="i-logo" viewBox="0 0 40 40"><path d="M25.5 6.5a14 14 0 1 0 8 23.6A11.5 11.5 0 0 1 25.5 6.5Z" fill="currentColor"/><path d="M29.5 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.75"/><path d="M4.75 20c.9-3.6 3.8-5.5 7.25-5.5s6.35 1.9 7.25 5.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" class="i-heart"><path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z"/></symbol>
@@ -72,15 +73,14 @@
 <!-- ===== شروع: نوار بالای صفحه ===== -->
 <div class="topbar" id="top">
   
+  <!-- دو گروه یکسان، هر کدام دست‌کم به پهنای صفحه؛ با جابه‌جایی به اندازه‌ی یک گروه، حرکت بی‌وقفه و بی‌پایان است -->
   <div class="topbar-marquee" aria-label="Announcements">
-    <ul role="list" class="topbar-track">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-    </ul>
+    <div class="topbar-track">
+
+      <ul role="list" class="topbar-group"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>7-day size exchange, no questions asked</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Code WELCOME for 10% off your first order</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Every item is guaranteed authentic</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>Free size advice, daily 9 am–9 pm</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Secure payment with all major cards</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>The autumn collection is here: coats and knits</li></ul>
+      <ul role="list" class="topbar-group" aria-hidden="true"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>7-day size exchange, no questions asked</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Code WELCOME for 10% off your first order</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Every item is guaranteed authentic</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>Free size advice, daily 9 am–9 pm</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Secure payment with all major cards</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>The autumn collection is here: coats and knits</li></ul>
+
+    </div>
   </div>
 </div>
 <!-- ===== پایان: نوار بالای صفحه ===== -->
@@ -212,6 +212,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">Best sellers: Men</p>
+                <ul>
+                  <li><a href="product-m-formal-463.html"><img src="assets/images/clothing/products/m-formal-463.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Oxblood Leather Moccasins</strong><em><span class="num">$118</span> <small></small></em></span></a></li><li><a href="product-m-hoodie-450.html"><img src="assets/images/clothing/products/m-hoodie-450.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Navy Zip Knit Cardigan</strong><em><span class="num">$119</span> <small></small></em></span></a></li><li><a href="product-m-bag-092.html"><img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Leather Document Case</strong><em><span class="num">$221</span> <small></small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -258,6 +265,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">Best sellers: Kids</p>
+                <ul>
+                  <li><a href="product-b-jacket-246.html"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Kids&#39; Printed Windbreaker</strong><em><span class="num">$111</span> <small></small></em></span></a></li><li><a href="product-g-dress-414.html"><img src="assets/images/clothing/products/g-dress-414.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Pink Bunny Pinafore</strong><em><span class="num">$91</span> <small></small></em></span></a></li><li><a href="product-g-set-256.html"><img src="assets/images/clothing/products/g-set-256.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Top and Navy Leggings Set</strong><em><span class="num">$85</span> <small></small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -279,13 +293,13 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="shop.html?sort=newest">New In</a>
+        <a class="main-nav-link has-badge" href="shop.html?sort=newest">New In<span class="nav-badge">New</span></a>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link is-accent" href="shop.html?sale=1">Sale</a>
+        <a class="main-nav-link is-accent has-badge" href="shop.html?sale=1"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>Sale<span class="nav-badge">%40</span></a>
 
       </li>
 
@@ -447,8 +461,13 @@
      برای پرداخت واقعی، آن را به فروشگاه یا سیستم سفارش خود وصل کنید (راهنما را ببینید). -->
 <div class="drawer drawer-end" id="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title" data-drawer data-mini-cart inert>
   <div class="drawer-head">
-    <h2 class="drawer-title" id="mini-cart-title">Shopping cart <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
+    <h2 class="drawer-title mc-title" id="mini-cart-title"><span class="mc-title-ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>Shopping cart <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <div class="mc-ship" data-mc-ship hidden>
+    <p data-mc-ship-text></p>
+    <i aria-hidden="true"><b data-mc-ship-bar></b></i>
   </div>
 
   <div class="drawer-body">
@@ -466,11 +485,14 @@
   </div>
 
   <div class="drawer-foot" data-cart-foot>
+    <ul class="mc-sum" role="list">
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Shipping</span><span data-mc-ship-cost>Calculated at checkout</span></li>
+    </ul>
     <div class="cart-total">
       <span>Total</span>
       <p><span class="cart-total-amount" data-cart-total>0</span> <span class="text-sm"></span></p>
     </div>
-    <p class="cart-note">Shipping is calculated at checkout.</p>
+    <p class="cart-note mc-trust"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Secure payment · <svg class="icon" aria-hidden="true"><use href="#i-return"/></svg> 7-day exchange</p>
     <div class="cart-buttons">
       <a href="cart.html" class="btn btn-outline">View cart</a>
       <a href="checkout.html" class="btn btn-primary">Checkout</a>
@@ -504,14 +526,16 @@
   </section>
   <!-- ===== پایان: هیرو ===== -->
 
-  <!-- ===== شروع: نوار متحرک مزایا (در حالت «کاهش حرکت» ثابت می‌ماند) ===== -->
-  <div class="c-marquee" aria-label="Shopping perks">
-    <div class="c-marquee-track">
-      <span>Free shipping over $100</span><span>✦</span><span>7-day exchange guarantee</span><span>✦</span><span>Authenticity guarantee</span><span>✦</span><span>Free size advice</span><span>✦</span>
-      <span aria-hidden="true">Free shipping over $100</span><span aria-hidden="true">✦</span><span aria-hidden="true">7-day exchange guarantee</span><span aria-hidden="true">✦</span><span aria-hidden="true">Authenticity guarantee</span><span aria-hidden="true">✦</span><span aria-hidden="true">Free size advice</span><span aria-hidden="true">✦</span>
-    </div>
-  </div>
-  <!-- ===== پایان: نوار متحرک ===== -->
+  <!-- ===== شروع: نوار مزایا (ثابت؛ تنها نوار متحرک صفحه، نوار اطلاعیه‌ی بالای هدر است) ===== -->
+  <section class="c-perks" aria-label="Shopping perks">
+    <ul role="list" class="container-site c-perks-list">
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><strong>Free shipping</strong><small>On orders over $100</small></li>
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><strong>7-day exchange</strong><small>No questions asked</small></li>
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><strong>Authenticity guarantee</strong><small>On every item</small></li>
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg></span><strong>Size advice</strong><small>Daily, 9 am – 9 pm</small></li>
+    </ul>
+  </section>
+  <!-- ===== پایان: نوار مزایا ===== -->
 
   <!-- ===== شروع: سه کاشی بلند ===== -->
   <section class="section" aria-labelledby="c-who-title">
@@ -520,10 +544,34 @@
         <h2 class="section-title" id="c-who-title">Who are you shopping for?</h2>
         <p class="section-sub">Women, men or kids?</p>
       </div>
-      <ul role="list" class="c-tall">
-        <li class="reveal"><a href="shop.html?cat=women" style="--tone:var(--tone-2)"><img src="assets/images/clothing/home/gender-women.webp" alt="" width="700" height="1000" loading="lazy"><span class="c-tall-body"><span class="c-tall-title">Women</span><span class="c-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
-        <li class="reveal" style="--d:80ms"><a href="shop.html?cat=men" style="--tone:var(--tone-4)"><img src="assets/images/clothing/home/gender-men.webp" alt="" width="700" height="1000" loading="lazy"><span class="c-tall-body"><span class="c-tall-title">Men</span><span class="c-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
-        <li class="reveal" style="--d:160ms"><a href="shop.html?cat=kids" style="--tone:var(--tone-3)"><img src="assets/images/clothing/home/gender-kids.webp" alt="" width="700" height="1000" loading="lazy"><span class="c-tall-body"><span class="c-tall-title">Kids</span><span class="c-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
+      <ul role="list" class="c-who-grid">
+        <li class="reveal"><article class="c-who" style="--tone:var(--tone-2)">
+          <a class="c-who-media" href="shop.html?cat=women" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/home/gender-women.webp" alt="" width="700" height="1000" loading="lazy" decoding="async"></a>
+          <span class="c-who-count">121 styles</span>
+          <div class="c-who-body">
+            <h3 class="c-who-title"><a href="shop.html?cat=women">Women</a></h3>
+            <ul class="c-who-chips" role="list"><li><a href="shop.html?cat=women-coat">Coats</a></li><li><a href="shop.html?cat=women-dress">Shirts</a></li><li><a href="shop.html?cat=women-knit">Knitwear</a></li></ul>
+            <a class="c-who-go" href="shop.html?cat=women" aria-label="View all women's"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article></li>
+        <li class="reveal" style="--d:80ms"><article class="c-who" style="--tone:var(--tone-4)">
+          <a class="c-who-media" href="shop.html?cat=men" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/home/gender-men.webp" alt="" width="700" height="1000" loading="lazy" decoding="async"></a>
+          <span class="c-who-count">175 styles</span>
+          <div class="c-who-body">
+            <h3 class="c-who-title"><a href="shop.html?cat=men">Men</a></h3>
+            <ul class="c-who-chips" role="list"><li><a href="shop.html?cat=men-jacket">Jackets</a></li><li><a href="shop.html?cat=men-shirt">Shirts</a></li><li><a href="shop.html?cat=men-formal-shoe">Dress Shoes</a></li></ul>
+            <a class="c-who-go" href="shop.html?cat=men" aria-label="View all men's"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article></li>
+        <li class="reveal" style="--d:160ms"><article class="c-who" style="--tone:var(--tone-3)">
+          <a class="c-who-media" href="shop.html?cat=kids" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/home/gender-kids.webp" alt="" width="700" height="1000" loading="lazy" decoding="async"></a>
+          <span class="c-who-count">129 styles</span>
+          <div class="c-who-body">
+            <h3 class="c-who-title"><a href="shop.html?cat=kids">Kids</a></h3>
+            <ul class="c-who-chips" role="list"><li><a href="shop.html?cat=girls-dress">Girls</a></li><li><a href="shop.html?cat=boys-jacket">Boys</a></li></ul>
+            <a class="c-who-go" href="shop.html?cat=kids" aria-label="View all kids'"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article></li>
       </ul>
     </div>
   </section>
@@ -953,32 +1001,686 @@
   </section>
   <!-- ===== پایان: پرفروش‌ها ===== -->
 
-  <!-- ===== شروع: بنر حراج تمام‌عرض ===== -->
-  <section class="c-sale" aria-labelledby="c-sale-title">
-    <div class="container-site c-sale-grid">
-      <div class="reveal">
-        <p class="c-kicker">End of season sale</p>
-        <h2 class="c-sale-title" id="c-sale-title">Up to 40% off<br>on the autumn collection</h2>
-        <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on the sale">
-          <span><strong data-cd="days">00</strong>Days</span>
-          <span><strong data-cd="hours">00</strong>Hours</span>
-          <span><strong data-cd="minutes">00</strong>Min</span>
-          <span><strong data-cd="seconds">00</strong>Sec</span>
+  <!-- ===== شروع: پیشنهاد شگفت‌انگیز (ریل خودکار و بی‌پایان؛ تایمر تا پایان هر روز است: data-countdown="daily") ===== -->
+  <section class="section pt-0" aria-labelledby="c-sale-title">
+    <div class="container-site">
+      <div class="c-amaze" data-rail data-rail-auto="3500">
+        <div class="c-amaze-intro">
+          <svg class="c-amaze-art" viewBox="0 0 80 80" aria-hidden="true"><path d="M40 4 48 30l28 1-22 17 8 27-22-16-22 16 8-27L4 31l28-1Z" fill="currentColor"/></svg>
+          <h2 class="c-amaze-title" id="c-sale-title">Amazing<br>Deals</h2>
+          <div class="countdown c-amaze-cd" data-countdown="daily" role="timer" aria-label="Time left on this deal">
+            <span><strong data-cd="hours">00</strong>Hours</span>
+            <span><strong data-cd="minutes">00</strong>Min</span>
+            <span><strong data-cd="seconds">00</strong>Sec</span>
+          </div>
+          <a class="c-amaze-all" href="shop.html?sale=1">View all <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <div class="rail-nav">
+            <button type="button" class="rail-btn" data-rail-prev aria-label="Previous"><svg class="icon rail-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="rail-btn" data-rail-next aria-label="Next"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
         </div>
-        <a class="btn btn-primary" href="shop.html?sale=1">Shop the sale <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <ul role="list" class="rail-track c-amaze-track">
+
+          <li class="c-am" data-product data-product-id="cl-wool-coat" data-product-name="Long Wool Coat" data-product-price="194" data-product-image="assets/images/clothing/products/coat.webp">
+            <a class="c-am-media" href="product-coat.html"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-coat.html">Long Wool Coat</a>
+            <div class="c-am-price">
+              <span class="c-am-off">20%</span>
+              <span class="c-am-now"><span class="num">$194</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$243</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:72%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Long Wool Coat to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-b-jacket-378" data-product-name="Green Puffer Jacket" data-product-price="96" data-product-image="assets/images/clothing/products/b-jacket-378.webp">
+            <a class="c-am-media" href="product-b-jacket-378.html"><img src="assets/images/clothing/products/b-jacket-378.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-b-jacket-378.html">Green Puffer Jacket</a>
+            <div class="c-am-price">
+              <span class="c-am-off">15%</span>
+              <span class="c-am-now"><span class="num">$96</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$113</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:52%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Green Puffer Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-m-bag-280" data-product-name="Navy Crossbody Bag" data-product-price="108" data-product-image="assets/images/clothing/products/m-bag-280.webp">
+            <a class="c-am-media" href="product-m-bag-280.html"><img src="assets/images/clothing/products/m-bag-280.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-m-bag-280.html">Navy Crossbody Bag</a>
+            <div class="c-am-price">
+              <span class="c-am-off">25%</span>
+              <span class="c-am-now"><span class="num">$108</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$144</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:53%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Navy Crossbody Bag to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-hoodie" data-product-name="Oversized Cotton Hoodie" data-product-price="60" data-product-image="assets/images/clothing/products/hoodie.webp">
+            <a class="c-am-media" href="product-hoodie.html"><img src="assets/images/clothing/products/hoodie.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-hoodie.html">Oversized Cotton Hoodie</a>
+            <div class="c-am-price">
+              <span class="c-am-off">25%</span>
+              <span class="c-am-now"><span class="num">$60</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$80</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:54%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Oversized Cotton Hoodie to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-m-belt-125" data-product-name="Burgundy Long Wallet" data-product-price="35" data-product-image="assets/images/clothing/products/m-belt-125.webp">
+            <a class="c-am-media" href="product-m-belt-125.html"><img src="assets/images/clothing/products/m-belt-125.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-m-belt-125.html">Burgundy Long Wallet</a>
+            <div class="c-am-price">
+              <span class="c-am-off">26%</span>
+              <span class="c-am-now"><span class="num">$35</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$47</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:55%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Burgundy Long Wallet to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-m-bag-063" data-product-name="Black Croc Briefcase" data-product-price="163" data-product-image="assets/images/clothing/products/m-bag-063.webp">
+            <a class="c-am-media" href="product-m-bag-063.html"><img src="assets/images/clothing/products/m-bag-063.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-m-bag-063.html">Black Croc Briefcase</a>
+            <div class="c-am-price">
+              <span class="c-am-off">25%</span>
+              <span class="c-am-now"><span class="num">$163</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$217</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:56%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Black Croc Briefcase to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-b-jacket-246" data-product-name="Kids&#39; Printed Windbreaker" data-product-price="111" data-product-image="assets/images/clothing/products/b-jacket-246.webp">
+            <a class="c-am-media" href="product-b-jacket-246.html"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-b-jacket-246.html">Kids&#39; Printed Windbreaker</a>
+            <div class="c-am-price">
+              <span class="c-am-off">20%</span>
+              <span class="c-am-now"><span class="num">$111</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$138</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:57%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Kids&#39; Printed Windbreaker to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-m-pants-062" data-product-name="Olive Chinos" data-product-price="57" data-product-image="assets/images/clothing/products/m-pants-062.webp">
+            <a class="c-am-media" href="product-m-pants-062.html"><img src="assets/images/clothing/products/m-pants-062.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-m-pants-062.html">Olive Chinos</a>
+            <div class="c-am-price">
+              <span class="c-am-off">30%</span>
+              <span class="c-am-now"><span class="num">$57</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$81</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:58%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Olive Chinos to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-m-bag-092" data-product-name="Leather Document Case" data-product-price="221" data-product-image="assets/images/clothing/products/m-bag-092.webp">
+            <a class="c-am-media" href="product-m-bag-092.html"><img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-m-bag-092.html">Leather Document Case</a>
+            <div class="c-am-price">
+              <span class="c-am-off">20%</span>
+              <span class="c-am-now"><span class="num">$221</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$276</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:59%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Leather Document Case to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+          <li class="c-am" data-product data-product-id="cl-b-shoe-532" data-product-name="Boys&#39; Black Sandals" data-product-price="51" data-product-image="assets/images/clothing/products/b-shoe-532.webp">
+            <a class="c-am-media" href="product-b-shoe-532.html"><img src="assets/images/clothing/products/b-shoe-532.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+            <a class="c-am-name" href="product-b-shoe-532.html">Boys&#39; Black Sandals</a>
+            <div class="c-am-price">
+              <span class="c-am-off">30%</span>
+              <span class="c-am-now"><span class="num">$51</span> <small></small></span>
+            </div>
+            <del class="c-am-old"><span class="num">$73</span></del>
+            <div class="c-am-bar" aria-hidden="true"><b style="width:38%"></b></div>
+            <button type="button" class="c-am-add" data-add-to-cart aria-label="Add Boys&#39; Black Sandals to cart"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </li>
+
+        </ul>
       </div>
-      <ul role="list" class="c-sale-items reveal" style="--d:120ms">
+    </div>
+  </section>
+  <!-- ===== پایان: پیشنهاد شگفت‌انگیز ===== -->
 
-        <li><a href="product-coat.html" style="--tone:var(--tone-1)"><img src="assets/images/clothing/products/coat.webp" alt="" width="900" height="1200" loading="lazy"><span class="badge badge-sale">20%</span><span class="c-sale-name">Long Wool Coat</span></a></li>
+  <!-- ===== شروع: تازه‌رسیده‌ها (ریل) ===== -->
+  <section class="section pt-0" aria-labelledby="c-new-title" data-rail>
+    <div class="container-site">
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title" id="c-new-title">Just in</h2>
+          <p class="section-sub">New styles every week</p>
+        </div>
+        <div class="rail-nav">
+          <button type="button" class="rail-btn" data-rail-prev aria-label="Previous"><svg class="icon rail-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" class="rail-btn" data-rail-next aria-label="Next"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="rail-track c-new-track">
+<article class="p-card" data-product data-product-id="cl-m-bag-280" data-product-name="Navy Crossbody Bag" data-product-price="108" data-product-image="assets/images/clothing/products/m-bag-280.webp"
+  data-cat="Men&#39;s Bags" data-brand="Della Leather" data-price-sort="108" data-rating-sort="4.3" data-badges="sale|new" data-tags="men|bags-shoes|men-bag|formal" data-colors="Navy|Light Gray">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-280.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-280.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
 
-        <li><a href="product-b-jacket-378.html" style="--tone:var(--tone-2)"><img src="assets/images/clothing/products/b-jacket-378.webp" alt="" width="900" height="1200" loading="lazy"><span class="badge badge-sale">15%</span><span class="c-sale-name">Green Puffer Jacket</span></a></li>
+    </a>
 
-        <li><a href="product-m-bag-280.html" style="--tone:var(--tone-3)"><img src="assets/images/clothing/products/m-bag-280.webp" alt="" width="900" height="1200" loading="lazy"><span class="badge badge-sale">25%</span><span class="c-sale-name">Navy Crossbody Bag</span></a></li>
+    <ul role="list" class="p-badges" aria-label="Features">
 
+      <li class="badge badge-sale">25% off</li>
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Navy Crossbody Bag Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Navy Crossbody Bag Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Men&#39;s Bags</p>
+    <h3 class="p-title"><a href="product-m-bag-280.html">Navy Crossbody Bag</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.3</strong> (88 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Light Gray">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$144</span></del>
+        <span><span class="price-now"><span class="num">$108</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Navy Crossbody Bag to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-b-jacket-260" data-product-name="White Puffer Jacket" data-product-price="84" data-product-image="assets/images/clothing/products/b-jacket-260.webp"
+  data-cat="Kids&#39; Jackets" data-brand="Kook" data-price-sort="84" data-rating-sort="4.1" data-badges="new" data-tags="kids|boys-jacket|autumn" data-colors="Light Gray|Charcoal|Light Blue" data-sizes="2 yrs|4 yrs|6 yrs|8 yrs">
+  <div class="p-media">
+    <a class="p-media-link" href="product-b-jacket-260.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/b-jacket-260.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add White Puffer Jacket Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add White Puffer Jacket Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · Kids&#39; Jackets</p>
+    <h3 class="p-title"><a href="product-b-jacket-260.html">White Puffer Jacket</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.1</strong> (96 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Light Gray, Charcoal, Light Blue">
+      <li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#404042" title="Charcoal"></span></li><li><span class="swatch" style="background:#A0BEDE" title="Light Blue"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$84</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add White Puffer Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-tshirt-445" data-product-name="Ice Blue Zip Polo" data-product-price="62" data-product-image="assets/images/clothing/products/m-tshirt-445.webp"
+  data-cat="T-Shirts &amp; Polos" data-brand="Kook" data-price-sort="62" data-rating-sort="4.4" data-badges="new" data-tags="men|men-tshirt|casual|sport" data-colors="Light Gray|Gray|Green" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-tshirt-445.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-tshirt-445.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Ice Blue Zip Polo Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Ice Blue Zip Polo Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · T-Shirts &amp; Polos</p>
+    <h3 class="p-title"><a href="product-m-tshirt-445.html">Ice Blue Zip Polo</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (97 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Light Gray, Gray, Green">
+      <li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#8C8C8A" title="Gray"></span></li><li><span class="swatch" style="background:#3C8250" title="Green"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$62</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Ice Blue Zip Polo to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-tshirt-423" data-product-name="Cream Polo Shirt" data-product-price="40" data-product-image="assets/images/clothing/products/m-tshirt-423.webp"
+  data-cat="T-Shirts &amp; Polos" data-brand="Parnian" data-price-sort="40" data-rating-sort="4.6" data-badges="new" data-tags="men|men-tshirt|casual|sport" data-colors="Beige|Light Gray" data-sizes="M|L|XL|XXL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-tshirt-423.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-tshirt-423.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Cream Polo Shirt Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Cream Polo Shirt Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Parnian · T-Shirts &amp; Polos</p>
+    <h3 class="p-title"><a href="product-m-tshirt-423.html">Cream Polo Shirt</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (132 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Beige, Light Gray">
+      <li><span class="swatch" style="background:#C8B296" title="Beige"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$40</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Cream Polo Shirt to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-092" data-product-name="Leather Document Case" data-product-price="221" data-product-image="assets/images/clothing/products/m-bag-092.webp"
+  data-cat="Men&#39;s Bags" data-brand="Della Leather" data-price-sort="221" data-rating-sort="4.2" data-badges="sale|new|bestseller" data-tags="men|bags-shoes|men-bag|formal" data-colors="Navy|Light Gray|Cream">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-092.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-sale">20% off</li>
+
+      <li class="badge badge-new">New</li>
+
+      <li class="badge badge-soft">Best seller</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Leather Document Case Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Leather Document Case Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Della Leather · Men&#39;s Bags</p>
+    <h3 class="p-title"><a href="product-m-bag-092.html">Leather Document Case</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.2</strong> (60 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Light Gray, Cream">
+      <li><span class="swatch" style="background:#222A42" title="Navy"></span></li><li><span class="swatch" style="background:#C4C4C2" title="Light Gray"></span></li><li><span class="swatch" style="background:#DECEB4" title="Cream"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">Previous price: </span><span class="num">$276</span></del>
+        <span><span class="price-now"><span class="num">$221</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Leather Document Case to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-pants-041" data-product-name="Black Chinos" data-product-price="100" data-product-image="assets/images/clothing/products/m-pants-041.webp"
+  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="100" data-rating-sort="4.1" data-badges="new" data-tags="men|men-pants|casual" data-colors="Black|Gray" data-sizes="30|32|34|36|38">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-pants-041.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-pants-041.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Black Chinos Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Black Chinos Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Kook · Men&#39;s Trousers</p>
+    <h3 class="p-title"><a href="product-m-pants-041.html">Black Chinos</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.1</strong> (13 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Black, Gray">
+      <li><span class="swatch" style="background:#191919" title="Black"></span></li><li><span class="swatch" style="background:#8C8C8A" title="Gray"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$100</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Black Chinos to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-pleated-skirt" data-product-name="Long Pleated Skirt" data-product-price="80" data-product-image="assets/images/clothing/products/skirt.webp"
+  data-cat="Skirts" data-brand="Sarvnaz" data-price-sort="80" data-rating-sort="4.4" data-badges="new" data-tags="women|women-skirt|party|formal" data-colors="Navy|Black|Beige" data-sizes="S|M|L|XL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-skirt.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/skirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Long Pleated Skirt Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Long Pleated Skirt Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarvnaz · Skirts</p>
+    <h3 class="p-title"><a href="product-skirt.html">Long Pleated Skirt</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (27 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Navy, Black, Beige">
+      <li><span class="swatch" style="background:#22283A" title="Navy"></span></li><li><span class="swatch" style="background:#1D1D1D" title="Black"></span></li><li><span class="swatch" style="background:#CDB99B" title="Beige"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$80</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Long Pleated Skirt to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-men-jacket" data-product-name="Men&#39;s Cotton Jacket" data-product-price="165" data-product-image="assets/images/clothing/products/jacket.webp"
+  data-cat="Blazers &amp; Jackets" data-brand="Sarv" data-price-sort="165" data-rating-sort="4.6" data-badges="new" data-tags="men|men-jacket|autumn|casual" data-colors="Olive|Navy" data-sizes="M|L|XL">
+  <div class="p-media">
+    <a class="p-media-link" href="product-jacket.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/jacket.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Men&#39;s Cotton Jacket Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Men&#39;s Cotton Jacket Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · Blazers &amp; Jackets</p>
+    <h3 class="p-title"><a href="product-jacket.html">Men&#39;s Cotton Jacket</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (42 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Olive, Navy">
+      <li><span class="swatch" style="background:#3E4A3A" title="Olive"></span></li><li><span class="swatch" style="background:#2B3550" title="Navy"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$165</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Men&#39;s Cotton Jacket to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-pants-012" data-product-name="Green Tailored Trousers" data-product-price="117" data-product-image="assets/images/clothing/products/m-pants-012.webp"
+  data-cat="Men&#39;s Trousers" data-brand="Parnian" data-price-sort="117" data-rating-sort="4.6" data-badges="new" data-tags="men|men-pants|casual" data-colors="Tan|Ivory" data-sizes="30|32|34|36|38">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-pants-012.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-pants-012.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Green Tailored Trousers Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Green Tailored Trousers Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Parnian · Men&#39;s Trousers</p>
+    <h3 class="p-title"><a href="product-m-pants-012.html">Green Tailored Trousers</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (138 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Tan, Ivory">
+      <li><span class="swatch" style="background:#AA6937" title="Tan"></span></li><li><span class="swatch" style="background:#ECE4D4" title="Ivory"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$117</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Green Tailored Trousers to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-pants-479" data-product-name="Gray Baggy Jeans" data-product-price="132" data-product-image="assets/images/clothing/products/m-pants-479.webp"
+  data-cat="Men&#39;s Trousers" data-brand="Sarv" data-price-sort="132" data-rating-sort="4.3" data-badges="new" data-tags="men|men-pants|casual" data-colors="Charcoal|Ivory" data-sizes="30|32|34|36|38">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-pants-479.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-pants-479.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="Features">
+
+      <li class="badge badge-new">New</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="Add Gray Baggy Jeans Add to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="Add Gray Baggy Jeans Add to compare"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Quick add</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">Sarv · Men&#39;s Trousers</p>
+    <h3 class="p-title"><a href="product-m-pants-479.html">Gray Baggy Jeans</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.3</strong> (127 reviews)</p>
+
+    <ul role="list" class="swatches" aria-label="Colors: Charcoal, Ivory">
+      <li><span class="swatch" style="background:#404042" title="Charcoal"></span></li><li><span class="swatch" style="background:#ECE4D4" title="Ivory"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">$132</span></span> <span class="currency"></span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="Add Gray Baggy Jeans to cart"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  <!-- ===== پایان: تازه‌رسیده‌ها ===== -->
+
+  <!-- ===== شروع: برندهای محبوب ===== -->
+  <section class="section pt-0" aria-labelledby="c-brand-title">
+    <div class="container-site">
+      <div class="section-head head-center reveal">
+        <h2 class="section-title" id="c-brand-title">Popular brands</h2>
+        <p class="section-sub">Shop trusted brands directly</p>
+      </div>
+      <ul role="list" class="c-brands">
+        <li><a href="shop.html?q=Atelier Nila"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Atelier Nila</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li><li><a href="shop.html?q=Kook"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Kook</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li><li><a href="shop.html?q=Della Leather"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Della Leather</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li><li><a href="shop.html?q=Sarvnaz"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Sarvnaz</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li><li><a href="shop.html?q=Sarv"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Sarv</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li><li><a href="shop.html?q=Parnian"><span class="c-brand-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg></span><strong>Parnian</strong><small>Browse products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></small></a></li>
       </ul>
     </div>
   </section>
-  <!-- ===== پایان: بنر حراج ===== -->
+  <!-- ===== پایان: برندها ===== -->
+
+  <!-- ===== شروع: سایزیاب و خبرنامه ===== -->
+  <section class="section pt-0" aria-label="Extra services">
+    <div class="container-site c-duo">
+      <a class="c-duo-card c-duo-size" href="size-guide.html">
+        <span class="c-duo-ico"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg></span>
+        <span><strong>Find your size</strong><small>Size charts and a smart size finder; free size exchanges within 7 days</small></span>
+        <span class="c-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <div class="c-duo-card c-duo-news">
+        <span class="c-duo-ico"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg></span>
+        <div>
+          <strong>10% off your first order</strong>
+          <form class="b-news-form" method="post" data-newsletter novalidate>
+            <label class="sr-only" for="c-news-email">Your email</label>
+            <input id="c-news-email" type="email" name="email" dir="ltr" placeholder="email@example.com" required aria-describedby="c-news-error">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+            <p class="form-error" id="c-news-error" data-newsletter-error hidden></p>
+          </form>
+          <p class="news-success" tabindex="-1" data-newsletter-success hidden>Thank you! You are subscribed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== پایان: سایزیاب و خبرنامه ===== -->
 
   <!-- ===== شروع: مجله ===== -->
   <section class="section" aria-labelledby="c-journal-title">
@@ -1121,14 +1823,14 @@
         <p class="news-success" tabindex="-1" data-newsletter-success hidden>Thank you! You are subscribed.</p>
 
         <!-- لینک صفحه‌های شبکه‌های اجتماعی خود را جایگزین کنید (فعلاً به صفحه‌ی تماس می‌روند) -->
-        <ul role="list" class="socials" aria-label="Social media">
-          <li><a href="contact.html#social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="Telegram"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        <ul role="list" class="socials socials--wide" aria-label="Social media">
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>WhatsApp</span></a></li>
         </ul>
 
         <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
-        <ul role="list" class="trust-slots" aria-label="Trust badges">
+        <ul role="list" class="trust-slots trust-slots--wide" aria-label="Trust badges">
           <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="Sample trust badge" width="120" height="120" loading="lazy"></li>
           <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="Sample registration badge" width="120" height="120" loading="lazy"></li>
         </ul>

@@ -23,6 +23,7 @@
   <!-- آیکون‌ها (طراحی اختصاصی قالب، خطی ۲۴×۲۴). استفاده: <svg class="icon"><use href="#i-search"/></svg> -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
   <symbol id="i-logo" viewBox="0 0 40 40"><path d="M25.5 6.5a14 14 0 1 0 8 23.6A11.5 11.5 0 0 1 25.5 6.5Z" fill="currentColor"/><path d="M29.5 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.75"/><path d="M4.75 20c.9-3.6 3.8-5.5 7.25-5.5s6.35 1.9 7.25 5.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" class="i-heart"><path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z"/></symbol>
@@ -72,15 +73,14 @@
 <!-- ===== شروع: نوار بالای صفحه ===== -->
 <div class="topbar" id="top">
   
+  <!-- دو گروه یکسان، هر کدام دست‌کم به پهنای صفحه؛ با جابه‌جایی به اندازه‌ی یک گروه، حرکت بی‌وقفه و بی‌پایان است -->
   <div class="topbar-marquee" aria-label="اطلاعیه‌ها">
-    <ul role="list" class="topbar-track">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-    </ul>
+    <div class="topbar-track">
+
+      <ul role="list" class="topbar-group"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>۷ روز ضمانت تعویض سایز، بدون پرسش</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>کد ‎WELCOME‎ برای ۱۰٪ تخفیف اولین خرید</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>ضمانت اصالت همه‌ی کالاها با برچسب اصل</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>مشاوره‌ی رایگان سایز، هر روز ۹ تا ۲۱</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>پرداخت امن با همه‌ی کارت‌های بانکی</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>کالکشن پاییز ۱۴۰۵ رسید؛ پالتو و بافت</li></ul>
+      <ul role="list" class="topbar-group" aria-hidden="true"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>۷ روز ضمانت تعویض سایز، بدون پرسش</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>کد ‎WELCOME‎ برای ۱۰٪ تخفیف اولین خرید</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>ضمانت اصالت همه‌ی کالاها با برچسب اصل</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>مشاوره‌ی رایگان سایز، هر روز ۹ تا ۲۱</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>پرداخت امن با همه‌ی کارت‌های بانکی</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>کالکشن پاییز ۱۴۰۵ رسید؛ پالتو و بافت</li></ul>
+
+    </div>
   </div>
 </div>
 <!-- ===== پایان: نوار بالای صفحه ===== -->
@@ -212,6 +212,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">پرفروش‌های مردانه</p>
+                <ul>
+                  <li><a href="product-m-formal-463.html"><img src="assets/images/clothing/products/m-formal-463.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>کفش کالج چرم قرمز قهوه‌ای</strong><em><span class="num">۲<span class="num-sep">٬</span>۳۵۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-m-hoodie-450.html"><img src="assets/images/clothing/products/m-hoodie-450.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>ژاکت بافت زیپ‌دار سرمه‌ای</strong><em><span class="num">۲<span class="num-sep">٬</span>۳۸۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-m-bag-092.html"><img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>کیف اسناد چرم</strong><em><span class="num">۴<span class="num-sep">٬</span>۴۱۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -258,6 +265,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">پرفروش‌های بچگانه</p>
+                <ul>
+                  <li><a href="product-b-jacket-246.html"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>بادگیر طرح‌دار بچگانه</strong><em><span class="num">۲<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-g-dress-414.html"><img src="assets/images/clothing/products/g-dress-414.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>سارافون خرگوشی صورتی</strong><em><span class="num">۱<span class="num-sep">٬</span>۸۲۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-g-set-256.html"><img src="assets/images/clothing/products/g-set-256.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>ست بلوز و ساپورت سرمه‌ای</strong><em><span class="num">۱<span class="num-sep">٬</span>۷۰۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -279,13 +293,13 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="shop.html?sort=newest">کالکشن جدید</a>
+        <a class="main-nav-link has-badge" href="shop.html?sort=newest">کالکشن جدید<span class="nav-badge">جدید</span></a>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link is-accent" href="shop.html?sale=1">حراج</a>
+        <a class="main-nav-link is-accent has-badge" href="shop.html?sale=1"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>حراج<span class="nav-badge">٪۴۰</span></a>
 
       </li>
 
@@ -447,8 +461,13 @@
      برای پرداخت واقعی، آن را به فروشگاه یا سیستم سفارش خود وصل کنید (راهنما را ببینید). -->
 <div class="drawer drawer-end" id="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title" data-drawer data-mini-cart inert>
   <div class="drawer-head">
-    <h2 class="drawer-title" id="mini-cart-title">سبد خرید <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
+    <h2 class="drawer-title mc-title" id="mini-cart-title"><span class="mc-title-ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>سبد خرید <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="بستن سبد خرید"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <div class="mc-ship" data-mc-ship hidden>
+    <p data-mc-ship-text></p>
+    <i aria-hidden="true"><b data-mc-ship-bar></b></i>
   </div>
 
   <div class="drawer-body">
@@ -466,11 +485,14 @@
   </div>
 
   <div class="drawer-foot" data-cart-foot>
+    <ul class="mc-sum" role="list">
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> هزینه‌ی ارسال</span><span data-mc-ship-cost>محاسبه در تسویه</span></li>
+    </ul>
     <div class="cart-total">
       <span>جمع کل</span>
       <p><span class="cart-total-amount" data-cart-total>۰</span> <span class="text-sm">تومان</span></p>
     </div>
-    <p class="cart-note">هزینه‌ی ارسال در مرحله‌ی تسویه حساب محاسبه می‌شود.</p>
+    <p class="cart-note mc-trust"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> پرداخت امن · <svg class="icon" aria-hidden="true"><use href="#i-return"/></svg> ۷ روز تعویض</p>
     <div class="cart-buttons">
       <a href="cart.html" class="btn btn-outline">مشاهده‌ی سبد</a>
       <a href="checkout.html" class="btn btn-primary">تسویه حساب</a>
@@ -488,41 +510,56 @@
     <div class="b-slides">
       <div class="b-slide is-active" role="group" aria-roledescription="اسلاید" aria-label="۱ از ۳" data-slide>
         <div class="b-collage" role="img" aria-label="کالکشن زنانه‌ی پاییز: پالتو، پیراهن و چکمه">
-          <span class="b-col-big"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" fetchpriority="high"></span>
-          <span><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="720" height="960" loading="lazy"></span>
-          <span><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span class="b-col-big" data-parallax="-0.06"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" fetchpriority="high"></span>
+          <span data-parallax="0.08"><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span data-parallax="0.14"><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="720" height="960" loading="lazy"></span>
         </div>
         <div class="container-site b-slide-body">
           <p class="b-eyebrow">کالکشن پاییز ۱۴۰۵</p>
           <h1 class="b-slide-title">زنانه، گرم و خوش‌فرم</h1>
           <p class="b-slide-lead">پالتو، پیراهن و بوت‌های فصل؛ با ارسال رایگان برای خریدهای بالای ۲ میلیون تومان.</p>
           <a class="btn btn-primary" href="shop.html?cat=women">خرید زنانه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <ul class="b-stats" role="list">
+            <li><strong>۱۲۱</strong>مدل زنانه</li>
+            <li><strong>۴٫۸</strong>امتیاز خریداران</li>
+            <li><strong>۲۴ ساعته</strong>ارسال تهران</li>
+          </ul>
         </div>
       </div>
       <div class="b-slide" role="group" aria-roledescription="اسلاید" aria-label="۲ از ۳" data-slide hidden>
         <div class="b-collage" role="img" aria-label="کالکشن مردانه: کاپشن، کت و کفش رسمی">
-          <span class="b-col-big"><img src="assets/images/clothing/products/m-shirt-520.webp" alt="" width="720" height="960" loading="lazy"></span>
-          <span><img src="assets/images/clothing/products/m-pants-095.webp" alt="" width="720" height="960" loading="lazy"></span>
-          <span><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span class="b-col-big" data-parallax="-0.06"><img src="assets/images/clothing/products/m-shirt-520.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span data-parallax="0.08"><img src="assets/images/clothing/products/m-pants-095.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span data-parallax="0.14"><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="720" height="960" loading="lazy"></span>
         </div>
         <div class="container-site b-slide-body">
           <p class="b-eyebrow">استایل رسمی مردانه</p>
           <h2 class="b-slide-title">کت، کاپشن و کفش ست</h2>
           <p class="b-slide-lead">برای روزهای کاری و مهمانی‌ها؛ دوخت دقیق و پارچه‌های بادوام.</p>
           <a class="btn btn-primary" href="shop.html?cat=men">خرید مردانه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <ul class="b-stats" role="list">
+            <li><strong>۱۷۵</strong>مدل مردانه</li>
+            <li><strong>۴٫۸</strong>امتیاز خریداران</li>
+            <li><strong>۲۴ ساعته</strong>ارسال تهران</li>
+          </ul>
         </div>
       </div>
       <div class="b-slide" role="group" aria-roledescription="اسلاید" aria-label="۳ از ۳" data-slide hidden>
         <div class="b-collage" role="img" aria-label="کالکشن بچگانه: ست دخترانه، کاپشن و صندل">
-          <span class="b-col-big"><img src="assets/images/clothing/products/g-set-149.webp" alt="" width="720" height="960" loading="lazy"></span>
-          <span><img src="assets/images/clothing/products/g-dress-466.webp" alt="" width="720" height="960" loading="lazy"></span>
-          <span><img src="assets/images/clothing/products/g-set-331.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span class="b-col-big" data-parallax="-0.06"><img src="assets/images/clothing/products/g-set-149.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span data-parallax="0.08"><img src="assets/images/clothing/products/g-dress-466.webp" alt="" width="720" height="960" loading="lazy"></span>
+          <span data-parallax="0.14"><img src="assets/images/clothing/products/g-set-331.webp" alt="" width="720" height="960" loading="lazy"></span>
         </div>
         <div class="container-site b-slide-body">
           <p class="b-eyebrow">بازگشت به مدرسه</p>
           <h2 class="b-slide-title">بچگانه، راحت و شاد</h2>
           <p class="b-slide-lead">ست‌ها، کاپشن‌ها و کفش‌هایی که پا به پای بازی بچه‌ها می‌آیند.</p>
           <a class="btn btn-primary" href="shop.html?cat=kids">خرید بچگانه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <ul class="b-stats" role="list">
+            <li><strong>۱۲۹</strong>مدل بچگانه</li>
+            <li><strong>۴٫۸</strong>امتیاز خریداران</li>
+            <li><strong>۲۴ ساعته</strong>ارسال تهران</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -551,25 +588,70 @@
   </section>
   <!-- ===== پایان: مزایا ===== -->
 
-  <!-- ===== شروع: دسته‌های دایره‌ای ===== -->
-  <section class="section" aria-labelledby="b-cats-title">
+  <!-- ===== شروع: دسته‌های محبوب (ریل کارت‌های قوسی؛ خودکار می‌چرخد) ===== -->
+  <section class="section b-cats-zone" aria-labelledby="b-cats-title" data-rail data-rail-auto="4500">
     <div class="container-site">
-      <div class="section-head head-center reveal">
-        <h2 class="section-title" id="b-cats-title">دسته‌های محبوب</h2>
-        <p class="section-sub">پرطرفدارترین دسته‌های این فصل</p>
-        <a class="link-more" href="shop.html">همه‌ی محصولات <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="section-head reveal">
+        <div>
+          <h2 class="section-title" id="b-cats-title">دسته‌های محبوب</h2>
+          <p class="section-sub">پرطرفدارترین دسته‌های این فصل</p>
+        </div>
+        <div class="rail-nav">
+          <button type="button" class="rail-btn" data-rail-prev aria-label="دسته‌ی قبلی"><svg class="icon rail-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" class="rail-btn" data-rail-next aria-label="دسته‌ی بعدی"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
       </div>
-      <ul role="list" class="b-circles">
-        <li><a href="shop.html?cat=women-coat"><span class="b-circle" style="--tone:var(--tone-1)"><img src="assets/images/clothing/products/coat.webp" alt="" width="900" height="1200" loading="lazy"></span>مانتو و پالتو</a></li>
-        <li><a href="shop.html?cat=women-dress"><span class="b-circle" style="--tone:var(--tone-4)"><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="900" height="1200" loading="lazy"></span>پیراهن زنانه</a></li>
-        <li><a href="shop.html?cat=women-knit"><span class="b-circle" style="--tone:var(--tone-2)"><img src="assets/images/clothing/products/w-knit-060.webp" alt="" width="900" height="1200" loading="lazy"></span>بافت</a></li>
-        <li><a href="shop.html?cat=women-boot"><span class="b-circle" style="--tone:var(--tone-5)"><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="900" height="1200" loading="lazy"></span>بوت</a></li>
-        <li><a href="shop.html?cat=women-bag"><span class="b-circle" style="--tone:var(--tone-3)"><img src="assets/images/clothing/products/w-skirt-204.webp" alt="" width="900" height="1200" loading="lazy"></span>کیف زنانه</a></li>
-        <li><a href="shop.html?cat=men-jacket"><span class="b-circle" style="--tone:var(--tone-4)"><img src="assets/images/clothing/products/m-jacket-266.webp" alt="" width="900" height="1200" loading="lazy"></span>کت و کاپشن</a></li>
-        <li><a href="shop.html?cat=men-shirt"><span class="b-circle" style="--tone:var(--tone-1)"><img src="assets/images/clothing/products/m-shirt-521.webp" alt="" width="900" height="1200" loading="lazy"></span>پیراهن مردانه</a></li>
-        <li><a href="shop.html?cat=men-formal-shoe"><span class="b-circle" style="--tone:var(--tone-5)"><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="900" height="1200" loading="lazy"></span>کفش رسمی</a></li>
-        <li><a href="shop.html?cat=girls-dress"><span class="b-circle" style="--tone:var(--tone-2)"><img src="assets/images/clothing/products/g-dress-133.webp" alt="" width="900" height="1200" loading="lazy"></span>پیراهن دخترانه</a></li>
-        <li><a href="shop.html?cat=boys-jacket"><span class="b-circle" style="--tone:var(--tone-3)"><img src="assets/images/clothing/products/b-jacket-396.webp" alt="" width="900" height="1200" loading="lazy"></span>کاپشن بچگانه</a></li>
+      <ul role="list" class="rail-track b-cat-track">
+        <li><a class="b-cat" href="shop.html?cat=women-coat" style="--tone:var(--tone-1)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>مانتو و پالتو</strong><small>۵ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=women-dress" style="--tone:var(--tone-4)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/w-dress-118.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>پیراهن زنانه</strong><small>۵ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=women-knit" style="--tone:var(--tone-2)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/w-knit-060.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>بافت</strong><small>۱۴ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=women-boot" style="--tone:var(--tone-5)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/w-boot-507.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>بوت</strong><small>۱۱ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=women-bag" style="--tone:var(--tone-3)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/w-skirt-204.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>کیف زنانه</strong><small>۶ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=men-jacket" style="--tone:var(--tone-4)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/m-jacket-266.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>کت و کاپشن</strong><small>۱۵ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=men-shirt" style="--tone:var(--tone-1)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/m-shirt-521.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>پیراهن مردانه</strong><small>۱۴ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=men-formal-shoe" style="--tone:var(--tone-5)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/m-formal-328.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>کفش رسمی</strong><small>۱۷ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=girls-dress" style="--tone:var(--tone-2)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/g-dress-133.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>پیراهن دخترانه</strong><small>۱۸ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="b-cat" href="shop.html?cat=boys-jacket" style="--tone:var(--tone-3)">
+          <span class="b-cat-media"><img src="assets/images/clothing/products/b-jacket-396.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></span>
+          <span class="b-cat-foot"><strong>کاپشن بچگانه</strong><small>۳۵ مدل</small></span>
+          <span class="b-cat-go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
       </ul>
     </div>
   </section>
@@ -578,13 +660,22 @@
   <!-- ===== شروع: پیشنهاد ویژه (محصول با شناسه‌ی cl-men-blazer؛ برای تغییر، شناسه را عوض کنید) ===== -->
 
   <section class="section pt-0" aria-labelledby="b-deal-title">
-    <div class="container-site b-deal reveal" data-product data-product-id="cl-men-blazer" data-product-name="کت تک مردانه" data-product-price="3590000" data-product-image="assets/images/clothing/products/blazer.webp">
-      <a class="b-deal-media" href="product-blazer.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200" loading="lazy"></a>
+    <div class="container-site"><div class="b-deal b-deal--rich reveal" data-product data-product-id="cl-men-blazer" data-product-name="کت تک مردانه" data-product-price="3590000" data-product-image="assets/images/clothing/products/blazer.webp">
+      <a class="b-deal-media" href="product-blazer.html" tabindex="-1" aria-hidden="true">
+        <img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200" loading="lazy">
+        <span class="b-deal-off"><small>تخفیف</small>٪۱۶</span>
+        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+      </a>
       <div class="b-deal-body">
         <p class="b-eyebrow">پیشنهاد ویژه‌ی این هفته</p>
         <h2 class="b-deal-title" id="b-deal-title"><a href="product-blazer.html">کت تک مردانه</a></h2>
         <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۳۲ نظر)</p>
         <p class="b-deal-text">کت تک دو دکمه با برش جذب، برای استایل رسمی و نیمه‌رسمی.</p>
+        <ul class="b-deal-feats" role="list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سرو</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز 48، 50، 52، 54</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
+        </ul>
         <p class="b-deal-price"><del><span class="num">۴<span class="num-sep">٬</span>۲۹۰<span class="num-sep">٬</span>۰۰۰</span></del> <strong><span class="num">۳<span class="num-sep">٬</span>۵۹۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
         <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
           <span><strong data-cd="days">۰۰</strong>روز</span>
@@ -592,12 +683,16 @@
           <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
           <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
         </div>
+        <div class="b-deal-stock" aria-label="۶۸ درصد موجودی فروخته شده">
+          <span><strong>۶۸٪</strong> فروخته شد</span><span>فقط ۹ عدد باقی مانده</span>
+          <i aria-hidden="true"><b style="width:68%"></b></i>
+        </div>
         <div class="b-deal-actions">
           <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
           <a class="btn btn-outline" href="product-blazer.html">جزئیات محصول</a>
         </div>
       </div>
-    </div>
+    </div></div>
   </section>
 
   <!-- ===== پایان: پیشنهاد ویژه ===== -->
@@ -1110,14 +1205,28 @@
   <!-- ===== شروع: دو بنر زنانه و مردانه ===== -->
   <section class="section pt-0" aria-label="خرید زنانه و مردانه">
     <div class="container-site b-split">
-      <a class="b-split-card reveal" href="shop.html?cat=women" style="--tone:var(--tone-2)">
-        <img src="assets/images/clothing/home/gender-women.webp" alt="" width="700" height="1000" loading="lazy">
-        <span class="b-split-body"><span class="b-eyebrow">زنانه</span><span class="b-split-title">پیراهن‌ها و تونیک‌های تازه</span><span class="banner-link">مشاهده <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
-      </a>
-      <a class="b-split-card b-split-rev reveal" href="shop.html?cat=men" style="--tone:var(--tone-4);--d:120ms">
-        <img src="assets/images/clothing/home/gender-men.webp" alt="" width="700" height="1000" loading="lazy">
-        <span class="b-split-body"><span class="b-eyebrow">مردانه</span><span class="b-split-title">پیراهن‌های چهارخانه</span><span class="banner-link">مشاهده <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
-      </a>
+      <article class="b-promo reveal" style="--tone:var(--tone-2)">
+        <a class="b-promo-media" href="shop.html?cat=women" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/home/gender-women.webp" alt="" width="700" height="1000" loading="lazy" decoding="async"></a>
+        <div class="b-promo-body">
+          <svg class="b-promo-art" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 7"/><path d="M60 22c10 14 10 30 0 38-10-8-10-24 0-38Zm0 76c-10-14-10-30 0-38 10 8 10 24 0 38ZM22 60c14-10 30-10 38 0-8 10-24 10-38 0Zm76 0c-14 10-30 10-38 0 8-10 24-10 38 0Z" fill="currentColor" opacity=".35"/></svg>
+          <span class="b-promo-off">٪۲۵</span>
+          <p class="b-eyebrow">زنانه · تا ۲۵٪ تخفیف</p>
+          <h3 class="b-promo-title">پیراهن‌ها و تونیک‌های تازه</h3>
+          <ul class="b-promo-thumbs" role="list"><li><a href="product-w-dress-118.html"><img src="assets/images/clothing/products/w-dress-118.webp" alt="پیراهن بلند آبی آسمانی" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-w-blouse-465.html"><img src="assets/images/clothing/products/w-blouse-465.webp" alt="ست بلوز و دامن پاپیونی سبز" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-w-dress-425.html"><img src="assets/images/clothing/products/w-dress-425.webp" alt="پیراهن مجلسی صورتی" width="720" height="960" loading="lazy" decoding="async"></a></li></ul>
+          <a class="btn btn-primary b-promo-btn" href="shop.html?cat=women">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="b-promo b-promo--rev reveal" style="--tone:var(--tone-4);--d:120ms">
+        <a class="b-promo-media" href="shop.html?cat=men" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/home/gender-men.webp" alt="" width="700" height="1000" loading="lazy" decoding="async"></a>
+        <div class="b-promo-body">
+          <svg class="b-promo-art" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 7"/><path d="M60 22c10 14 10 30 0 38-10-8-10-24 0-38Zm0 76c-10-14-10-30 0-38 10 8 10 24 0 38ZM22 60c14-10 30-10 38 0-8 10-24 10-38 0Zm76 0c-14 10-30 10-38 0 8-10 24-10 38 0Z" fill="currentColor" opacity=".35"/></svg>
+          <span class="b-promo-off">جدید</span>
+          <p class="b-eyebrow">مردانه · کالکشن پاییز</p>
+          <h3 class="b-promo-title">پیراهن‌های چهارخانه</h3>
+          <ul class="b-promo-thumbs" role="list"><li><a href="product-m-shirt-521.html"><img src="assets/images/clothing/products/m-shirt-521.webp" alt="پیراهن چهارخانه قرمز و سرمه‌ای" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-m-formal-463.html"><img src="assets/images/clothing/products/m-formal-463.webp" alt="کفش کالج چرم قرمز قهوه‌ای" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-m-hoodie-450.html"><img src="assets/images/clothing/products/m-hoodie-450.webp" alt="ژاکت بافت زیپ‌دار سرمه‌ای" width="720" height="960" loading="lazy" decoding="async"></a></li></ul>
+          <a class="btn btn-primary b-promo-btn" href="shop.html?cat=men">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
     </div>
   </section>
   <!-- ===== پایان: دو بنر ===== -->
@@ -1518,66 +1627,112 @@
   </section>
   <!-- ===== پایان: جدیدترین‌ها ===== -->
 
-  <!-- ===== شروع: نظر مشتریان (از نظرات خود محصولات) ===== -->
-  <section class="section b-quotes" aria-labelledby="b-quotes-title">
-    <div class="container-site">
-      <div class="section-head head-center reveal">
-        <h2 class="section-title" id="b-quotes-title">مشتری‌ها چه می‌گویند</h2>
-        <p class="section-sub">نظر واقعی خریدارانی که این محصولات را پوشیده‌اند.</p>
+  <!-- ===== شروع: نظر مشتریان (از نظرات خود محصولات؛ ریل خودکار) ===== -->
+  <section class="section b-voices" aria-labelledby="b-quotes-title" data-rail data-rail-auto="5500">
+    <div class="container-site b-voices-grid">
+      <div class="b-voices-intro reveal">
+        <p class="b-eyebrow">صدای خریداران</p>
+        <h2 class="b-voices-title" id="b-quotes-title">مشتری‌ها چه می‌گویند</h2>
+        <div class="b-voices-score">
+          <strong>۴٫۸</strong>
+          <span><span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><small>از بیش از ۱۲ هزار نظر ثبت‌شده</small></span>
+        </div>
+        <ul class="b-voices-facts" role="list">
+          <li><strong>۹۶٪</strong>خرید دوباره</li>
+          <li><strong>۹۸٪</strong>رضایت از سایز</li>
+        </ul>
+        <div class="rail-nav">
+          <button type="button" class="rail-btn" data-rail-prev aria-label="نظر قبلی"><svg class="icon rail-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" class="rail-btn" data-rail-next aria-label="نظر بعدی"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
       </div>
-      <ul role="list" class="b-quotes-grid">
+      <ul role="list" class="rail-track b-voices-track">
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>دوختش تمیزه و رنگش هم توی نور روز همونیه که توی عکس دیدم. خیلی راضی‌ام.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-1" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av4"/></svg></span>
             <span><strong>شیما صادقی</strong><a href="product-coat.html">پالتو بلند پشمی</a></span>
+            <a class="b-voice-prod" href="product-coat.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/coat.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>سایزش درست بود و بعد از چند بار شستن هم رنگش نرفت.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
             <span><strong>آرش کاظمی</strong><a href="product-b-jacket-378.html">کاپشن پفی سبز</a></span>
+            <a class="b-voice-prod" href="product-b-jacket-378.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/b-jacket-378.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>قالبش استاندارده و از روز اول راحت بود، اصلاً پا رو نزد.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-3" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av4"/></svg></span>
             <span><strong>نگار کاظمی</strong><a href="product-w-boot-497.html">چکمه‌ی بلند مشکی پاشنه‌کوتاه</a></span>
+            <a class="b-voice-prod" href="product-w-boot-497.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/w-boot-497.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>دقیقاً همونی بود که می‌خواستم؛ جیب‌بندی داخلش خیلی کاربردیه.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
             <span><strong>هانیه یزدانی</strong><a href="product-m-bag-280.html">کیف کراس‌بادی سرمه‌ای</a></span>
+            <a class="b-voice-prod" href="product-m-bag-280.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/m-bag-280.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>دوختش محکمه و برای بازی و مدرسه عالیه. دوباره سفارش میدم.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-4" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av2"/></svg></span>
             <span><strong>پریسا شریفی</strong><a href="product-b-jacket-097.html">کاپشن پفی مشکی</a></span>
+            <a class="b-voice-prod" href="product-b-jacket-097.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/b-jacket-097.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
-        <li class="b-quote reveal">
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
           <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
           <blockquote>دومین باره از این فروشگاه خرید می‌کنم و باز هم کیفیت عالی بود. بسته‌بندی هم مرتب بود.</blockquote>
-          <div class="b-quote-foot">
+          <div class="b-voice-foot">
             <span class="pd-review-avatar av-tone-3" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
             <span><strong>سارا توکلی</strong><a href="product-w-blouse-504.html">تونیک گلدوزی‌شده صورتی</a></span>
+            <a class="b-voice-prod" href="product-w-blouse-504.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/w-blouse-504.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+          </div>
+        </li>
+
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
+          <blockquote>جنسش خیلی خوبه و دقیقاً مطابق عکس بود. سایزش هم با جدول راهنما جور درمی‌اومد.</blockquote>
+          <div class="b-voice-foot">
+            <span class="pd-review-avatar av-tone-2" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av4"/></svg></span>
+            <span><strong>بهنام احمدی</strong><a href="product-m-tshirt-445.html">پولو زیپ‌دار آبی یخی</a></span>
+            <a class="b-voice-prod" href="product-m-tshirt-445.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/m-tshirt-445.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
+          </div>
+        </li>
+
+        <li class="b-voice">
+          <svg class="b-voice-q" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v8c-6 1-9 5-9 12h9v16Zm30 0V20c0-12 6-19 18-20v8c-6 1-9 5-9 12h9v16Z" fill="currentColor"/></svg>
+          <span class="pd-stars" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="sr-only">۵ از ۵</span>
+          <blockquote>پارچه نرم و خنکه، بعد از شست‌وشو هم فرمش رو از دست نداد.</blockquote>
+          <div class="b-voice-foot">
+            <span class="pd-review-avatar av-tone-3" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-av3"/></svg></span>
+            <span><strong>سمیرا قاسمی</strong><a href="product-hoodie.html">هودی پنبه‌ای اورسایز</a></span>
+            <a class="b-voice-prod" href="product-hoodie.html" tabindex="-1" aria-hidden="true"><img src="assets/images/clothing/products/hoodie.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></a>
           </div>
         </li>
 
@@ -1709,14 +1864,14 @@
         <p class="news-success" tabindex="-1" data-newsletter-success hidden>ممنون! عضویت شما ثبت شد.</p>
 
         <!-- لینک صفحه‌های شبکه‌های اجتماعی خود را جایگزین کنید (فعلاً به صفحه‌ی تماس می‌روند) -->
-        <ul role="list" class="socials" aria-label="شبکه‌های اجتماعی">
-          <li><a href="contact.html#social" aria-label="اینستاگرام"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="تلگرام"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="واتس‌اپ"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        <ul role="list" class="socials socials--wide" aria-label="شبکه‌های اجتماعی">
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>اینستاگرام</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>تلگرام</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>واتس‌اپ</span></a></li>
         </ul>
 
         <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
-        <ul role="list" class="trust-slots" aria-label="نمادهای اعتماد">
+        <ul role="list" class="trust-slots trust-slots--wide" aria-label="نمادهای اعتماد">
           <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="نمونه‌ی نماد اعتماد" width="120" height="120" loading="lazy"></li>
           <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="نمونه‌ی نماد ساماندهی" width="120" height="120" loading="lazy"></li>
         </ul>

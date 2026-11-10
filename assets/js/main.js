@@ -361,6 +361,14 @@
          data-product-id، data-product-name، data-product-price (عدد انگلیسی، تومان)، data-product-image
        و یک دکمه با data-add-to-cart داخل آن. اگر وزن یا حجم انتخاب شود، جداگانه ثبت می‌شود.
      ------------------------------------------------------------------------ */
+
+  // تصویر کالای ذخیره‌شده در سبد: مسیر از روی پوشه‌ی images همین نسخه از نو ساخته می‌شود
+  // تا اگر قالب جابه‌جا شد یا سبد از نسخه‌ی دیگری آمده بود، تصویر شکسته نشود
+  const itemImage = (src) => {
+    const s = String(src || '');
+    const i = s.lastIndexOf('/images/');
+    return i >= 0 ? ASSETS + s.slice(i + 1) : s;
+  };
   const cartStore = {
     read: () => store.read('cart', []).filter((i) => i && i.id && i.qty > 0),
     write: (items) => store.write('cart', items),
@@ -403,7 +411,7 @@
         .map((item) => {
           const name = escapeHtml(item.name);
           return `<li class="cart-item" data-id="${escapeHtml(item.id)}">
-  <img class="cart-thumb" src="${escapeHtml(item.image)}" width="76" height="76" alt="">
+  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.replace(/[.](svg|jpg|png)$/,'.webp')}else{this.style.visibility='hidden'}" width="76" height="76" alt="">
   <div class="cart-info">
     <p class="cart-name">${name}</p>
     ${item.variant ? `<p class="cart-variant">${escapeHtml(item.variant)}</p>` : ''}
@@ -423,6 +431,19 @@
       foot.hidden = n === 0;
       total.innerHTML = priceHtml(items.reduce((sum, i) => sum + i.price * i.qty, 0));
       headingCount.textContent = n ? `(${toFa(n)})` : '';
+      // نوار پیشرفت ارسال رایگان در سبد کشویی
+      const ship = panel.querySelector('[data-mc-ship]');
+      if (ship) {
+        const sub = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+        const goal = 2000000;
+        const remain = goal - sub;
+        ship.hidden = n === 0;
+        ship.classList.toggle('is-done', remain <= 0);
+        ship.querySelector('[data-mc-ship-text]').innerHTML = remain > 0 ? `فقط <strong>${priceHtml(remain)} تومان</strong> تا ارسال رایگان` : '<strong>تبریک!</strong> ارسال این سفارش رایگان است';
+        ship.querySelector('[data-mc-ship-bar]').style.width = `${Math.min(100, Math.round((sub / goal) * 100))}%`;
+        const cost = panel.querySelector('[data-mc-ship-cost]');
+        if (cost) cost.textContent = remain <= 0 ? 'رایگان' : 'محاسبه در تسویه';
+      }
       document.dispatchEvent(new CustomEvent('mahtab:cart-render', { detail: { items } }));
     };
 
@@ -583,6 +604,8 @@
   function initCountdown() {
     document.querySelectorAll('[data-countdown]').forEach((timer) => {
       let end = new Date(timer.dataset.countdown).getTime();
+      // data-countdown="daily": تا پایان امروز (نیمه‌شب) و هر روز از نو
+      if (timer.dataset.countdown === 'daily') { const d = new Date(); d.setHours(24, 0, 0, 0); end = d.getTime(); }
       if (Number.isNaN(end)) return;
       // data-countdown-repeat="7": اگر مهلت گذشته باشد، شمارش برای دوره‌ی بعدیِ ۷روزه ادامه پیدا می‌کند (مناسب دمو)
       const repeatDays = parseInt(timer.dataset.countdownRepeat, 10);
@@ -720,9 +743,9 @@
     const urlSale = params.get('sale') === '1';
     if (sortSelect && params.get('sort') && [...sortSelect.options].some((o) => o.value === params.get('sort'))) sortSelect.value = params.get('sort');
     if (queryWords.length) {
-      const title = document.querySelector('.shop-head .section-title');
+      const title = document.querySelector('.shop-head .section-title, .sh-title');
       if (title) title.textContent = `نتیجه‌ی جستجو: «${params.get('q').trim()}»`;
-      const head = document.querySelector('.shop-head-count');
+      const head = document.querySelector('.shop-head-count, .sh-sub');
       if (head && !head.querySelector('[data-clear-url]')) head.insertAdjacentHTML('beforeend', ' · <a href="shop.html" data-clear-url>نمایش همه‌ی محصولات</a>');
     } else if ((urlTags.length && hasTags) || urlSale || params.get('sort')) {
       const q = location.search;
@@ -734,9 +757,9 @@
         .map((a) => (a.querySelector('strong, span') || a).textContent.trim().split('\n')[0].trim())
         .filter((t) => t && !t.startsWith('مشاهده'));
       const label = labels[q.replace(/^\?/, '')] || names.sort((a, b) => a.length - b.length)[0];
-      const title = document.querySelector('.shop-head .section-title');
+      const title = document.querySelector('.shop-head .section-title, .sh-title');
       if (title && label) title.textContent = label;
-      const head = document.querySelector('.shop-head-count');
+      const head = document.querySelector('.shop-head-count, .sh-sub');
       if (head && !head.querySelector('[data-clear-url]')) head.insertAdjacentHTML('beforeend', ' · <a href="shop.html" data-clear-url>نمایش همه‌ی محصولات</a>');
     }
 
@@ -1034,6 +1057,117 @@
      اسلایدر صفحه‌ی اصلی (طرح ۲): [data-slider] با اسلایدهای [data-slide]
      پخش خودکار هر ۶ ثانیه؛ با نگه داشتن نشانگر یا فوکوس متوقف می‌شود و در حالت «کاهش حرکت» خودکار نمی‌چرخد.
      ------------------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------------------
+     ریل کارت‌ها (اسلایدر افقی): [data-rail] با .rail-track و دکمه‌های [data-rail-prev] / [data-rail-next]
+     با data-rail-auto="5000" خودکار و در حلقه‌ی بی‌پایان جلو می‌رود؛ بعد از آخرین کارت به اولی برمی‌گردد.
+     با نگه داشتن ماوس یا فوکوس متوقف می‌شود و در حالت «کاهش حرکت» خودکار نمی‌چرخد.
+     ------------------------------------------------------------------------ */
+  function initRails() {
+    document.querySelectorAll('[data-rail]').forEach((rail) => {
+      const track = rail.querySelector('.rail-track');
+      if (!track) return;
+      const items = () => Array.from(track.children);
+      const rtl = getComputedStyle(track).direction === 'rtl';
+      const pos = () => Math.abs(track.scrollLeft);
+      const max = () => track.scrollWidth - track.clientWidth;
+      const step = () => { const first = items()[0]; if (!first) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).columnGap) || 0; return first.getBoundingClientRect().width + gap; };
+      const go = (dir) => {
+        let target;
+        if (dir > 0) target = pos() >= max() - 4 ? 0 : Math.min(max(), pos() + step());
+        else target = pos() <= 4 ? max() : Math.max(0, pos() - step());
+        track.scrollTo({ left: rtl ? -target : target, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+      };
+      const next = rail.querySelector('[data-rail-next]');
+      const prev = rail.querySelector('[data-rail-prev]');
+      if (next) next.addEventListener('click', () => { go(1); play(); });
+      if (prev) prev.addEventListener('click', () => { go(-1); play(); });
+      let timer = null;
+      const delay = parseInt(rail.dataset.railAuto, 10);
+      const stop = () => timer && (clearInterval(timer), (timer = null));
+      const play = () => { stop(); if (!delay || prefersReducedMotion()) return; timer = setInterval(() => go(1), delay); };
+      rail.addEventListener('mouseenter', stop);
+      rail.addEventListener('mouseleave', play);
+      rail.addEventListener('focusin', stop);
+      rail.addEventListener('focusout', play);
+      track.addEventListener('pointerdown', stop);
+      play();
+    });
+  }
+
+
+  /* ------------------------------------------------------------------------
+     صفحه‌ی ورود: جابه‌جایی بین ورود، ثبت‌نام و بازیابی رمز؛ نمایش/پنهان کردن رمز عبور
+     ------------------------------------------------------------------------ */
+  function initAuth() {
+    const panels = Array.from(document.querySelectorAll('[data-auth-panel]'));
+    if (!panels.length) return;
+    const tabs = Array.from(document.querySelectorAll('.au-tab'));
+    const go = (name) => {
+      panels.forEach((p) => (p.hidden = p.dataset.authPanel !== name));
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.authGo === name || (name === 'forgot' && t.dataset.authGo === 'login'))));
+      const panel = panels.find((p) => p.dataset.authPanel === name);
+      if (panel) {
+        const form = panel.querySelector('form');
+        const done = panel.querySelector('[data-auth-success]');
+        if (form) form.hidden = false;
+        if (done) done.hidden = true;
+        const first = panel.querySelector('input');
+        if (first) first.focus({ preventScroll: true });
+      }
+    };
+    document.querySelectorAll('[data-auth-go]').forEach((b) => b.addEventListener('click', () => go(b.dataset.authGo)));
+    panels.forEach((panel) => {
+      const form = panel.querySelector('form');
+      const done = panel.querySelector('[data-auth-success]');
+      if (form && done) form.addEventListener('mahtab:valid-submit', () => { form.hidden = true; done.hidden = false; done.focus(); });
+    });
+    document.querySelectorAll('[data-pass-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const input = btn.parentElement.querySelector('input');
+        const show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        btn.setAttribute('aria-pressed', String(show));
+      });
+    });
+    if (location.hash === '#register') go('register');
+    if (location.hash === '#forgot') go('forgot');
+  }
+
+
+  // دکمه‌ی پسندیدن نظرها (فقط نمایشی)
+  function initCommentLikes() {
+    document.querySelectorAll('.cm-like').forEach((b) => b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      const node = Array.from(b.childNodes).reverse().find((n) => n.nodeType === 3 && n.textContent.trim());
+      if (node) { const n = parseInt(toEn(node.textContent.trim()), 10) + (on ? 1 : -1); node.textContent = ' ' + toFa(n); }
+    }));
+  }
+
+
+  /* ------------------------------------------------------------------------
+     حرکت تصاویر با اسکرول (پارالاکس): [data-parallax="سرعت"]؛ مثبت = پایین، منفی = بالا
+     در حالت «کاهش حرکت» غیرفعال است.
+     ------------------------------------------------------------------------ */
+  function initParallax() {
+    const els = Array.from(document.querySelectorAll('[data-parallax]'));
+    if (!els.length || prefersReducedMotion()) return;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      els.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        const shift = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
+        el.style.transform = `translate3d(0, ${shift.toFixed(1)}px, 0)`;
+      });
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  }
+
   function initSliders() {
     document.querySelectorAll('[data-slider]').forEach((slider) => {
       const slides = Array.from(slider.querySelectorAll('[data-slide]'));
@@ -1305,6 +1439,11 @@
       return `<li><a href="#${h.id}">${escapeHtml(h.textContent.trim())}</a></li>`;
     }).join('');
     toc.hidden = false;
+    // صفحه‌های قوانین: بخش‌ها آکاردئونی‌اند؛ با رفتن به یک بخش، همان باز می‌شود
+    const openFor = (id) => { const h = id && document.getElementById(id); const d = h && h.closest('details'); if (d) d.open = true; };
+    toc.addEventListener('click', (e) => { const a = e.target.closest('a[href^="#"]'); if (a) openFor(a.getAttribute('href').slice(1)); });
+    openFor(location.hash.slice(1));
+    window.addEventListener('hashchange', () => openFor(location.hash.slice(1)));
   }
 
 
@@ -1320,8 +1459,20 @@
         if (!item) return;
         const scope = spot.closest('section') || document;
         scope.querySelectorAll('.hotspot.is-active, .look-item.is-active').forEach((el) => el.classList.remove('is-active'));
+        scope.querySelectorAll('.hs.is-open').forEach((el) => el.classList.remove('is-open'));
         spot.classList.add('is-active');
         item.classList.add('is-active');
+        const hs = spot.closest('.hs');
+        if (hs) {
+          hs.classList.add('is-open');
+          // کارت محصول به سمتی باز می‌شود که جا دارد
+          const card = hs.querySelector('.hs-card');
+          const box = hs.parentElement.getBoundingClientRect();
+          const r = hs.getBoundingClientRect();
+          const rtl = document.dir === 'rtl' || document.documentElement.dir === 'rtl';
+          const roomBefore = rtl ? r.left - box.left : box.right - r.right;
+          card.classList.toggle('to-end', roomBefore < 270);
+        }
         if (scroll) {
           const r = item.getBoundingClientRect();
           if (r.top < 80 || r.bottom > window.innerHeight) item.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
@@ -1330,6 +1481,11 @@
       spot.addEventListener('click', (event) => { event.preventDefault(); activate(true); });
       spot.addEventListener('mouseenter', () => activate(false));
       spot.addEventListener('focus', () => activate(false));
+    });
+    // کلیک بیرون از نقطه‌ها، کارت باز را می‌بندد
+    document.addEventListener('click', (event) => {
+      if (event.target.closest('.hs')) return;
+      document.querySelectorAll('.hs.is-open').forEach((el) => el.classList.remove('is-open'));
     });
   }
 
@@ -1768,7 +1924,7 @@
 
   function cartItemRow(item) {
     return `<li class="cart-item cart-page-item" data-id="${escapeHtml(item.id)}">
-  <img class="cart-thumb" src="${escapeHtml(item.image)}" width="90" height="90" alt="">
+  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.replace(/[.](svg|jpg|png)$/,'.webp')}else{this.style.visibility='hidden'}" width="90" height="90" alt="">
   <div class="cart-info">
     <a class="cart-name" href="${productUrl(item)}">${escapeHtml(item.name)}</a>
     ${item.variant ? `<p class="cart-variant">${escapeHtml(item.variant)}</p>` : ''}
@@ -1945,6 +2101,10 @@
   initProductVariants();
   initProductAddToCart();
   initSliders();
+  initRails();
+  initAuth();
+  initParallax();
+  initCommentLikes();
   initRails();
   initReviews();
   initSizeGuide();

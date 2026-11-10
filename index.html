@@ -23,6 +23,7 @@
   <!-- آیکون‌ها (طراحی اختصاصی قالب، خطی ۲۴×۲۴). استفاده: <svg class="icon"><use href="#i-search"/></svg> -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
   <symbol id="i-logo" viewBox="0 0 40 40"><path d="M25.5 6.5a14 14 0 1 0 8 23.6A11.5 11.5 0 0 1 25.5 6.5Z" fill="currentColor"/><path d="M29.5 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.75"/><path d="M4.75 20c.9-3.6 3.8-5.5 7.25-5.5s6.35 1.9 7.25 5.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" class="i-heart"><path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z"/></symbol>
@@ -72,15 +73,14 @@
 <!-- ===== شروع: نوار بالای صفحه ===== -->
 <div class="topbar" id="top">
   
+  <!-- دو گروه یکسان، هر کدام دست‌کم به پهنای صفحه؛ با جابه‌جایی به اندازه‌ی یک گروه، حرکت بی‌وقفه و بی‌پایان است -->
   <div class="topbar-marquee" aria-label="اطلاعیه‌ها">
-    <ul role="list" class="topbar-track">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال سریع به سراسر کشور</li>
-    </ul>
+    <div class="topbar-track">
+
+      <ul role="list" class="topbar-group"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>۷ روز ضمانت تعویض سایز، بدون پرسش</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>کد ‎WELCOME‎ برای ۱۰٪ تخفیف اولین خرید</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>ضمانت اصالت همه‌ی کالاها با برچسب اصل</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>مشاوره‌ی رایگان سایز، هر روز ۹ تا ۲۱</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>پرداخت امن با همه‌ی کارت‌های بانکی</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>کالکشن پاییز ۱۴۰۵ رسید؛ پالتو و بافت</li></ul>
+      <ul role="list" class="topbar-group" aria-hidden="true"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>ارسال رایگان برای خریدهای بالای ۲ میلیون تومان</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>۷ روز ضمانت تعویض سایز، بدون پرسش</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>کد ‎WELCOME‎ برای ۱۰٪ تخفیف اولین خرید</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>ضمانت اصالت همه‌ی کالاها با برچسب اصل</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>مشاوره‌ی رایگان سایز، هر روز ۹ تا ۲۱</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>پرداخت امن با همه‌ی کارت‌های بانکی</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>کالکشن پاییز ۱۴۰۵ رسید؛ پالتو و بافت</li></ul>
+
+    </div>
   </div>
 </div>
 <!-- ===== پایان: نوار بالای صفحه ===== -->
@@ -212,6 +212,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">پرفروش‌های مردانه</p>
+                <ul>
+                  <li><a href="product-m-formal-463.html"><img src="assets/images/clothing/products/m-formal-463.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>کفش کالج چرم قرمز قهوه‌ای</strong><em><span class="num">۲<span class="num-sep">٬</span>۳۵۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-m-hoodie-450.html"><img src="assets/images/clothing/products/m-hoodie-450.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>ژاکت بافت زیپ‌دار سرمه‌ای</strong><em><span class="num">۲<span class="num-sep">٬</span>۳۸۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-m-bag-092.html"><img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>کیف اسناد چرم</strong><em><span class="num">۴<span class="num-sep">٬</span>۴۱۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -258,6 +265,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">پرفروش‌های بچگانه</p>
+                <ul>
+                  <li><a href="product-b-jacket-246.html"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>بادگیر طرح‌دار بچگانه</strong><em><span class="num">۲<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-g-dress-414.html"><img src="assets/images/clothing/products/g-dress-414.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>سارافون خرگوشی صورتی</strong><em><span class="num">۱<span class="num-sep">٬</span>۸۲۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li><li><a href="product-g-set-256.html"><img src="assets/images/clothing/products/g-set-256.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>ست بلوز و ساپورت سرمه‌ای</strong><em><span class="num">۱<span class="num-sep">٬</span>۷۰۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -279,13 +293,13 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="shop.html?sort=newest">کالکشن جدید</a>
+        <a class="main-nav-link has-badge" href="shop.html?sort=newest">کالکشن جدید<span class="nav-badge">جدید</span></a>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link is-accent" href="shop.html?sale=1">حراج</a>
+        <a class="main-nav-link is-accent has-badge" href="shop.html?sale=1"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>حراج<span class="nav-badge">٪۴۰</span></a>
 
       </li>
 
@@ -447,8 +461,13 @@
      برای پرداخت واقعی، آن را به فروشگاه یا سیستم سفارش خود وصل کنید (راهنما را ببینید). -->
 <div class="drawer drawer-end" id="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title" data-drawer data-mini-cart inert>
   <div class="drawer-head">
-    <h2 class="drawer-title" id="mini-cart-title">سبد خرید <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
+    <h2 class="drawer-title mc-title" id="mini-cart-title"><span class="mc-title-ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>سبد خرید <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="بستن سبد خرید"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <div class="mc-ship" data-mc-ship hidden>
+    <p data-mc-ship-text></p>
+    <i aria-hidden="true"><b data-mc-ship-bar></b></i>
   </div>
 
   <div class="drawer-body">
@@ -466,11 +485,14 @@
   </div>
 
   <div class="drawer-foot" data-cart-foot>
+    <ul class="mc-sum" role="list">
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> هزینه‌ی ارسال</span><span data-mc-ship-cost>محاسبه در تسویه</span></li>
+    </ul>
     <div class="cart-total">
       <span>جمع کل</span>
       <p><span class="cart-total-amount" data-cart-total>۰</span> <span class="text-sm">تومان</span></p>
     </div>
-    <p class="cart-note">هزینه‌ی ارسال در مرحله‌ی تسویه حساب محاسبه می‌شود.</p>
+    <p class="cart-note mc-trust"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> پرداخت امن · <svg class="icon" aria-hidden="true"><use href="#i-return"/></svg> ۷ روز تعویض</p>
     <div class="cart-buttons">
       <a href="cart.html" class="btn btn-outline">مشاهده‌ی سبد</a>
       <a href="checkout.html" class="btn btn-primary">تسویه حساب</a>
@@ -487,17 +509,23 @@
   <section class="fh" aria-labelledby="hero-title">
     <div class="container-site fh-grid">
       <div class="fh-text">
-        <p class="fh-chip"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> کالکشن پاییز ۱۴۰۵</p>
-        <h1 class="fh-title" id="hero-title">گرمای پاییز، در لایه‌های نرم</h1>
-        <p class="fh-lead">پالتوهای پشمی، بافت‌های دست‌دوز و رنگ‌های خاکی؛ کالکشنی برای روزهای خنک شهر که هم گرم نگهتان می‌دارد و هم ساده و خوش‌دوخت است.</p>
+        <p class="fh-chip"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> کالکشن پاییز ۱۴۰۵ رسید</p>
+        <h1 class="fh-title" id="hero-title"><span>گرمای پاییز</span> <span class="fh-title-accent">در لایه‌های نرم</span></h1>
+        <p class="fh-lead">پالتوی پشمی، بافت دست‌دوز و نیم‌بوت چرمی؛ تکه‌هایی که با هم ست می‌شوند و تمام فصل گرم نگهتان می‌دارند.</p>
         <div class="fh-actions">
           <a class="btn btn-primary" href="shop.html?collection=autumn">خرید کالکشن <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-outline" href="#lookbook">دیدن لوک‌بوک</a>
         </div>
+        <div class="fh-proof">
+          <span class="fh-proof-thumbs" aria-hidden="true">
+            <img src="assets/images/clothing/products/coat.webp" alt="" width="44" height="44" loading="lazy" decoding="async"><img src="assets/images/clothing/products/w-knit-059.webp" alt="" width="44" height="44" loading="lazy" decoding="async"><img src="assets/images/clothing/products/boot.webp" alt="" width="44" height="44" loading="lazy" decoding="async"><img src="assets/images/clothing/products/bag.webp" alt="" width="44" height="44" loading="lazy" decoding="async">
+          </span>
+          <span class="fh-proof-text"><strong><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> ۴٫۸ از ۵</strong>رضایت بیش از ۱۲ هزار خریدار</span>
+        </div>
         <ul class="fh-perks" role="list" aria-label="مزایای خرید">
-          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span><strong>۴۲۲ مدل</strong><span>پوشاک، کیف و کفش برای همه</span></li>
-          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><strong>۷ روز تعویض</strong><span>اگر اندازه نبود، عوضش کنید</span></li>
-          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><strong>ارسال رایگان</strong><span>برای خرید بالای ۲ میلیون</span></li>
+          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span><span><strong>۴۲۲ مدل</strong><small>پوشاک، کیف و کفش</small></span></li>
+          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><span><strong>۷ روز تعویض</strong><small>بدون پرسش</small></span></li>
+          <li><span class="fh-perk-icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><span><strong>ارسال رایگان</strong><small>بالای ۲ میلیون تومان</small></span></li>
         </ul>
       </div>
       <figure class="fh-media">
@@ -521,7 +549,7 @@
       </div>
       <ul class="fc-cats" role="list">
         <li class="fc-big"><a class="fc-cat" href="shop.html?cat=women">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-women.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
+          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-women-hero.webp" alt="" width="1000" height="1500" loading="lazy" decoding="async"></span>
           <span class="fc-cat-foot"><span class="fc-cat-text"><strong>زنانه</strong><small>مانتو، پیراهن، بافت و کفش</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
         </a></li>
         <li class=""><a class="fc-cat" href="shop.html?cat=men">
@@ -1154,18 +1182,30 @@
   <!-- ===== شروع: لوک‌بوک «استایل کامل» =====
        نقطه‌های روی تصویر (hotspot) به ردیف همان محصول در فهرست کنار تصویر لینک می‌شوند.
        جای نقطه‌ها با style="--x:…; --y:…" (درصد از راست و بالا) تنظیم می‌شود. -->
-  <section class="section lookbook" id="lookbook" aria-labelledby="look-title">
+  <section class="section lookbook lookbook--warm" id="lookbook" aria-labelledby="look-title">
     <div class="container-site lookbook-grid">
       <div class="lookbook-media reveal">
-        <img src="assets/images/clothing/home/lookbook.webp" alt="ست پاییزی: پالتو پشمی، شلوار دمپا گشاد، نیم‌بوت و کیف چرم" width="1400" height="1100" loading="lazy" decoding="async">
-        <a class="hotspot" href="#look-1" style="--x:80%;--y:42%" aria-label="۱: پالتو بلند پشمی">۱</a>
-        <a class="hotspot" href="#look-2" style="--x:49%;--y:40%" aria-label="۲: شلوار پارچه‌ای دمپا گشاد">۲</a>
-        <a class="hotspot" href="#look-3" style="--x:20%;--y:72%" aria-label="۳: نیم‌بوت چرم">۳</a>
-        <a class="hotspot" href="#look-4" style="--x:20%;--y:30%" aria-label="۴: کیف دستی چرم">۴</a>
+        <img src="assets/images/clothing/home/lookbook-model.webp" alt="مدل با ست پاییزی: پالتو پشمی، شلوار دمپا گشاد، نیم‌بوت و کیف چرم" width="1122" height="1402" loading="lazy" decoding="async">
+        <div class="hs" style="--x:30%;--y:44%">
+          <a class="hotspot" href="#look-1" aria-label="۱: پالتو بلند پشمی"><span aria-hidden="true">+</span></a>
+          <div class="hs-card" role="tooltip"><img src="assets/images/clothing/products/coat.webp" alt="" width="64" height="80" loading="lazy" decoding="async"><span><strong>پالتو بلند پشمی</strong><em><span class="num">۳<span class="num-sep">٬</span>۸۸۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em><a href="product-coat.html">جزئیات محصول</a></span></div>
+        </div>
+        <div class="hs" style="--x:44%;--y:72%">
+          <a class="hotspot" href="#look-2" aria-label="۲: شلوار پارچه‌ای دمپا گشاد"><span aria-hidden="true">+</span></a>
+          <div class="hs-card" role="tooltip"><img src="assets/images/clothing/products/pants.webp" alt="" width="64" height="80" loading="lazy" decoding="async"><span><strong>شلوار پارچه‌ای دمپا گشاد</strong><em><span class="num">۱<span class="num-sep">٬</span>۳۵۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em><a href="product-pants.html">جزئیات محصول</a></span></div>
+        </div>
+        <div class="hs" style="--x:33%;--y:93%">
+          <a class="hotspot" href="#look-3" aria-label="۳: نیم‌بوت چرم پاشنه‌دار"><span aria-hidden="true">+</span></a>
+          <div class="hs-card" role="tooltip"><img src="assets/images/clothing/products/boot.webp" alt="" width="64" height="80" loading="lazy" decoding="async"><span><strong>نیم‌بوت چرم پاشنه‌دار</strong><em><span class="num">۲<span class="num-sep">٬</span>۸۵۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em><a href="product-boot.html">جزئیات محصول</a></span></div>
+        </div>
+        <div class="hs" style="--x:67%;--y:66%">
+          <a class="hotspot" href="#look-4" aria-label="۴: کیف دستی چرم طبیعی"><span aria-hidden="true">+</span></a>
+          <div class="hs-card" role="tooltip"><img src="assets/images/clothing/products/bag.webp" alt="" width="64" height="80" loading="lazy" decoding="async"><span><strong>کیف دستی چرم طبیعی</strong><em><span class="num">۳<span class="num-sep">٬</span>۱۵۰<span class="num-sep">٬</span>۰۰۰</span> <small>تومان</small></em><a href="product-bag.html">جزئیات محصول</a></span></div>
+        </div>
       </div>
       <div class="lookbook-body reveal" style="--d:120ms">
         <p class="eyebrow">لوک‌بوک پاییز</p>
-        <h2 class="section-title" id="look-title">استایل کامل: یک روز خنک در شهر</h2>
+        <h2 class="section-title" id="look-title">ست کامل یک روز پاییزی</h2>
         <p class="mt-3 text-muted">چهار تکه که با هم ساخته شده‌اند؛ هر کدام را جدا بخرید یا کل ست را یک‌جا به سبد اضافه کنید.</p>
         <ol class="look-list" data-look>
 
@@ -1220,37 +1260,90 @@
   </section>
   <!-- ===== پایان: لوک‌بوک ===== -->
 
-  <!-- ===== شروع: حراج فصل (تاریخ پایان حراج در data-countdown) ===== -->
-  <section class="section pt-0" aria-labelledby="sale-title">
+  <!-- ===== شروع: پیشنهادهای فصل (اسلایدر کارت‌ها؛ تاریخ پایان حراج در data-countdown) ===== -->
+  <section class="section sale-zone" aria-labelledby="sale-title" data-rail data-rail-auto="5000">
     <div class="container-site">
-      <div class="fs-sale">
-        <p class="fs-sale-big" aria-hidden="true"><small>تا</small>۴۰<span>٪</span></p>
-        <div class="fs-sale-body">
-          <p class="fs-sale-kicker">حراج پایان فصل</p>
-          <h2 class="fs-sale-title" id="sale-title">زمستان را با تخفیف شروع کنید</h2>
-          <p class="fs-sale-note">پالتو، کاپشن و نیم‌بوت؛ فقط تا پایان مهلت زیر</p>
-          <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان حراج">
-            <span><strong data-cd="days">۰۰</strong>روز</span>
-            <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-            <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-            <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
-          </div>
-          <a class="btn fs-sale-btn" href="shop.html?sale=1">ورود به حراج <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="section-head sale-head reveal">
+        <div>
+          <h2 class="section-title" id="sale-title">تخفیف‌های داغ این فصل</h2>
+          <p class="section-sub">پیشنهادهای محدود؛ پیش از تمام شدن موجودی</p>
         </div>
-        <figure class="fs-sale-media"><img src="assets/images/clothing/home/banner-sale.webp" alt="رگال لباس‌های پاییزی حراج" width="1200" height="700" loading="lazy" decoding="async"></figure>
+        <div class="rail-nav">
+          <button type="button" class="rail-btn" data-rail-prev aria-label="پیشنهاد قبلی"><svg class="icon rail-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button type="button" class="rail-btn" data-rail-next aria-label="پیشنهاد بعدی"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
       </div>
+      <ul class="rail-track offer-track" role="list">
+          <li class="offer offer--main">
+            <a class="offer-link" href="shop.html?sale=1" aria-label="خرید حراج با تا ۴۰٪ تخفیف">
+              <span class="offer-media"><img src="assets/images/clothing/home/banner-sale.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>تخفیف</small>تا ۴۰٪</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">پایان فصل</p>
+              <h3 class="offer-title">پالتو و کاپشن زمستانی</h3>
+              <div class="countdown offer-cd" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان حراج">
+                <span><strong data-cd="days">۰۰</strong>روز</span>
+                <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+              </div>
+              <a class="offer-btn" href="shop.html?sale=1">خرید حراج <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="offer">
+            <a class="offer-link" href="shop.html?cat=men" aria-label="خرید کت و پیراهن با ۲۵٪ تخفیف">
+              <span class="offer-media"><img src="assets/images/clothing/promo/promo-formal.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>تخفیف</small>۲۵٪</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">استایل رسمی</p>
+              <h3 class="offer-title">کت و پیراهن مردانه</h3>
+              <a class="offer-btn" href="shop.html?cat=men">خرید کت و پیراهن <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="offer">
+            <a class="offer-link" href="shop.html?cat=kids" aria-label="خرید بچگانه با ۳۰٪ تخفیف">
+              <span class="offer-media"><img src="assets/images/clothing/promo/promo-kids.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>تخفیف</small>۳۰٪</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">بازگشت به مدرسه</p>
+              <h3 class="offer-title">ست‌های راحت بچگانه</h3>
+              <a class="offer-btn" href="shop.html?cat=kids">خرید بچگانه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="offer">
+            <a class="offer-link" href="shop.html?collection=autumn" aria-label="خرید کالکشن پاییز با ۲۰٪ تخفیف">
+              <span class="offer-media"><img src="assets/images/clothing/promo/promo-autumn.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>تخفیف</small>۲۰٪</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">کالکشن پاییز</p>
+              <h3 class="offer-title">پالتو، بافت و بوت</h3>
+              <a class="offer-btn" href="shop.html?collection=autumn">خرید کالکشن پاییز <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+      </ul>
 
-      <a class="fs-knit" href="shop.html?cat=women-knit">
-        <figure class="fs-knit-media"><img src="assets/images/clothing/products/w-knit-059.webp" alt="" width="720" height="960" loading="lazy" decoding="async"></figure>
-        <span class="fs-knit-body">
-          <span class="fs-knit-off">۳۰٪</span>
-          <span class="fs-knit-text"><strong>بافت‌های دست‌دوز</strong>ژاکت و پلیورهای پشمی، این هفته با تخفیف</span>
-          <span class="fs-knit-link">خرید بافت <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
+      <!-- بنر بافت‌ها: متن و دکمه سمت راست، بافت‌های رنگی سمت چپ -->
+      <div class="knit-banner">
+        <div class="knit-text">
+          <p class="knit-kicker"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> فقط این هفته</p>
+          <h3 class="knit-title">بافت‌های دست‌دوز <span>۳۰٪ تخفیف</span></h3>
+          <p class="knit-note">ژاکت، یقه‌اسکی و پلیور پشمی در رنگ‌های پاییزی؛ نرم، گرم و ماندگار.</p>
+          <div class="knit-actions">
+            <a class="btn btn-primary" href="shop.html?cat=women-knit">خرید بافت <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <span class="knit-meta"><strong>۱۴</strong> مدل موجود</span>
+          </div>
+        </div>
+        <ul class="knit-tiles" role="list" aria-label="نمونه‌ی بافت‌ها">
+          <li><a href="product-w-knit-059.html"><img src="assets/images/clothing/products/w-knit-059.webp" alt="یقه‌اسکی بافت رنگی" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-w-knit-060.html"><img src="assets/images/clothing/products/w-knit-060.webp" alt="بافت یقه‌اسکی و ژاکت" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-w-knit-048.html"><img src="assets/images/clothing/products/w-knit-048.webp" alt="یقه‌اسکی بافت" width="720" height="960" loading="lazy" decoding="async"></a></li><li><a href="product-w-knit-518.html"><img src="assets/images/clothing/products/w-knit-518.webp" alt="جلیقه‌ی بافت گل‌دار" width="720" height="960" loading="lazy" decoding="async"></a></li>
+        </ul>
+      </div>
     </div>
   </section>
-  <!-- ===== پایان: حراج فصل ===== -->
+  <!-- ===== پایان: پیشنهادهای فصل ===== -->
 
   <!-- ===== شروع: خرید بر اساس استایل ===== -->
   <section class="section pt-0" aria-labelledby="style-title">
@@ -1427,14 +1520,14 @@
         <p class="news-success" tabindex="-1" data-newsletter-success hidden>ممنون! عضویت شما ثبت شد.</p>
 
         <!-- لینک صفحه‌های شبکه‌های اجتماعی خود را جایگزین کنید (فعلاً به صفحه‌ی تماس می‌روند) -->
-        <ul role="list" class="socials" aria-label="شبکه‌های اجتماعی">
-          <li><a href="contact.html#social" aria-label="اینستاگرام"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="تلگرام"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="واتس‌اپ"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        <ul role="list" class="socials socials--wide" aria-label="شبکه‌های اجتماعی">
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>اینستاگرام</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>تلگرام</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>واتس‌اپ</span></a></li>
         </ul>
 
         <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
-        <ul role="list" class="trust-slots" aria-label="نمادهای اعتماد">
+        <ul role="list" class="trust-slots trust-slots--wide" aria-label="نمادهای اعتماد">
           <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="نمونه‌ی نماد اعتماد" width="120" height="120" loading="lazy"></li>
           <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="نمونه‌ی نماد ساماندهی" width="120" height="120" loading="lazy"></li>
         </ul>

@@ -23,6 +23,7 @@
   <!-- آیکون‌ها (طراحی اختصاصی قالب، خطی ۲۴×۲۴). استفاده: <svg class="icon"><use href="#i-search"/></svg> -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden" aria-hidden="true" focusable="false">
   <symbol id="i-logo" viewBox="0 0 40 40"><path d="M25.5 6.5a14 14 0 1 0 8 23.6A11.5 11.5 0 0 1 25.5 6.5Z" fill="currentColor"/><path d="M29.5 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9Z" fill="currentColor"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.75"/><path d="M4.75 20c.9-3.6 3.8-5.5 7.25-5.5s6.35 1.9 7.25 5.5"/></symbol>
   <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" class="i-heart"><path d="M12 19.5s-7.5-4.4-7.5-10A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7.5 2.5c0 5.6-7.5 10-7.5 10Z"/></symbol>
@@ -72,15 +73,14 @@
 <!-- ===== شروع: نوار بالای صفحه ===== -->
 <div class="topbar" id="top">
   
+  <!-- دو گروه یکسان، هر کدام دست‌کم به پهنای صفحه؛ با جابه‌جایی به اندازه‌ی یک گروه، حرکت بی‌وقفه و بی‌پایان است -->
   <div class="topbar-marquee" aria-label="Announcements">
-    <ul role="list" class="topbar-track">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-      <li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Fast nationwide delivery</li>
-    </ul>
+    <div class="topbar-track">
+
+      <ul role="list" class="topbar-group"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>7-day size exchange, no questions asked</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Code WELCOME for 10% off your first order</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Every item is guaranteed authentic</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>Free size advice, daily 9 am–9 pm</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Secure payment with all major cards</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>The autumn collection is here: coats and knits</li></ul>
+      <ul role="list" class="topbar-group" aria-hidden="true"><li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>Free shipping on orders over $100</li><li><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg>7-day size exchange, no questions asked</li><li><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>Code WELCOME for 10% off your first order</li><li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Every item is guaranteed authentic</li><li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg>Free size advice, daily 9 am–9 pm</li><li><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg>Secure payment with all major cards</li><li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>The autumn collection is here: coats and knits</li></ul>
+
+    </div>
   </div>
 </div>
 <!-- ===== پایان: نوار بالای صفحه ===== -->
@@ -212,6 +212,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">Best sellers: Men</p>
+                <ul>
+                  <li><a href="product-m-formal-463.html"><img src="assets/images/clothing/products/m-formal-463.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Oxblood Leather Moccasins</strong><em><span class="num">$118</span> <small></small></em></span></a></li><li><a href="product-m-hoodie-450.html"><img src="assets/images/clothing/products/m-hoodie-450.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Navy Zip Knit Cardigan</strong><em><span class="num">$119</span> <small></small></em></span></a></li><li><a href="product-m-bag-092.html"><img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Leather Document Case</strong><em><span class="num">$221</span> <small></small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -258,6 +265,13 @@
                 </ul>
               </div>
 
+              <div class="mega-featured">
+                <p class="mega-col-title">Best sellers: Kids</p>
+                <ul>
+                  <li><a href="product-b-jacket-246.html"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Kids&#39; Printed Windbreaker</strong><em><span class="num">$111</span> <small></small></em></span></a></li><li><a href="product-g-dress-414.html"><img src="assets/images/clothing/products/g-dress-414.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Pink Bunny Pinafore</strong><em><span class="num">$91</span> <small></small></em></span></a></li><li><a href="product-g-set-256.html"><img src="assets/images/clothing/products/g-set-256.webp" alt="" width="56" height="72" loading="lazy" decoding="async"><span><strong>Top and Navy Leggings Set</strong><em><span class="num">$85</span> <small></small></em></span></a></li>
+                </ul>
+              </div>
+
             </div>
 
             <div class="mega-promos">
@@ -279,13 +293,13 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="shop.html?sort=newest">New In</a>
+        <a class="main-nav-link has-badge" href="shop.html?sort=newest">New In<span class="nav-badge">New</span></a>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link is-accent" href="shop.html?sale=1">Sale</a>
+        <a class="main-nav-link is-accent has-badge" href="shop.html?sale=1"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>Sale<span class="nav-badge">%40</span></a>
 
       </li>
 
@@ -447,8 +461,13 @@
      برای پرداخت واقعی، آن را به فروشگاه یا سیستم سفارش خود وصل کنید (راهنما را ببینید). -->
 <div class="drawer drawer-end" id="mini-cart" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title" data-drawer data-mini-cart inert>
   <div class="drawer-head">
-    <h2 class="drawer-title" id="mini-cart-title">Shopping cart <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
+    <h2 class="drawer-title mc-title" id="mini-cart-title"><span class="mc-title-ico"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>Shopping cart <span class="text-sm font-normal text-muted" data-cart-heading-count></span></h2>
     <button type="button" class="icon-btn drawer-close" data-drawer-close aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+
+  <div class="mc-ship" data-mc-ship hidden>
+    <p data-mc-ship-text></p>
+    <i aria-hidden="true"><b data-mc-ship-bar></b></i>
   </div>
 
   <div class="drawer-body">
@@ -466,11 +485,14 @@
   </div>
 
   <div class="drawer-foot" data-cart-foot>
+    <ul class="mc-sum" role="list">
+      <li><span><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Shipping</span><span data-mc-ship-cost>Calculated at checkout</span></li>
+    </ul>
     <div class="cart-total">
       <span>Total</span>
       <p><span class="cart-total-amount" data-cart-total>0</span> <span class="text-sm"></span></p>
     </div>
-    <p class="cart-note">Shipping is calculated at checkout.</p>
+    <p class="cart-note mc-trust"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Secure payment · <svg class="icon" aria-hidden="true"><use href="#i-return"/></svg> 7-day exchange</p>
     <div class="cart-buttons">
       <a href="cart.html" class="btn btn-outline">View cart</a>
       <a href="checkout.html" class="btn btn-primary">Checkout</a>
@@ -492,36 +514,48 @@
 
 <main id="main">
   <div class="container-site pb-16">
-    <div class="shop-head">
-      <h1 class="section-title">Terms & Conditions</h1>
-      <p class="shop-head-count">Terms of purchase, shipping and returns</p>
-    </div>
+    <!-- ===== شروع: سربرگ صفحه با تصویرسازی ===== -->
+    <section class="lg-hero">
+      <div class="lg-hero-text">
+        <p class="lg-chip"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> Last updated: Oct 23, 2026</p>
+        <h1 class="lg-title">Terms & Conditions</h1>
+        <p class="lg-sub">Read our shopping, shipping and return terms once and shop with peace of mind.</p>
+      </div>
+      <svg class="lg-art" viewBox="0 0 240 200" aria-hidden="true">
+        <circle cx="130" cy="100" r="88" fill="rgb(var(--c-accent) / .1)"/>
+        <rect x="70" y="30" width="110" height="140" rx="14" fill="#fff" stroke="rgb(var(--c-accent))" stroke-width="3"/>
+        <path d="M90 62h70M90 82h70M90 102h50M90 122h60" stroke="rgb(var(--c-ink) / .25)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M150 118c0 22 14 34 30 40 16-6 30-18 30-40v-18l-30-10-30 10Z" fill="rgb(var(--c-accent))"/>
+        <path d="m168 128 9 9 17-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="52" cy="58" r="6" fill="rgb(var(--c-accent) / .45)"/><circle cx="212" cy="46" r="4" fill="rgb(var(--c-accent) / .6)"/>
+      </svg>
+    </section>
+    <ul class="lg-summary" role="list"><li><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><span><strong>2–7 day delivery</strong><small>nationwide</small></span></li><li><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><span><strong>7-day returns</strong><small>No questions asked</small></span></li><li><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><span><strong>Secure payment</strong><small>trusted payment gateway</small></span></li></ul>
+    <!-- ===== پایان: سربرگ ===== -->
+
     <div class="doc-layout">
-    <div class="doc-main" data-doc>
-      <div class="faq-group">
-        <h2 class="faq-group-title">Acceptance of terms</h2>
-        <p style="margin-block:.6rem;line-height:2">Using this store means you accept the terms below.</p>
-      </div>
-      <div class="faq-group">
-        <h2 class="faq-group-title">Prices & payment</h2>
-        <p style="margin-block:.6rem;line-height:2">Prices are in US dollars and are calculated at the time the order is placed. Payment is made through an online gateway and the order is processed once payment is confirmed.</p>
-      </div>
-      <div class="faq-group">
-        <h2 class="faq-group-title">Shipping & delivery</h2>
-        <p style="margin-block:.6rem;line-height:2">We ship nationwide and delivery usually takes 2 to 7 business days depending on the destination. Orders over $100 ship free.</p>
-      </div>
-      <div class="faq-group">
-        <h2 class="faq-group-title" id="returns">Returns & exchanges</h2>
-        <p style="margin-block:.6rem;line-height:2">You can request a return or exchange within 7 days of receiving your item. Items must be unused and in their original packaging. If an item is defective or incorrect, the store pays for return shipping.</p>
-      </div>
-      <div class="faq-group">
-        <h2 class="faq-group-title">Account</h2>
-        <p style="margin-block:.6rem;line-height:2">You are responsible for keeping your sign-in details safe.</p>
-      </div>
-      <div class="faq-group">
-        <h2 class="faq-group-title">Note for the store owner</h2>
-        <p style="margin-block:.6rem;line-height:2">This text is a sample. Before launching your real store, replace it with your own business rules.</p>
-      </div>
+    <div class="doc-main lg-list" data-doc>
+      <details class="lg-item" open>
+        <summary><span class="lg-num">1</span><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><h2>Acceptance of terms</h2><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <ul class="lg-body" role="list"><li>Using the store and placing an order means you accept these terms.</li><li>These terms may change; the last update date is shown at the top of this page.</li></ul>
+      </details>
+      <details class="lg-item">
+        <summary><span class="lg-num">2</span><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><h2>Prices & payment</h2><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <ul class="lg-body" role="list"><li>Prices are in US dollars and are fixed when you place the order.</li><li>Payment is made online and the order is processed once payment is confirmed.</li><li>Discount codes apply only to full-price items.</li></ul>
+      </details>
+      <details class="lg-item">
+        <summary><span class="lg-num">3</span><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><h2>Shipping & delivery</h2><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <ul class="lg-body" role="list"><li>We ship nationwide; delivery usually takes 2 to 7 business days depending on the destination.</li><li>Orders over $100 ship free.</li><li>You get a tracking code by text once the order ships.</li></ul>
+      </details>
+      <details class="lg-item">
+        <summary><span class="lg-num">4</span><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><h2 id="returns">Returns & exchanges</h2><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <ul class="lg-body" role="list"><li>You can request a return or exchange within 7 days of delivery.</li><li>Items must be unused, with tags, in their original packaging.</li><li>If an item is faulty or wrong, we pay the return shipping.</li></ul>
+      </details>
+      <details class="lg-item">
+        <summary><span class="lg-num">5</span><span class="lg-ico"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span><h2>Account</h2><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <ul class="lg-body" role="list"><li>You are responsible for keeping your sign-in details safe.</li><li>If you notice suspicious activity, change your password and contact support right away.</li></ul>
+      </details>
+      <p class="lg-note"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg> This is sample text. Replace it with your own business rules before launching a real store.</p>
     </div>
     <!-- ستون کناری صفحه‌های راهنما: فهرست بخش‌ها (خودکار از تیترها) و راه‌های تماس -->
 <aside class="doc-aside" aria-label="More help">
@@ -644,14 +678,14 @@
         <p class="news-success" tabindex="-1" data-newsletter-success hidden>Thank you! You are subscribed.</p>
 
         <!-- لینک صفحه‌های شبکه‌های اجتماعی خود را جایگزین کنید (فعلاً به صفحه‌ی تماس می‌روند) -->
-        <ul role="list" class="socials" aria-label="Social media">
-          <li><a href="contact.html#social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="Telegram"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
-          <li><a href="contact.html#social" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+        <ul role="list" class="socials socials--wide" aria-label="Social media">
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>WhatsApp</span></a></li>
         </ul>
 
         <!-- نمادهای اعتماد نمونه (با برچسب «نمونه»): کد یا تصویر نمادهای واقعی سایت خود را به‌جای این دو تصویر قرار دهید -->
-        <ul role="list" class="trust-slots" aria-label="Trust badges">
+        <ul role="list" class="trust-slots trust-slots--wide" aria-label="Trust badges">
           <li class="trust-slot"><img src="assets/images/trust-sample-1.svg" alt="Sample trust badge" width="120" height="120" loading="lazy"></li>
           <li class="trust-slot"><img src="assets/images/trust-sample-2.svg" alt="Sample registration badge" width="120" height="120" loading="lazy"></li>
         </ul>
