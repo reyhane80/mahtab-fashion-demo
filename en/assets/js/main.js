@@ -1063,7 +1063,7 @@
      با data-rail-auto="5000" خودکار و در حلقه‌ی بی‌پایان جلو می‌رود؛ بعد از آخرین کارت به اولی برمی‌گردد.
      با نگه داشتن ماوس یا فوکوس متوقف می‌شود و در حالت «کاهش حرکت» خودکار نمی‌چرخد.
      ------------------------------------------------------------------------ */
-  function initRails() {
+  function initCardRails() {
     document.querySelectorAll('[data-rail]').forEach((rail) => {
       const track = rail.querySelector('.rail-track');
       if (!track) return;
@@ -1072,11 +1072,32 @@
       const pos = () => Math.abs(track.scrollLeft);
       const max = () => track.scrollWidth - track.clientWidth;
       const step = () => { const first = items()[0]; if (!first) return track.clientWidth; const gap = parseFloat(getComputedStyle(track).columnGap) || 0; return first.getBoundingClientRect().width + gap; };
+      // اسکرول با انیمیشن خود قالب (در همه‌ی مرورگرها، حتی با scroll-snap) — بدون وابستگی به scroll-behavior
+      let anim = null;
+      const animate = (target) => {
+        cancelAnimationFrame(anim);
+        const from = pos();
+        const dist = target - from;
+        const set = (v) => { track.scrollLeft = rtl ? -v : v; };
+        track.style.scrollSnapType = 'none';
+        track.style.scrollBehavior = 'auto';
+        const done = () => { set(target); track.style.scrollSnapType = ''; track.style.scrollBehavior = ''; };
+        if (prefersReducedMotion() || Math.abs(dist) < 2) { done(); return; }
+        const t0 = performance.now();
+        const dur = 550;
+        const tick = (now) => {
+          const k = Math.min(1, (now - t0) / dur);
+          const e = 1 - Math.pow(1 - k, 3);
+          set(from + dist * e);
+          if (k < 1) anim = requestAnimationFrame(tick); else done();
+        };
+        anim = requestAnimationFrame(tick);
+      };
       const go = (dir) => {
         let target;
         if (dir > 0) target = pos() >= max() - 4 ? 0 : Math.min(max(), pos() + step());
         else target = pos() <= 4 ? max() : Math.max(0, pos() - step());
-        track.scrollTo({ left: rtl ? -target : target, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        animate(target);
       };
       const next = rail.querySelector('[data-rail-next]');
       const prev = rail.querySelector('[data-rail-prev]');
@@ -2101,7 +2122,7 @@
   initProductVariants();
   initProductAddToCart();
   initSliders();
-  initRails();
+  initCardRails();
   initAuth();
   initParallax();
   initCommentLikes();
