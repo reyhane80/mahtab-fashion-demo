@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.1.0-11101229">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1.0-11101239">
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -1273,8 +1273,9 @@
           <button type="button" class="rail-btn" data-rail-next aria-label="Next offer"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </div>
-      <ul class="rail-track offer-track" role="list">
-          <li class="offer offer--main">
+      <!-- کارت حراج ثابت می‌ماند؛ فقط کارت‌های کنار آن اسکرول می‌شوند -->
+      <div class="offer-layout">
+          <div class="offer offer--main">
             <a class="offer-link" href="shop.html?sale=1" aria-label="Shop the sale at up to 40% off">
               <span class="offer-media"><img src="assets/images/clothing/home/banner-sale.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
               <span class="offer-off"><small>Discount</small>up to 40%</span>
@@ -1290,7 +1291,8 @@
               </div>
               <a class="offer-btn" href="shop.html?sale=1">Shop the sale <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-          </li>
+          </div>
+        <ul class="rail-track offer-track" role="list">
           <li class="offer">
             <a class="offer-link" href="shop.html?cat=men" aria-label="Shop jackets & shirts at 25% off">
               <span class="offer-media"><img src="assets/images/clothing/promo/promo-formal.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
@@ -1324,7 +1326,30 @@
               <a class="offer-btn" href="shop.html?collection=autumn">Shop the autumn collection <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
           </li>
-      </ul>
+          <li class="offer">
+            <a class="offer-link" href="shop.html?cat=women" aria-label="Shop women's dresses and tunics at 25% off">
+              <span class="offer-media"><img src="assets/images/clothing/home/style-party.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>Discount</small>25%</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">Party & Occasion</p>
+              <h3 class="offer-title">Women's Dresses & Tunics</h3>
+              <a class="offer-btn" href="shop.html?cat=women">Shop women <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+          <li class="offer">
+            <a class="offer-link" href="shop.html?cat=bags" aria-label="Shop bags and shoes at 15% off">
+              <span class="offer-media"><img src="assets/images/clothing/home/cat-bags.webp" alt="" width="600" height="750" loading="lazy" decoding="async"></span>
+              <span class="offer-off"><small>Discount</small>15%</span>
+            </a>
+            <div class="offer-body">
+              <p class="offer-kicker">Finish the look</p>
+              <h3 class="offer-title">Leather Bags & Shoes</h3>
+              <a class="offer-btn" href="shop.html?cat=bags">Shop bags & shoes <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <!-- بنر بافت‌ها: متن و دکمه سمت راست، بافت‌های رنگی سمت چپ -->
       <div class="knit-banner">
@@ -1545,7 +1570,7 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.1.0-11101229" defer></script>
+  <script src="assets/js/main.js?v=1.1.0-11101239" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>
