@@ -1103,6 +1103,17 @@
       const prev = rail.querySelector('[data-rail-prev]');
       if (next) next.addEventListener('click', () => { go(1); play(); });
       if (prev) prev.addEventListener('click', () => { go(-1); play(); });
+      // دکمه‌های پرش مستقیم (data-rail-to="شماره‌ی کارت از صفر") و علامت‌گذاری کارت فعلی
+      const jumps = Array.from(rail.querySelectorAll('[data-rail-to]'));
+      if (jumps.length) {
+        const mark = () => {
+          const i = Math.round(pos() / Math.max(1, step()));
+          jumps.forEach((j) => { const on = parseInt(j.dataset.railTo, 10) === i; j.classList.toggle('is-active', on); j.setAttribute('aria-pressed', String(on)); });
+        };
+        jumps.forEach((j) => j.addEventListener('click', () => { animate(Math.min(max(), (parseInt(j.dataset.railTo, 10) || 0) * step())); play(); }));
+        track.addEventListener('scroll', () => window.requestAnimationFrame(mark), { passive: true });
+        mark();
+      }
       let timer = null;
       const delay = parseInt(rail.dataset.railAuto, 10);
       const stop = () => timer && (clearInterval(timer), (timer = null));

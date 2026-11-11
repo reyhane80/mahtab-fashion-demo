@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.2.0-11102338">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2.0-11110041">
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -304,7 +304,7 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link has-tag" href="shop.html?sort=newest">New In<span class="nav-tag">New</span></a>
+        <a class="main-nav-link is-fresh" href="shop.html?sort=newest"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>New In</a>
 
       </li>
 
@@ -437,7 +437,7 @@
 
       <li>
 
-        <a class="m-nav-link" href="shop.html?sort=newest">New In<span class="nav-tag">New</span></a>
+        <a class="m-nav-link" href="shop.html?sort=newest">New In</a>
 
       </li>
 
@@ -708,8 +708,8 @@
   </section>
   <!-- ===== پایان: دسته‌های دایره‌ای ===== -->
 
-  <!-- ===== شروع: پیشنهادهای ویژه (اسلایدر؛ هر اسلاید یک محصول با شناسه‌ی find products "…"؛ برای تغییر، شناسه‌ها را عوض کنید) ===== -->
-  <section class="section pt-0" aria-labelledby="b-deal-title">
+  <!-- ===== شروع: پیشنهادهای ویژه (اسلایدر؛ هر اسلاید یک محصول با شناسه‌ی find products "…"؛ همان شناسه‌ها را در ردیف تصاویر کوچک پایین هم بگذارید) ===== -->
+  <section class="section pt-0 dl-zone" aria-labelledby="b-deal-title">
     <div class="container-site" data-rail data-rail-auto="7000">
       <div class="section-head reveal">
         <div>
@@ -721,238 +721,213 @@
           <button type="button" class="rail-btn" data-rail-next aria-label="Next offer"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </div>
-      <ul class="rail-track b-deal-track reveal" role="list">
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-men-blazer" data-product-name="Men&#39;s Blazer" data-product-price="180" data-product-image="assets/images/clothing/products/blazer.webp">
-      <a class="b-deal-media" href="product-blazer.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200" loading="lazy">
-        <span class="b-deal-off"><small>Discount</small>16%</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Deal of the week</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (32 reviews)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-blazer.html">Men&#39;s Blazer</a></h3>
-        <p class="b-deal-text">A two-button blazer with a slim cut for formal and smart-casual looks.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarv</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> Size 48، 50، 52، 54</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Free shipping</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>Special price</small>
-            <del><span class="num">$215</span></del>
-            <p><strong><span class="num">$180</span></strong> <span></span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>Offer ends in</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
-              <span><strong data-cd="days">00</strong>Days</span>
-              <span><strong data-cd="hours">00</strong>Hours</span>
-              <span><strong data-cd="minutes">00</strong>Min</span>
-              <span><strong data-cd="seconds">00</strong>Sec</span>
+      <div class="dl-frame reveal">
+        <ul class="rail-track dl-track" role="list">
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-men-blazer" data-product-name="Men&#39;s Blazer" data-product-price="180" data-product-image="assets/images/clothing/products/blazer.webp">
+            <a class="dl-media" href="product-blazer.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200"></span>
+              <span class="dl-off"><small>Discount</small>16%</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarv</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (32 reviews)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-blazer.html">Men&#39;s Blazer</a></h3>
+              <p class="dl-text">A two-button blazer with a slim cut for formal and smart-casual looks.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">$180</span></strong> <span></span></p>
+                <del><span class="num">$215</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>Offer ends in</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+                    <span><strong data-cd="days">00</strong>Days</span>
+                    <span><strong data-cd="hours">00</strong>Hours</span>
+                    <span><strong data-cd="minutes">00</strong>Min</span>
+                    <span><strong data-cd="seconds">00</strong>Sec</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="68% of stock sold">
+                  <span><strong>68%</strong> sold</span><span>Only 9 left</span>
+                  <i aria-hidden="true"><b style="width:68%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+                <a class="btn btn-outline" href="product-blazer.html">Product details</a>
+              </div>
             </div>
-          </div>
-          <div class="b-deal-stock" aria-label="68% of stock sold">
-            <span><strong>68%</strong> sold</span><span>Only 9 left</span>
-            <i aria-hidden="true"><b style="width:68%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
-          <a class="btn btn-outline" href="product-blazer.html">Product details</a>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-m-jacket-034" data-product-name="Men&#39;s Navy Jacket" data-product-price="234" data-product-image="assets/images/clothing/products/m-jacket-034.webp">
+            <a class="dl-media" href="product-m-jacket-034.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>Discount</small>15%</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Parnian</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (119 reviews)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-m-jacket-034.html">Men&#39;s Navy Jacket</a></h3>
+              <p class="dl-text">Men&#39;s Navy Jacket with a simple design that fits any style.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">$234</span></strong> <span></span></p>
+                <del><span class="num">$275</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>Offer ends in</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+                    <span><strong data-cd="days">00</strong>Days</span>
+                    <span><strong data-cd="hours">00</strong>Hours</span>
+                    <span><strong data-cd="minutes">00</strong>Min</span>
+                    <span><strong data-cd="seconds">00</strong>Sec</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="54% of stock sold">
+                  <span><strong>54%</strong> sold</span><span>Only 14 left</span>
+                  <i aria-hidden="true"><b style="width:54%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+                <a class="btn btn-outline" href="product-m-jacket-034.html">Product details</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-w-dress-425" data-product-name="Pink Party Dress" data-product-price="81" data-product-image="assets/images/clothing/products/w-dress-425.webp">
+            <a class="dl-media" href="product-w-dress-425.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>Discount</small>15%</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarvnaz</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (107 reviews)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-w-dress-425.html">Pink Party Dress</a></h3>
+              <p class="dl-text">Pink Party Dress in soft tones that go with most of your wardrobe.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">$81</span></strong> <span></span></p>
+                <del><span class="num">$95</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>Offer ends in</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+                    <span><strong data-cd="days">00</strong>Days</span>
+                    <span><strong data-cd="hours">00</strong>Hours</span>
+                    <span><strong data-cd="minutes">00</strong>Min</span>
+                    <span><strong data-cd="seconds">00</strong>Sec</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="81% of stock sold">
+                  <span><strong>81%</strong> sold</span><span>Only 5 left</span>
+                  <i aria-hidden="true"><b style="width:81%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+                <a class="btn btn-outline" href="product-w-dress-425.html">Product details</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-m-formal-109" data-product-name="Brown Suede Loafers" data-product-price="161" data-product-image="assets/images/clothing/products/m-formal-109.webp">
+            <a class="dl-media" href="product-m-formal-109.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>Discount</small>25%</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Della Leather</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4</strong> (123 reviews)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-m-formal-109.html">Brown Suede Loafers</a></h3>
+              <p class="dl-text">Brown Suede Loafers with a simple design that fits any style.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">$161</span></strong> <span></span></p>
+                <del><span class="num">$214</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>Offer ends in</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+                    <span><strong data-cd="days">00</strong>Days</span>
+                    <span><strong data-cd="hours">00</strong>Hours</span>
+                    <span><strong data-cd="minutes">00</strong>Min</span>
+                    <span><strong data-cd="seconds">00</strong>Sec</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="47% of stock sold">
+                  <span><strong>47%</strong> sold</span><span>Only 17 left</span>
+                  <i aria-hidden="true"><b style="width:47%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+                <a class="btn btn-outline" href="product-m-formal-109.html">Product details</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-b-jacket-246" data-product-name="Kids&#39; Printed Windbreaker" data-product-price="111" data-product-image="assets/images/clothing/products/b-jacket-246.webp">
+            <a class="dl-media" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>Discount</small>20%</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarvnaz</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (9 reviews)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-b-jacket-246.html">Kids&#39; Printed Windbreaker</a></h3>
+              <p class="dl-text">Kids&#39; Printed Windbreaker: comfy and durable for busy days.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">$111</span></strong> <span></span></p>
+                <del><span class="num">$138</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>Offer ends in</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
+                    <span><strong data-cd="days">00</strong>Days</span>
+                    <span><strong data-cd="hours">00</strong>Hours</span>
+                    <span><strong data-cd="minutes">00</strong>Min</span>
+                    <span><strong data-cd="seconds">00</strong>Sec</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="73% of stock sold">
+                  <span><strong>73%</strong> sold</span><span>Only 8 left</span>
+                  <i aria-hidden="true"><b style="width:73%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
+                <a class="btn btn-outline" href="product-b-jacket-246.html">Product details</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        </ul>
+        <div class="dl-thumbs" role="group" aria-label="Choose an offer">
+          <button type="button" class="dl-thumb" data-rail-to="0" aria-label="Men&#39;s Blazer"><img src="assets/images/clothing/products/blazer.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>Men&#39;s Blazer</span><em>16%</em></button><button type="button" class="dl-thumb" data-rail-to="1" aria-label="Men&#39;s Navy Jacket"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>Men&#39;s Navy Jacket</span><em>15%</em></button><button type="button" class="dl-thumb" data-rail-to="2" aria-label="Pink Party Dress"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>Pink Party Dress</span><em>15%</em></button><button type="button" class="dl-thumb" data-rail-to="3" aria-label="Brown Suede Loafers"><img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>Brown Suede Loafers</span><em>25%</em></button><button type="button" class="dl-thumb" data-rail-to="4" aria-label="Kids&#39; Printed Windbreaker"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>Kids&#39; Printed Windbreaker</span><em>20%</em></button>
         </div>
       </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-m-jacket-034" data-product-name="Men&#39;s Navy Jacket" data-product-price="234" data-product-image="assets/images/clothing/products/m-jacket-034.webp">
-      <a class="b-deal-media" href="product-m-jacket-034.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>Discount</small>15%</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Deal of the week</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.4</strong> (119 reviews)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-m-jacket-034.html">Men&#39;s Navy Jacket</a></h3>
-        <p class="b-deal-text">Men&#39;s Navy Jacket with a simple design that fits any style.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Parnian</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> Size M، L، XL، XXL</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Free shipping</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>Special price</small>
-            <del><span class="num">$275</span></del>
-            <p><strong><span class="num">$234</span></strong> <span></span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>Offer ends in</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
-              <span><strong data-cd="days">00</strong>Days</span>
-              <span><strong data-cd="hours">00</strong>Hours</span>
-              <span><strong data-cd="minutes">00</strong>Min</span>
-              <span><strong data-cd="seconds">00</strong>Sec</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="54% of stock sold">
-            <span><strong>54%</strong> sold</span><span>Only 14 left</span>
-            <i aria-hidden="true"><b style="width:54%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
-          <a class="btn btn-outline" href="product-m-jacket-034.html">Product details</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-w-dress-425" data-product-name="Pink Party Dress" data-product-price="81" data-product-image="assets/images/clothing/products/w-dress-425.webp">
-      <a class="b-deal-media" href="product-w-dress-425.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>Discount</small>15%</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Deal of the week</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.5</strong> (107 reviews)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-w-dress-425.html">Pink Party Dress</a></h3>
-        <p class="b-deal-text">Pink Party Dress in soft tones that go with most of your wardrobe.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarvnaz</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> Size S، M، L، XL</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Free shipping</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>Special price</small>
-            <del><span class="num">$95</span></del>
-            <p><strong><span class="num">$81</span></strong> <span></span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>Offer ends in</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
-              <span><strong data-cd="days">00</strong>Days</span>
-              <span><strong data-cd="hours">00</strong>Hours</span>
-              <span><strong data-cd="minutes">00</strong>Min</span>
-              <span><strong data-cd="seconds">00</strong>Sec</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="81% of stock sold">
-            <span><strong>81%</strong> sold</span><span>Only 5 left</span>
-            <i aria-hidden="true"><b style="width:81%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
-          <a class="btn btn-outline" href="product-w-dress-425.html">Product details</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-m-formal-109" data-product-name="Brown Suede Loafers" data-product-price="161" data-product-image="assets/images/clothing/products/m-formal-109.webp">
-      <a class="b-deal-media" href="product-m-formal-109.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>Discount</small>25%</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Deal of the week</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4</strong> (123 reviews)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-m-formal-109.html">Brown Suede Loafers</a></h3>
-        <p class="b-deal-text">Brown Suede Loafers with a simple design that fits any style.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Della Leather</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> Size 41، 42، 43، 44، 45</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Free shipping</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>Special price</small>
-            <del><span class="num">$214</span></del>
-            <p><strong><span class="num">$161</span></strong> <span></span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>Offer ends in</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
-              <span><strong data-cd="days">00</strong>Days</span>
-              <span><strong data-cd="hours">00</strong>Hours</span>
-              <span><strong data-cd="minutes">00</strong>Min</span>
-              <span><strong data-cd="seconds">00</strong>Sec</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="47% of stock sold">
-            <span><strong>47%</strong> sold</span><span>Only 17 left</span>
-            <i aria-hidden="true"><b style="width:47%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
-          <a class="btn btn-outline" href="product-m-formal-109.html">Product details</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-b-jacket-246" data-product-name="Kids&#39; Printed Windbreaker" data-product-price="111" data-product-image="assets/images/clothing/products/b-jacket-246.webp">
-      <a class="b-deal-media" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>Discount</small>20%</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> This week only</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> Deal of the week</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>4.6</strong> (9 reviews)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-b-jacket-246.html">Kids&#39; Printed Windbreaker</a></h3>
-        <p class="b-deal-text">Kids&#39; Printed Windbreaker: comfy and durable for busy days.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> Sarvnaz</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> Size 2 yrs، 4 yrs، 6 yrs، 8 yrs</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Free shipping</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>Special price</small>
-            <del><span class="num">$138</span></del>
-            <p><strong><span class="num">$111</span></strong> <span></span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>Offer ends in</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="Time left on this deal">
-              <span><strong data-cd="days">00</strong>Days</span>
-              <span><strong data-cd="hours">00</strong>Hours</span>
-              <span><strong data-cd="minutes">00</strong>Min</span>
-              <span><strong data-cd="seconds">00</strong>Sec</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="73% of stock sold">
-            <span><strong>73%</strong> sold</span><span>Only 8 left</span>
-            <i aria-hidden="true"><b style="width:73%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>Add to cart</span></button>
-          <a class="btn btn-outline" href="product-b-jacket-246.html">Product details</a>
-        </div>
-      </div>
-    </div>
-        </li>
-      </ul>
     </div>
   </section>
   <!-- ===== پایان: پیشنهاد ویژه ===== -->
@@ -2305,7 +2280,7 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.2.0-11102338" defer></script>
+  <script src="assets/js/main.js?v=1.2.0-11110041" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

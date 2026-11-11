@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.2.0-11102338">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2.0-11110041">
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -304,7 +304,7 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link has-tag" href="shop.html?sort=newest">کالکشن جدید<span class="nav-tag">جدید</span></a>
+        <a class="main-nav-link is-fresh" href="shop.html?sort=newest"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>کالکشن جدید</a>
 
       </li>
 
@@ -437,7 +437,7 @@
 
       <li>
 
-        <a class="m-nav-link" href="shop.html?sort=newest">کالکشن جدید<span class="nav-tag">جدید</span></a>
+        <a class="m-nav-link" href="shop.html?sort=newest">کالکشن جدید</a>
 
       </li>
 
@@ -708,8 +708,8 @@
   </section>
   <!-- ===== پایان: دسته‌های دایره‌ای ===== -->
 
-  <!-- ===== شروع: پیشنهادهای ویژه (اسلایدر؛ هر اسلاید یک محصول با شناسه‌ی find products "…"؛ برای تغییر، شناسه‌ها را عوض کنید) ===== -->
-  <section class="section pt-0" aria-labelledby="b-deal-title">
+  <!-- ===== شروع: پیشنهادهای ویژه (اسلایدر؛ هر اسلاید یک محصول با شناسه‌ی find products "…"؛ همان شناسه‌ها را در ردیف تصاویر کوچک پایین هم بگذارید) ===== -->
+  <section class="section pt-0 dl-zone" aria-labelledby="b-deal-title">
     <div class="container-site" data-rail data-rail-auto="7000">
       <div class="section-head reveal">
         <div>
@@ -721,238 +721,213 @@
           <button type="button" class="rail-btn" data-rail-next aria-label="پیشنهاد بعدی"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </div>
-      <ul class="rail-track b-deal-track reveal" role="list">
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-men-blazer" data-product-name="کت تک مردانه" data-product-price="3590000" data-product-image="assets/images/clothing/products/blazer.webp">
-      <a class="b-deal-media" href="product-blazer.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200" loading="lazy">
-        <span class="b-deal-off"><small>تخفیف</small>٪۱۶</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پیشنهاد ویژه‌ی این هفته</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۳۲ نظر)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-blazer.html">کت تک مردانه</a></h3>
-        <p class="b-deal-text">کت تک دو دکمه با برش جذب، برای استایل رسمی و نیمه‌رسمی.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سرو</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز 48، 50، 52، 54</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>قیمت ویژه</small>
-            <del><span class="num">۴<span class="num-sep">٬</span>۲۹۰<span class="num-sep">٬</span>۰۰۰</span></del>
-            <p><strong><span class="num">۳<span class="num-sep">٬</span>۵۹۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>تا پایان پیشنهاد</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
-              <span><strong data-cd="days">۰۰</strong>روز</span>
-              <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-              <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-              <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+      <div class="dl-frame reveal">
+        <ul class="rail-track dl-track" role="list">
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-men-blazer" data-product-name="کت تک مردانه" data-product-price="3590000" data-product-image="assets/images/clothing/products/blazer.webp">
+            <a class="dl-media" href="product-blazer.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/blazer.webp" alt="" width="900" height="1200"></span>
+              <span class="dl-off"><small>تخفیف</small>٪۱۶</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سرو</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۳۲ نظر)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-blazer.html">کت تک مردانه</a></h3>
+              <p class="dl-text">کت تک دو دکمه با برش جذب، برای استایل رسمی و نیمه‌رسمی.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">۳<span class="num-sep">٬</span>۵۹۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
+                <del><span class="num">۴<span class="num-sep">٬</span>۲۹۰<span class="num-sep">٬</span>۰۰۰</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>تا پایان پیشنهاد</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
+                    <span><strong data-cd="days">۰۰</strong>روز</span>
+                    <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                    <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                    <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="۶۸ درصد موجودی فروخته شده">
+                  <span><strong>۶۸٪</strong> فروخته شد</span><span>فقط ۹ عدد باقی مانده</span>
+                  <i aria-hidden="true"><b style="width:68%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
+                <a class="btn btn-outline" href="product-blazer.html">جزئیات محصول</a>
+              </div>
             </div>
-          </div>
-          <div class="b-deal-stock" aria-label="۶۸ درصد موجودی فروخته شده">
-            <span><strong>۶۸٪</strong> فروخته شد</span><span>فقط ۹ عدد باقی مانده</span>
-            <i aria-hidden="true"><b style="width:68%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
-          <a class="btn btn-outline" href="product-blazer.html">جزئیات محصول</a>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-m-jacket-034" data-product-name="کاپشن مردانه سرمه‌ای" data-product-price="4670000" data-product-image="assets/images/clothing/products/m-jacket-034.webp">
+            <a class="dl-media" href="product-m-jacket-034.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>تخفیف</small>٪۱۵</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> پرنیان</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۴</strong> (۱۱۹ نظر)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-m-jacket-034.html">کاپشن مردانه سرمه‌ای</a></h3>
+              <p class="dl-text">کاپشن مردانه سرمه‌ای با طراحی ساده که در هر استایلی جا می‌شود.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">۴<span class="num-sep">٬</span>۶۷۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
+                <del><span class="num">۵<span class="num-sep">٬</span>۴۹۰<span class="num-sep">٬</span>۰۰۰</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>تا پایان پیشنهاد</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
+                    <span><strong data-cd="days">۰۰</strong>روز</span>
+                    <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                    <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                    <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="۵۴ درصد موجودی فروخته شده">
+                  <span><strong>۵۴٪</strong> فروخته شد</span><span>فقط ۱۴ عدد باقی مانده</span>
+                  <i aria-hidden="true"><b style="width:54%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
+                <a class="btn btn-outline" href="product-m-jacket-034.html">جزئیات محصول</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-w-dress-425" data-product-name="پیراهن مجلسی صورتی" data-product-price="1620000" data-product-image="assets/images/clothing/products/w-dress-425.webp">
+            <a class="dl-media" href="product-w-dress-425.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>تخفیف</small>٪۱۵</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سروناز</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۱۰۷ نظر)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-w-dress-425.html">پیراهن مجلسی صورتی</a></h3>
+              <p class="dl-text">پیراهن مجلسی صورتی با رنگ‌بندی ملایم که با بیشتر لباس‌ها ست می‌شود.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">۱<span class="num-sep">٬</span>۶۲۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
+                <del><span class="num">۱<span class="num-sep">٬</span>۹۰۰<span class="num-sep">٬</span>۰۰۰</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>تا پایان پیشنهاد</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
+                    <span><strong data-cd="days">۰۰</strong>روز</span>
+                    <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                    <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                    <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="۸۱ درصد موجودی فروخته شده">
+                  <span><strong>۸۱٪</strong> فروخته شد</span><span>فقط ۵ عدد باقی مانده</span>
+                  <i aria-hidden="true"><b style="width:81%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
+                <a class="btn btn-outline" href="product-w-dress-425.html">جزئیات محصول</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-m-formal-109" data-product-name="لوفر جیر قهوه‌ای" data-product-price="3210000" data-product-image="assets/images/clothing/products/m-formal-109.webp">
+            <a class="dl-media" href="product-m-formal-109.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>تخفیف</small>٪۲۵</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> چرم دلا</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴</strong> (۱۲۳ نظر)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-m-formal-109.html">لوفر جیر قهوه‌ای</a></h3>
+              <p class="dl-text">لوفر جیر قهوه‌ای با طراحی ساده که در هر استایلی جا می‌شود.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">۳<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
+                <del><span class="num">۴<span class="num-sep">٬</span>۲۸۰<span class="num-sep">٬</span>۰۰۰</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>تا پایان پیشنهاد</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
+                    <span><strong data-cd="days">۰۰</strong>روز</span>
+                    <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                    <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                    <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="۴۷ درصد موجودی فروخته شده">
+                  <span><strong>۴۷٪</strong> فروخته شد</span><span>فقط ۱۷ عدد باقی مانده</span>
+                  <i aria-hidden="true"><b style="width:47%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
+                <a class="btn btn-outline" href="product-m-formal-109.html">جزئیات محصول</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="dl-slide">
+          <article class="dl" data-product data-product-id="cl-b-jacket-246" data-product-name="بادگیر طرح‌دار بچگانه" data-product-price="2210000" data-product-image="assets/images/clothing/products/b-jacket-246.webp">
+            <a class="dl-media" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
+              <span class="dl-arch"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async"></span>
+              <span class="dl-off"><small>تخفیف</small>٪۲۰</span>
+              <span class="dl-week"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
+            </a>
+            <div class="dl-body">
+              <div class="dl-top">
+                <span class="dl-brand"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سروناز</span>
+                <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۹ نظر)</p>
+              </div>
+              <h3 class="dl-title"><a href="product-b-jacket-246.html">بادگیر طرح‌دار بچگانه</a></h3>
+              <p class="dl-text">بادگیر طرح‌دار بچگانه؛ راحت و بادوام برای جنب‌وجوش روزانه.</p>
+              <div class="dl-price">
+                <p><strong><span class="num">۲<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
+                <del><span class="num">۲<span class="num-sep">٬</span>۷۶۰<span class="num-sep">٬</span>۰۰۰</span></del>
+              </div>
+              <div class="dl-meta">
+                <div class="dl-timer">
+                  <small>تا پایان پیشنهاد</small>
+                  <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
+                    <span><strong data-cd="days">۰۰</strong>روز</span>
+                    <span><strong data-cd="hours">۰۰</strong>ساعت</span>
+                    <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
+                    <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
+                  </div>
+                </div>
+                <div class="dl-stock" aria-label="۷۳ درصد موجودی فروخته شده">
+                  <span><strong>۷۳٪</strong> فروخته شد</span><span>فقط ۸ عدد باقی مانده</span>
+                  <i aria-hidden="true"><b style="width:73%"></b></i>
+                </div>
+              </div>
+              <div class="dl-actions">
+                <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
+                <a class="btn btn-outline" href="product-b-jacket-246.html">جزئیات محصول</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        </ul>
+        <div class="dl-thumbs" role="group" aria-label="انتخاب پیشنهاد">
+          <button type="button" class="dl-thumb" data-rail-to="0" aria-label="کت تک مردانه"><img src="assets/images/clothing/products/blazer.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>کت تک مردانه</span><em>٪۱۶</em></button><button type="button" class="dl-thumb" data-rail-to="1" aria-label="کاپشن مردانه سرمه‌ای"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>کاپشن مردانه سرمه‌ای</span><em>٪۱۵</em></button><button type="button" class="dl-thumb" data-rail-to="2" aria-label="پیراهن مجلسی صورتی"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>پیراهن مجلسی صورتی</span><em>٪۱۵</em></button><button type="button" class="dl-thumb" data-rail-to="3" aria-label="لوفر جیر قهوه‌ای"><img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>لوفر جیر قهوه‌ای</span><em>٪۲۵</em></button><button type="button" class="dl-thumb" data-rail-to="4" aria-label="بادگیر طرح‌دار بچگانه"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="720" height="960" loading="lazy" decoding="async"><span>بادگیر طرح‌دار بچگانه</span><em>٪۲۰</em></button>
         </div>
       </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-m-jacket-034" data-product-name="کاپشن مردانه سرمه‌ای" data-product-price="4670000" data-product-image="assets/images/clothing/products/m-jacket-034.webp">
-      <a class="b-deal-media" href="product-m-jacket-034.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>تخفیف</small>٪۱۵</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پیشنهاد ویژه‌ی این هفته</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۴</strong> (۱۱۹ نظر)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-m-jacket-034.html">کاپشن مردانه سرمه‌ای</a></h3>
-        <p class="b-deal-text">کاپشن مردانه سرمه‌ای با طراحی ساده که در هر استایلی جا می‌شود.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> پرنیان</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز M، L، XL، XXL</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>قیمت ویژه</small>
-            <del><span class="num">۵<span class="num-sep">٬</span>۴۹۰<span class="num-sep">٬</span>۰۰۰</span></del>
-            <p><strong><span class="num">۴<span class="num-sep">٬</span>۶۷۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>تا پایان پیشنهاد</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
-              <span><strong data-cd="days">۰۰</strong>روز</span>
-              <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-              <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-              <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="۵۴ درصد موجودی فروخته شده">
-            <span><strong>۵۴٪</strong> فروخته شد</span><span>فقط ۱۴ عدد باقی مانده</span>
-            <i aria-hidden="true"><b style="width:54%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
-          <a class="btn btn-outline" href="product-m-jacket-034.html">جزئیات محصول</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-w-dress-425" data-product-name="پیراهن مجلسی صورتی" data-product-price="1620000" data-product-image="assets/images/clothing/products/w-dress-425.webp">
-      <a class="b-deal-media" href="product-w-dress-425.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>تخفیف</small>٪۱۵</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پیشنهاد ویژه‌ی این هفته</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۱۰۷ نظر)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-w-dress-425.html">پیراهن مجلسی صورتی</a></h3>
-        <p class="b-deal-text">پیراهن مجلسی صورتی با رنگ‌بندی ملایم که با بیشتر لباس‌ها ست می‌شود.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سروناز</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز S، M، L، XL</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>قیمت ویژه</small>
-            <del><span class="num">۱<span class="num-sep">٬</span>۹۰۰<span class="num-sep">٬</span>۰۰۰</span></del>
-            <p><strong><span class="num">۱<span class="num-sep">٬</span>۶۲۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>تا پایان پیشنهاد</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
-              <span><strong data-cd="days">۰۰</strong>روز</span>
-              <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-              <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-              <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="۸۱ درصد موجودی فروخته شده">
-            <span><strong>۸۱٪</strong> فروخته شد</span><span>فقط ۵ عدد باقی مانده</span>
-            <i aria-hidden="true"><b style="width:81%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
-          <a class="btn btn-outline" href="product-w-dress-425.html">جزئیات محصول</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-m-formal-109" data-product-name="لوفر جیر قهوه‌ای" data-product-price="3210000" data-product-image="assets/images/clothing/products/m-formal-109.webp">
-      <a class="b-deal-media" href="product-m-formal-109.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/m-formal-109.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>تخفیف</small>٪۲۵</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پیشنهاد ویژه‌ی این هفته</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴</strong> (۱۲۳ نظر)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-m-formal-109.html">لوفر جیر قهوه‌ای</a></h3>
-        <p class="b-deal-text">لوفر جیر قهوه‌ای با طراحی ساده که در هر استایلی جا می‌شود.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> چرم دلا</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز 41، 42، 43، 44، 45</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>قیمت ویژه</small>
-            <del><span class="num">۴<span class="num-sep">٬</span>۲۸۰<span class="num-sep">٬</span>۰۰۰</span></del>
-            <p><strong><span class="num">۳<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>تا پایان پیشنهاد</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
-              <span><strong data-cd="days">۰۰</strong>روز</span>
-              <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-              <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-              <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="۴۷ درصد موجودی فروخته شده">
-            <span><strong>۴۷٪</strong> فروخته شد</span><span>فقط ۱۷ عدد باقی مانده</span>
-            <i aria-hidden="true"><b style="width:47%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
-          <a class="btn btn-outline" href="product-m-formal-109.html">جزئیات محصول</a>
-        </div>
-      </div>
-    </div>
-        </li>
-        <li class="b-deal-slide">
-        <div class="b-deal b-deal--rich" data-product data-product-id="cl-b-jacket-246" data-product-name="بادگیر طرح‌دار بچگانه" data-product-price="2210000" data-product-image="assets/images/clothing/products/b-jacket-246.webp">
-      <a class="b-deal-media" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
-        <img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="b-deal-off"><small>تخفیف</small>٪۲۰</span>
-        <span class="b-deal-stamp"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> فقط این هفته</span>
-      </a>
-      <div class="b-deal-body">
-        <div class="b-deal-top">
-          <p class="b-eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پیشنهاد ویژه‌ی این هفته</p>
-          <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۹ نظر)</p>
-        </div>
-        <h3 class="b-deal-title"><a href="product-b-jacket-246.html">بادگیر طرح‌دار بچگانه</a></h3>
-        <p class="b-deal-text">بادگیر طرح‌دار بچگانه؛ راحت و بادوام برای جنب‌وجوش روزانه.</p>
-        <ul class="b-deal-feats" role="list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg> سروناز</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg> سایز ۲ سال، ۴ سال، ۶ سال، ۸ سال</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> ارسال رایگان</li>
-        </ul>
-        <div class="b-deal-panel">
-          <div class="b-deal-price">
-            <small>قیمت ویژه</small>
-            <del><span class="num">۲<span class="num-sep">٬</span>۷۶۰<span class="num-sep">٬</span>۰۰۰</span></del>
-            <p><strong><span class="num">۲<span class="num-sep">٬</span>۲۱۰<span class="num-sep">٬</span>۰۰۰</span></strong> <span>تومان</span></p>
-          </div>
-          <div class="b-deal-timer">
-            <small>تا پایان پیشنهاد</small>
-            <div class="countdown" data-countdown-repeat="7" data-countdown="2026-11-21T23:59:59+03:30" role="timer" aria-label="زمان باقی‌مانده تا پایان پیشنهاد">
-              <span><strong data-cd="days">۰۰</strong>روز</span>
-              <span><strong data-cd="hours">۰۰</strong>ساعت</span>
-              <span><strong data-cd="minutes">۰۰</strong>دقیقه</span>
-              <span><strong data-cd="seconds">۰۰</strong>ثانیه</span>
-            </div>
-          </div>
-          <div class="b-deal-stock" aria-label="۷۳ درصد موجودی فروخته شده">
-            <span><strong>۷۳٪</strong> فروخته شد</span><span>فقط ۸ عدد باقی مانده</span>
-            <i aria-hidden="true"><b style="width:73%"></b></i>
-          </div>
-        </div>
-        <div class="b-deal-actions">
-          <button type="button" class="btn btn-primary" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن به سبد</span></button>
-          <a class="btn btn-outline" href="product-b-jacket-246.html">جزئیات محصول</a>
-        </div>
-      </div>
-    </div>
-        </li>
-      </ul>
     </div>
   </section>
   <!-- ===== پایان: پیشنهاد ویژه ===== -->
@@ -2305,7 +2280,7 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.2.0-11102338" defer></script>
+  <script src="assets/js/main.js?v=1.2.0-11110041" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>
