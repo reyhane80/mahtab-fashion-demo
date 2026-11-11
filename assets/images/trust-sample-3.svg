@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="16" fill="#ffffff"/>
+  <rect x="30" y="26" width="60" height="40" rx="7" fill="none" stroke="#2f5d8a" stroke-width="5"/>
+  <path d="M30 38h60" stroke="#2f5d8a" stroke-width="6"/>
+  <path d="M40 54h14" stroke="#2f5d8a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="78" cy="56" r="11" fill="#ffffff" stroke="#3a7d4f" stroke-width="4"/>
+  <path d="M73 56l4 4 7-7" fill="none" stroke="#3a7d4f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="100" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="700" fill="#24323d">درگاه امن</text>
+  <text x="60" y="113" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="9" fill="#5b6b78">پرداخت شتابی</text>
+  <g transform="rotate(-30 60 60)" opacity="0.28"><rect x="-10" y="50" width="140" height="20" fill="#d23c3c"/><text x="60" y="65" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="800" fill="#fff">نمونه · TEST</text></g>
+</svg>

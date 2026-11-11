@@ -364,6 +364,8 @@
 
   // تصویر کالای ذخیره‌شده در سبد: مسیر از روی پوشه‌ی images همین نسخه از نو ساخته می‌شود
   // تا اگر قالب جابه‌جا شد یا سبد از نسخه‌ی دیگری آمده بود، تصویر شکسته نشود
+  // اگر تصویر ذخیره‌شده در سبد با پسوند دیگری باشد، یک بار نسخه‌ی webp امتحان می‌شود
+  const IMG_RETRY = "if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.replace(/[.](svg|jpg|png)$/,'.webp')}else{this.style.visibility='hidden'}";
   const itemImage = (src) => {
     const s = String(src || '');
     const i = s.lastIndexOf('/images/');
@@ -411,7 +413,7 @@
         .map((item) => {
           const name = escapeHtml(item.name);
           return `<li class="cart-item" data-id="${escapeHtml(item.id)}">
-  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.replace(/[.](svg|jpg|png)$/,'.webp')}else{this.style.visibility='hidden'}" width="76" height="76" alt="">
+  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="${IMG_RETRY}" width="76" height="76" alt="">
   <div class="cart-info">
     <p class="cart-name">${name}</p>
     ${item.variant ? `<p class="cart-variant">${escapeHtml(item.variant)}</p>` : ''}
@@ -2000,7 +2002,7 @@
 
   function cartItemRow(item) {
     return `<li class="cart-item cart-page-item" data-id="${escapeHtml(item.id)}">
-  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src=this.src.replace(/[.](svg|jpg|png)$/,'.webp')}else{this.style.visibility='hidden'}" width="90" height="90" alt="">
+  <img class="cart-thumb" src="${escapeHtml(itemImage(item.image))}" onerror="${IMG_RETRY}" width="90" height="90" alt="">
   <div class="cart-info">
     <a class="cart-name" href="${productUrl(item)}">${escapeHtml(item.name)}</a>
     ${item.variant ? `<p class="cart-variant">${escapeHtml(item.variant)}</p>` : ''}
@@ -2047,6 +2049,8 @@
         const remain = FREE_SHIPPING_FROM - subtotal;
         noteEl.textContent = remain > 0 ? `Spend $${formatPrice(remain)} more to get free shipping.` : 'This order ships free.';
       }
+      const bar = document.querySelector('[data-cart-ship-bar]');
+      if (bar) bar.style.width = `${Math.min(100, Math.round((subtotal / FREE_SHIPPING_FROM) * 100))}%`;
       if (checkoutLink) checkoutLink.setAttribute('aria-disabled', String(items.length === 0));
     };
 
@@ -2121,7 +2125,7 @@
       const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
       const shipping = currentShippingCost();
       list.innerHTML = items
-        .map((i) => `<li><img src="${escapeHtml(i.image)}" width="48" height="48" alt=""><span class="checkout-mini-name">${escapeHtml(i.name)} × ${toFa(i.qty)}</span><span>${priceHtml(i.price * i.qty)}</span></li>`)
+        .map((i) => `<li><span class="checkout-mini-thumb"><img src="${escapeHtml(itemImage(i.image))}" onerror="${IMG_RETRY}" width="56" height="56" alt=""><b>${toFa(i.qty)}</b></span><span class="checkout-mini-name">${escapeHtml(i.name)}${i.variant ? `<small>${escapeHtml(i.variant)}</small>` : ''}</span><span class="checkout-mini-price">${priceHtml(i.price * i.qty)} <span class="currency"></span></span></li>`)
         .join('');
       subtotalEl.innerHTML = `${priceHtml(subtotal)} <span class="currency"></span>`;
       shippingEl.innerHTML = shipping === 0 ? 'Free' : `${priceHtml(shipping)} <span class="currency"></span>`;
