@@ -1424,25 +1424,69 @@
      ------------------------------------------------------------------------ */
   function initBlogFilter() {
     const bar = document.querySelector('[data-blog-filter]');
-    if (!bar) return;
+    const grid = document.querySelector('[data-blog-grid]');
+    if (!bar && !grid) return;
     const items = Array.from(document.querySelectorAll('[data-blog-item]'));
+    const gridItems = grid ? Array.from(grid.querySelectorAll('[data-blog-item]')) : [];
     const empty = document.querySelector('[data-blog-empty]');
-    bar.addEventListener('click', (event) => {
-      const btn = event.target.closest('[data-blog-cat]');
-      if (!btn) return;
-      const cat = btn.dataset.blogCat;
-      bar.querySelectorAll('[data-blog-cat]').forEach((b) => {
-        b.classList.toggle('is-active', b === btn);
-        b.setAttribute('aria-pressed', String(b === btn));
-      });
+    const pager = document.querySelector('[data-blog-pages]');
+    const perPage = grid ? parseInt(grid.dataset.perPage, 10) || 0 : 0;
+    let cat = '';
+    let page = 1;
+    // صفحه‌بندی: مقاله‌های دسته‌ی انتخاب‌شده به صفحه‌های perPageتایی تقسیم می‌شوند
+    const render = () => {
       let shown = 0;
       items.forEach((item) => {
+        if (gridItems.includes(item)) return;
         const on = !cat || item.dataset.cat === cat;
         item.hidden = !on;
         if (on) shown++;
       });
+      const matched = gridItems.filter((item) => !cat || item.dataset.cat === cat);
+      const pages = perPage ? Math.max(1, Math.ceil(matched.length / perPage)) : 1;
+      if (page > pages) page = pages;
+      gridItems.forEach((item) => { item.hidden = true; });
+      matched.forEach((item, i) => {
+        const on = !perPage || (i >= (page - 1) * perPage && i < page * perPage);
+        item.hidden = !on;
+      });
+      shown += matched.length;
       if (empty) empty.hidden = shown !== 0;
-    });
+      if (!pager) return;
+      pager.hidden = pages <= 1;
+      if (pages <= 1) { pager.innerHTML = ''; return; }
+      const btn = (label, target, extra = '') => `<button type="button" data-page="${target}" ${extra}>${label}</button>`;
+      let html = btn('قبلی', 'prev', page === 1 ? 'disabled aria-label="صفحه‌ی قبل"' : 'aria-label="صفحه‌ی قبل"');
+      for (let i = 1; i <= pages; i++) html += btn(toFa(i), i, i === page ? 'aria-current="page"' : `aria-label="صفحه‌ی ${toFa(i)}"`);
+      html += btn('بعدی', 'next', page === pages ? 'disabled aria-label="صفحه‌ی بعد"' : 'aria-label="صفحه‌ی بعد"');
+      pager.innerHTML = html;
+    };
+    if (bar) {
+      bar.addEventListener('click', (event) => {
+        const btn = event.target.closest('[data-blog-cat]');
+        if (!btn) return;
+        cat = btn.dataset.blogCat;
+        page = 1;
+        bar.querySelectorAll('[data-blog-cat]').forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        render();
+      });
+    }
+    if (pager) {
+      pager.addEventListener('click', (event) => {
+        const btn = event.target.closest('button[data-page]');
+        if (!btn || btn.disabled) return;
+        const target = btn.dataset.page;
+        if (target === 'prev') page -= 1;
+        else if (target === 'next') page += 1;
+        else page = parseInt(target, 10) || 1;
+        render();
+        if (grid) window.scrollTo({ top: grid.getBoundingClientRect().top + window.scrollY - 140, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+      });
+    }
+    render();
   }
 
 
