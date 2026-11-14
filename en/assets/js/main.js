@@ -1863,25 +1863,58 @@
      کارت محصول ساده برای صفحه‌هایی که سمت کاربر رندر می‌شوند (علاقه‌مندی‌ها)
      همان ساختار و کلاس‌های p-card را می‌سازد تا با بقیه‌ی سایت یکدست باشد.
      ------------------------------------------------------------------------ */
+  // کارت محصول ساخته‌شده با جاوااسکریپت (علاقه‌مندی‌ها)؛ همان ساختار کارت فروشگاه
   function simpleProductCard(p, extraButton) {
-    const price = p.finalPrice ?? p.price;
     const sale = p.salePrice || null;
-    return `<article class="p-card" data-product data-product-id="${p.id}" data-product-name="${escapeHtml(p.name)}" data-product-price="${price}" data-product-image="${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}">
+    const now = sale || p.finalPrice || p.price;
+    const img = `${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}`;
+    const off = sale && p.price ? Math.round((1 - sale / p.price) * 100) : 0;
+    const badges = [];
+    if (off > 0) badges.push(`<li class="badge badge-sale">${toFa(off)}% off</li>`);
+    if ((p.badges || []).includes('new')) badges.push('<li class="badge badge-new">New</li>');
+    const colors = (p.colors || []).slice(0, 4).map((c) => `<li><span class="swatch" style="background:${escapeHtml(c.hex || '')}" title="${escapeHtml(c.name || '')}"></span></li>`).join('');
+    const cat = [p.brand, p.category].filter(Boolean).map(escapeHtml).join(' · ');
+    return `<article class="p-card" data-product data-product-id="${p.id}" data-product-name="${escapeHtml(p.name)}" data-product-price="${now}" data-product-image="${img}">
   <div class="p-media">
     <a class="p-media-link" href="product-${p.image}.html" tabindex="-1" aria-hidden="true">
-      <img src="${ASSETS}images/${p.__demo}/products/${p.image}.${p.imageExt || 'svg'}" alt="" width="600" height="600" loading="lazy" decoding="async">
+      <img src="${img}" alt="" width="900" height="1200" loading="lazy" decoding="async">
     </a>
+    ${badges.length ? `<ul role="list" class="p-badges">${badges.join('')}</ul>` : ''}
     <div class="p-tools">${extraButton || ''}</div>
   </div>
   <div class="p-body">
-    <p class="p-cat">${escapeHtml(p.category || '')}</p>
+    <p class="p-cat">${cat}</p>
     <h3 class="p-title"><a href="product-${p.image}.html">${escapeHtml(p.name)}</a></h3>
+    ${p.rating ? `<p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>${toFa(String(p.rating).replace('.', '.'))}</strong> (${toFa(p.reviews || 0)} reviews)</p>` : ''}
+    ${colors ? `<ul role="list" class="swatches">${colors}</ul>` : ''}
     <div class="p-foot">
-      <div class="price"><span><span class="price-now">${priceHtml(sale || price)}</span> <span class="currency"></span></span></div>
-      <button type="button" class="btn btn-sm p-add" data-add-to-cart>${'<svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>'} <span data-cart-label>Add to cart</span></button>
+      <div class="price">${sale ? `<del><span class="sr-only">Previous price: </span>${priceHtml(p.price)}</del>` : ''}<span><span class="price-now">${priceHtml(now)}</span> <span class="currency"></span></span></div>
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن ${escapeHtml(p.name)} به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
     </div>
   </div>
 </article>`;
+  }
+
+  /* ------------------------------------------------------------------------
+     ستون‌های چسبان (خلاصه‌ی سبد، سایدبار مقاله، حساب کاربری)
+     فاصله از بالا = ارتفاع واقعی هدر چسبان + ۱۶ پیکسل؛ اگر ستون از ارتفاع صفحه بلندتر باشد، چسبان نمی‌ماند تا زیر هدر نرود و بریده نشود
+     ------------------------------------------------------------------------ */
+  function initStickyAsides() {
+    const header = document.querySelector('.site-header');
+    const asides = document.querySelectorAll('.cart-page-summary, .post-aside, .account-side, .pd-rsum, .doc-aside');
+    if (!header) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const top = Math.round(header.getBoundingClientRect().height) + 16;
+      document.documentElement.style.setProperty('--stick-top', `${top}px`);
+      asides.forEach((el) => el.classList.toggle('is-unstuck', el.offsetHeight > window.innerHeight - top - 16));
+    };
+    const queue = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    window.addEventListener('load', queue);
+    update();
   }
 
   function readEmbeddedProducts() {
@@ -1905,18 +1938,55 @@
     const emptyMsg = document.querySelector('[data-wish-page-empty]');
     const countEl = document.querySelector('[data-wish-page-count]');
 
+    const wrap = document.querySelector('[data-wish-wrap]');
+    const chips = document.querySelector('[data-wish-chips]');
+    // گروه‌بندی بر اساس برچسب محصول؛ ترتیب مهم است (کیف و کفش زنانه در «کیف و کفش» می‌آید)
+    const GROUPS = [
+      { key: 'bags-shoes', label: 'Bags & Shoes', icon: 'bag' },
+      { key: 'accessories', label: 'Accessories', icon: 'sparkle' },
+      { key: 'kids', label: 'Kids', icon: 'kid' },
+      { key: 'women', label: 'Women', icon: 'dress' },
+      { key: 'men', label: 'Men', icon: 'shirt' },
+    ];
+    const groupOf = (p) => (GROUPS.find((g) => (p.tags || []).includes(g.key)) || { key: 'other', label: 'Other', icon: 'heart' });
+    let active = 'all';
+    const svg = (id) => `<svg class="icon" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+
     const render = () => {
       const ids = store.read('wishlist', []);
       const items = ids.map((id) => products.find((p) => p.id === id)).filter(Boolean);
-      grid.innerHTML = items
-        .map((p) => simpleProductCard(p, `<button type="button" class="p-tool" data-wish-remove="${p.id}" aria-label="Remove ${escapeHtml(p.name)} from wishlist">${'<svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>'}</button>`))
-        .join('');
+      const groups = [];
+      items.forEach((p) => {
+        const g = groupOf(p);
+        let entry = groups.find((x) => x.key === g.key);
+        if (!entry) { entry = { ...g, items: [] }; groups.push(entry); }
+        entry.items.push(p);
+      });
+      groups.sort((x, y) => GROUPS.findIndex((g) => g.key === x.key) - GROUPS.findIndex((g) => g.key === y.key));
+      if (active !== 'all' && !groups.some((g) => g.key === active)) active = 'all';
+      if (chips) {
+        chips.innerHTML = [{ key: 'all', label: 'All', icon: 'heart', items }, ...groups]
+          .map((g) => `<button type="button" class="wish-chip" data-wish-filter="${g.key}" aria-pressed="${g.key === active}">${svg(g.icon)}${escapeHtml(g.label)}<span>${toFa(g.items.length)}</span></button>`)
+          .join('');
+      }
+      // «همه»: یک شبکه با ترتیب دسته‌ها؛ با انتخاب هر دسته فقط کارت‌های همان دسته
+      const shown = groups.filter((g) => active === 'all' || g.key === active).flatMap((g) => g.items);
+      grid.innerHTML = `<div class="p-grid">${shown
+        .map((p) => simpleProductCard(p, `<button type="button" class="p-tool" data-wish-remove="${p.id}" aria-label="Remove ${escapeHtml(p.name)} from wishlist">${svg('close')}</button>`))
+        .join('')}</div>`;
       emptyMsg.hidden = items.length !== 0;
-      grid.hidden = items.length === 0;
+      if (wrap) wrap.hidden = items.length === 0;
       if (countEl) countEl.textContent = toFa(items.length);
       // کارت‌ها هر بار از نو ساخته می‌شوند؛ دکمه‌ی «افزودن به سبد» باید دوباره فعال شود
       rebindAddToCart(grid);
     };
+
+    if (chips) chips.addEventListener('click', (event) => {
+      const chip = event.target.closest('[data-wish-filter]');
+      if (!chip) return;
+      active = chip.dataset.wishFilter;
+      render();
+    });
 
     grid.addEventListener('click', (event) => {
       const btn = event.target.closest('[data-wish-remove]');
@@ -2203,6 +2273,7 @@
   initCommentForm();
   initWishCountBadge();
   initWishlistPage();
+  initStickyAsides();
   initComparePage();
   initCartPage();
   initCheckout();

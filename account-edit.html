@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.3.0-11111038">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.4.0-11132356">
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -62,6 +62,12 @@
   <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.6" cy="7.4" r=".9" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-telegram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 4.5 3.5 11l5.5 2 2 6 3-3.5 4.5 3.5Z"/><path d="m9 13 8-5.5"/></symbol>
   <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.3 8.8c.2 2.6 2.4 4.9 5 5.4l1.1-1.3-1.7-.9-.8.8c-1-.4-1.9-1.3-2.4-2.4l.8-.8-.8-1.8Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1Z"/></symbol>
+  <symbol id="i-dress" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5v3.2L10.2 9 6 20h12L13.8 9 15 6.7V3.5"/><path d="M9 6.7c1 .9 2 1.3 3 1.3s2-.4 3-1.3M10.2 9h3.6"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 4 6.5l1.6 4L8 9.6V20h8V9.6l2.4.9 1.6-4L15 4c-.4 1.3-1.6 2.2-3 2.2S9.4 5.3 9 4Z"/></symbol>
+  <symbol id="i-kid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="7.5"/><path d="M9.3 13.6c.7.8 1.6 1.2 2.7 1.2s2-.4 2.7-1.2"/><path d="M9.5 10v.3M14.5 10v.3" stroke-width="2.2"/><path d="M12 3.5c-.8 1-.6 2.1.6 2.6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5.2 8 4.6 4.5 4.8v13.4c3.5-.2 5.8.4 7.5 1.7 1.7-1.3 4-1.9 7.5-1.7V4.8c-3.5-.2-5.8.4-7.5 1.7Z"/><path d="M12 6.5v13.4"/></symbol>
+  <symbol id="i-bale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a8 8 0 0 1 0 16H4.5v-8A8 8 0 0 1 12 4Z"/><path d="m8.6 12.2 2.4 2.4 4.4-4.6"/></symbol>
   <!-- آیکون‌های چهره‌ی کاربران (به‌جای حرف اول نام در نظرات) -->
   <symbol id="i-av1" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M4 20.2c.9-4.1 4.2-6.4 8-6.4s7.1 2.3 8 6.4c.1.5-.3.8-.8.8H4.8c-.5 0-.9-.3-.8-.8Z"/></symbol>
   <symbol id="i-av2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><path d="M8.4 14.2c.9 1.3 2.2 2 3.6 2s2.7-.7 3.6-2"/><path d="M9 9.6v.6M15 9.6v.6" stroke-width="2.4"/></symbol>
@@ -127,14 +133,14 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="index.html">خانه</a>
+        <a class="main-nav-link" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>خانه</a>
 
       </li>
 
       <li class="main-nav-item">
 
         <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-1" data-mega-trigger>
-          زنانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-dress"/></svg>زنانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
         <div class="mega" id="mega-1" data-mega>
           <div class="container-site mega-inner">
@@ -197,7 +203,7 @@
       <li class="main-nav-item">
 
         <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-2" data-mega-trigger>
-          مردانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-shirt"/></svg>مردانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
         <div class="mega" id="mega-2" data-mega>
           <div class="container-site mega-inner">
@@ -251,7 +257,7 @@
       <li class="main-nav-item">
 
         <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-3" data-mega-trigger>
-          بچگانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-kid"/></svg>بچگانه <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
         </button>
         <div class="mega" id="mega-3" data-mega>
           <div class="container-site mega-inner">
@@ -308,19 +314,76 @@
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link is-fresh" href="shop.html?sort=newest"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>کالکشن جدید</a>
+        <button type="button" class="main-nav-link" aria-expanded="false" aria-controls="mega-4" data-mega-trigger>
+          <svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>کالکشن جدید <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="mega mega--seasons" id="mega-4" data-mega>
+          <div class="container-site mega-inner">
+            <div class="mega-head">
+              <p class="mega-title font-heading">کالکشن‌های چهار فصل</p>
+              <a class="mega-all" href="shop.html?sort=newest">جدیدترین محصولات <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <ul class="season-grid" role="list">
+
+              <li class="season" data-season="spring">
+                <a class="season-head" href="shop.html?collection=spring">
+                  <span class="season-img"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="120" height="150" loading="lazy" decoding="async"></span>
+                  <span class="season-txt"><strong>کالکشن بهار</strong><em>پیراهن، شومیز و رنگ‌های روشن</em></span>
+                </a>
+                <ul class="season-links" role="list">
+                  <li><a href="shop.html?cat=women-dress">پیراهن و تونیک</a></li><li><a href="shop.html?cat=women-blouse">شومیز و بلوز</a></li><li><a href="shop.html?cat=men-shirt">پیراهن مردانه</a></li>
+                </ul>
+                <a class="season-all" href="shop.html?collection=spring">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+
+              <li class="season" data-season="summer">
+                <a class="season-head" href="shop.html?collection=summer">
+                  <span class="season-img"><img src="assets/images/clothing/products/m-tshirt-445.webp" alt="" width="120" height="150" loading="lazy" decoding="async"></span>
+                  <span class="season-txt"><strong>کالکشن تابستان</strong><em>تی‌شرت، کتانی و عینک آفتابی</em></span>
+                </a>
+                <ul class="season-links" role="list">
+                  <li><a href="shop.html?cat=men-tshirt">تی‌شرت مردانه</a></li><li><a href="shop.html?cat=women-sunglasses">عینک آفتابی</a></li><li><a href="shop.html?cat=boys-set">ست بچگانه</a></li>
+                </ul>
+                <a class="season-all" href="shop.html?collection=summer">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+
+              <li class="season" data-season="autumn">
+                <a class="season-head" href="shop.html?collection=autumn">
+                  <span class="season-img"><img src="assets/images/clothing/products/coat.webp" alt="" width="120" height="150" loading="lazy" decoding="async"></span>
+                  <span class="season-txt"><strong>کالکشن پاییز</strong><em>بافت، پالتو و رنگ‌های گرم</em></span>
+                </a>
+                <ul class="season-links" role="list">
+                  <li><a href="shop.html?cat=women-knit">بافت و ژاکت</a></li><li><a href="shop.html?cat=women-coat">مانتو و پالتو</a></li><li><a href="shop.html?cat=women-boot">بوت و نیم‌بوت</a></li>
+                </ul>
+                <a class="season-all" href="shop.html?collection=autumn">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+
+              <li class="season" data-season="winter">
+                <a class="season-head" href="shop.html?collection=winter">
+                  <span class="season-img"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="120" height="150" loading="lazy" decoding="async"></span>
+                  <span class="season-txt"><strong>کالکشن زمستان</strong><em>کاپشن، هودی و شال گرم</em></span>
+                </a>
+                <ul class="season-links" role="list">
+                  <li><a href="shop.html?cat=men-jacket">کاپشن مردانه</a></li><li><a href="shop.html?cat=men-hoodie">هودی و سویشرت</a></li><li><a href="shop.html?cat=boys-jacket">کاپشن بچگانه</a></li>
+                </ul>
+                <a class="season-all" href="shop.html?collection=winter">مشاهده‌ی همه <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="blog.html">مجله‌ی مد</a>
+        <a class="main-nav-link" href="blog.html"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>مجله‌ی مد</a>
 
       </li>
 
       <li class="main-nav-item">
 
-        <a class="main-nav-link" href="contact.html">تماس با ما</a>
+        <a class="main-nav-link" href="contact.html"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>تماس با ما</a>
 
       </li>
 
@@ -441,7 +504,13 @@
 
       <li>
 
-        <a class="m-nav-link" href="shop.html?sort=newest">کالکشن جدید</a>
+        <button type="button" class="m-nav-link" aria-expanded="false" aria-controls="m-sub-4" data-disclosure>
+          کالکشن جدید <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <div class="m-sub" id="m-sub-4" hidden>
+          <ul><li><a href="shop.html?collection=spring">کالکشن بهار</a></li><li><a href="shop.html?collection=summer">کالکشن تابستان</a></li><li><a href="shop.html?collection=autumn">کالکشن پاییز</a></li><li><a href="shop.html?collection=winter">کالکشن زمستان</a></li></ul>
+          <a class="m-all" href="shop.html?sort=newest">جدیدترین محصولات</a>
+        </div>
 
       </li>
 
@@ -714,7 +783,7 @@
           <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>اینستاگرام</span></a></li>
           <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span>تلگرام</span></a></li>
           <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>واتس‌اپ</span></a></li>
-          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><span>آپارات</span></a></li>
+          <li><a href="contact.html#social"><svg class="icon" aria-hidden="true"><use href="#i-bale"/></svg><span>بله</span></a></li>
           <li><a href="mailto:info@example.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>ایمیل</span></a></li>
         </ul>
 
@@ -738,7 +807,7 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.3.0-11111038" defer></script>
+  <script src="assets/js/main.js?v=1.4.0-11132356" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>
