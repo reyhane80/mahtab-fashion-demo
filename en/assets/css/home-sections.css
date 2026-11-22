@@ -1,0 +1,105 @@
+/* =========================================================================
+   بخش‌های صفحه‌ی اصلی طرح ۱ (دموی پوشاک)
+   ۱) «تازه‌های فروشگاه»: قاب روشن، زبانه‌های قرصی و کارت ویژه
+   ۲) «خرید بر اساس دسته»: دایره‌های استوری‌مانند
+   ========================================================================= */
+
+/* ---------- ۱) تازه‌های فروشگاه ---------- */
+.picks-panel {
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.25rem); border-radius: 32px;
+  background: linear-gradient(160deg, #fff 0%, rgb(var(--c-surface)) 55%, #F6E2D2 100%);
+  border: 1px solid rgb(var(--c-line));
+}
+.picks-panel::before {
+  content: ""; position: absolute; z-index: -1; width: 34rem; height: 34rem; inset-inline-end: -14rem; top: -18rem; border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--c-primary) / .14), transparent);
+}
+.picks-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 1.75rem; }
+.picks-head .section-title { margin: 0; }
+.picks-kicker { display: inline-flex; align-items: center; gap: .4rem; margin: 0 0 .5rem; padding: .3rem .8rem; border-radius: 999px; background: rgb(var(--c-primary) / .1); color: rgb(var(--c-primary)); font-size: .8rem; font-weight: 800; }
+.picks-kicker .icon { width: 1rem; height: 1rem; }
+
+/* زبانه‌ها: دکمه‌های قرصی داخل یک قاب */
+.picks-tabs.tabs { display: inline-flex; gap: .25rem; margin: 0; padding: .3rem; border: 1px solid rgb(var(--c-line)); border-radius: 999px; background: #fff; box-shadow: 0 10px 24px -20px rgb(0 0 0 / .3); }
+.picks-tabs .tab { display: inline-flex; align-items: center; gap: .4rem; margin: 0; padding: .55rem 1.1rem; border: 0; border-radius: 999px; background: transparent; color: rgb(var(--c-muted)); font-weight: 800; font-size: .9rem; transition: background-color .3s, color .3s, box-shadow .3s; }
+.picks-tabs .tab::after { display: none; }
+.picks-tabs .tab .icon { width: 1.05rem; height: 1.05rem; }
+.picks-tabs .tab:hover { color: rgb(var(--c-ink)); }
+.picks-tabs .tab[aria-selected="true"] { background: rgb(var(--c-primary)); color: rgb(var(--c-on-primary)); box-shadow: 0 10px 20px -12px rgb(var(--c-primary) / .9); }
+
+/* شبکه: کارت ویژه + ۶ محصول */
+.picks-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.picks-grid > .picks-spot { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+  .picks-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .picks-grid > .picks-spot { grid-column: auto; grid-row: span 2; }
+}
+.picks-spot { position: relative; display: block; min-height: 16rem; border-radius: 24px; overflow: hidden; color: #fff; text-decoration: none; isolation: isolate; }
+.picks-spot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s cubic-bezier(.22, 1, .36, 1); }
+.picks-spot::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgb(30 18 12 / .85) 0%, rgb(30 18 12 / .25) 55%, transparent 80%); }
+.picks-spot:hover img { transform: scale(1.06); }
+.picks-spot-body { position: absolute; inset-inline: 0; bottom: 0; display: grid; gap: .5rem; padding: 1.5rem; }
+.picks-spot-kick { display: inline-flex; align-items: center; gap: .35rem; justify-self: start; padding: .3rem .75rem; border-radius: 999px; background: rgb(255 255 255 / .18); backdrop-filter: blur(6px); font-size: .75rem; font-weight: 800; }
+.picks-spot-kick .icon { width: .95rem; height: .95rem; }
+.picks-spot strong { font-size: clamp(1.35rem, 2.2vw, 1.75rem); font-weight: 900; line-height: 1.35; }
+.picks-spot-text { font-size: .9rem; opacity: .85; line-height: 1.8; }
+.picks-spot-cta { display: inline-flex; align-items: center; gap: .4rem; justify-self: start; margin-top: .4rem; padding: .6rem 1.1rem; border-radius: 999px; background: #fff; color: rgb(var(--c-ink)); font-weight: 800; font-size: .85rem; transition: gap .3s, background-color .3s, color .3s; }
+.picks-spot:hover .picks-spot-cta { gap: .7rem; background: rgb(var(--c-primary)); color: rgb(var(--c-on-primary)); }
+.picks-spot-cta .icon { width: 1rem; height: 1rem; }
+.picks-spot:focus-visible { outline: 3px solid rgb(var(--c-primary)); outline-offset: 3px; }
+
+/* ظاهر شدن نرم کارت‌ها با عوض کردن زبانه */
+@media (prefers-reduced-motion: no-preference) {
+  .mt-on .picks-body:not([hidden]) { animation: picks-in .55s cubic-bezier(.22, 1, .36, 1); }
+  .mt-on .picks-body:not([hidden]) .p-card { animation: picks-card .6s cubic-bezier(.22, 1, .36, 1) backwards; }
+  .mt-on .picks-body:not([hidden]) .p-card:nth-child(3) { animation-delay: .05s; }
+  .mt-on .picks-body:not([hidden]) .p-card:nth-child(4) { animation-delay: .1s; }
+  .mt-on .picks-body:not([hidden]) .p-card:nth-child(5) { animation-delay: .15s; }
+  .mt-on .picks-body:not([hidden]) .p-card:nth-child(6) { animation-delay: .2s; }
+  .mt-on .picks-body:not([hidden]) .p-card:nth-child(7) { animation-delay: .25s; }
+}
+@keyframes picks-in { from { opacity: 0; } }
+@keyframes picks-card { from { opacity: 0; transform: translateY(16px); } }
+
+.picks-more { margin: 2rem 0 0; text-align: center; }
+.picks-more .btn { display: inline-flex; align-items: center; gap: .5rem; }
+.picks-more .icon { width: 1rem; height: 1rem; }
+@media (max-width: 599px) {
+  .picks-head { align-items: flex-start; }
+  .picks-tabs.tabs { width: 100%; justify-content: space-between; }
+  .picks-tabs .tab { flex: 1; justify-content: center; padding-inline: .5rem; font-size: .82rem; }
+}
+
+/* ---------- ۲) خرید بر اساس دسته (دایره‌های استوری‌مانند) ---------- */
+.cat-bubbles { display: flex; gap: clamp(.9rem, 2vw, 1.6rem); margin: 0; padding: .5rem .25rem 1rem; list-style: none; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.cat-bubbles::-webkit-scrollbar { display: none; }
+@media (min-width: 1100px) { .cat-bubbles { justify-content: space-between; overflow-x: visible; } }
+.cat-bubbles > li { flex: 0 0 auto; scroll-snap-align: start; }
+.cat-bubble { display: grid; justify-items: center; gap: .35rem; width: 6.6rem; text-align: center; text-decoration: none; color: rgb(var(--c-ink)); }
+.cat-bubble-ring {
+  position: relative; display: block; flex-shrink: 0; width: 6.2rem; height: 6.2rem; border-radius: 50%; overflow: hidden;
+  background: conic-gradient(from 210deg, rgb(var(--c-primary)), #E8A25A, #D2416E, rgb(var(--c-primary)));
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s;
+}
+/* عکس همیشه داخل دایره می‌ماند: حلقه ۳ پیکسل، حاشیه‌ی روشن ۳ پیکسل */
+.cat-bubble-ring img, .cat-bubble-icon {
+  position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); max-width: none;
+  border-radius: 50%; border: 3px solid rgb(var(--c-bg)); object-fit: cover; background: #fff; box-sizing: border-box;
+}
+.cat-bubble-icon { display: grid; place-items: center; font-size: 2rem; font-weight: 900; color: #fff; background: linear-gradient(135deg, #E8572A, #C2264B); }
+.cat-bubble strong { margin-top: .25rem; font-size: .85rem; font-weight: 800; line-height: 1.5; }
+.cat-bubble:hover .cat-bubble-ring { transform: translateY(-4px) scale(1.04); box-shadow: 0 12px 22px -16px rgb(var(--c-primary) / .7); }
+.cat-bubble:focus-visible { outline: none; }
+.cat-bubble:focus-visible .cat-bubble-ring { box-shadow: 0 0 0 3px rgb(var(--c-primary)); }
+/* چرخش حلقه با رفتن موس؛ عکس برعکس می‌چرخد تا ثابت دیده شود */
+@media (prefers-reduced-motion: no-preference) {
+  .mt-on .cat-bubble:hover .cat-bubble-ring { animation: cat-ring-spin 3s linear infinite; }
+  .mt-on .cat-bubble:hover .cat-bubble-ring img, .mt-on .cat-bubble:hover .cat-bubble-icon { animation: cat-ring-spin 3s linear infinite reverse; }
+}
+@keyframes cat-ring-spin { to { rotate: 360deg; } }
+@media (max-width: 599px) {
+  .cat-bubble { width: 5.4rem; }
+  .cat-bubble-ring { width: 5rem; height: 5rem; }
+  .cat-bubbles { margin-inline: -1rem; padding-inline: 1rem; }
+}

@@ -1,0 +1,78 @@
+/* =========================================================================
+   موشن و انیمیشن‌های مهتاب (همراه js/motion.js)
+   همه‌چیز فقط وقتی فعال است که <html> کلاس mt-on داشته باشد؛ این کلاس را
+   motion.js اضافه می‌کند. برای خاموش کردن همه‌ی انیمیشن‌ها، در بالای
+   assets/js/motion.js مقدار MAHTAB_MOTION را false کنید.
+   برای کسی که در دستگاهش «کاهش حرکت» را روشن کرده، هیچ‌کدام اجرا نمی‌شود.
+   ========================================================================= */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ۱) انتقال نرم بین صفحه‌ها (کروم و اج؛ مرورگرهای دیگر عادی صفحه را باز می‌کنند) */
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: mt-page-out .22s ease both; }
+  ::view-transition-new(root) { animation: mt-page-in .38s cubic-bezier(.22, 1, .36, 1) both; }
+  @keyframes mt-page-out { to { opacity: 0; } }
+  @keyframes mt-page-in { from { opacity: 0; transform: translateY(10px); } }
+  .mt-on .site-header { view-transition-name: mt-header; }
+
+  /* ۲) ورود نرم بخش‌ها و کارت‌ها هنگام اسکرول (یکی‌یکی) */
+  .mt-on .mt-reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22, 1, .36, 1) var(--mt-d, 0ms), transform .9s cubic-bezier(.22, 1, .36, 1) var(--mt-d, 0ms); }
+  .mt-on .mt-reveal.mt-in { opacity: 1; transform: none; }
+  .mt-on .mt-reveal-img .p-media img { transform: scale(1.06); transition: transform 1.4s cubic-bezier(.22, 1, .36, 1) var(--mt-d, 0ms); }
+  .mt-on .mt-reveal-img.mt-in .p-media img { transform: none; }
+
+  /* ۳) هیرو: بزرگ‌نمایی آرام عکس و بالا آمدن کلمه‌به‌کلمه‌ی تیتر */
+  .mt-on .fh-media > img { animation: mt-kenburns 2.4s cubic-bezier(.22, 1, .36, 1) backwards; }
+  @keyframes mt-kenburns { from { transform: scale(1.14); filter: saturate(.85); } }
+  .mt-on .mt-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .08em; }
+  .mt-on .mt-word > span { display: inline-block; animation: mt-word-up .9s cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: calc(var(--i) * 70ms + 150ms); }
+  @keyframes mt-word-up { from { transform: translateY(105%); } }
+  .mt-on .fh-chip, .mt-on .fh-lead, .mt-on .fh-actions, .mt-on .fh-perks, .mt-on .fh-proof, .mt-on .fh-caption { animation: mt-rise .9s cubic-bezier(.22, 1, .36, 1) backwards; }
+  .mt-on .fh-chip { animation-delay: .05s; }
+  .mt-on .fh-lead { animation-delay: .45s; }
+  .mt-on .fh-actions { animation-delay: .6s; }
+  .mt-on .fh-perks, .mt-on .fh-proof { animation-delay: .75s; }
+  .mt-on .fh-caption { animation-delay: .9s; }
+  @keyframes mt-rise { from { opacity: 0; transform: translateY(18px); } }
+
+  /* ۴) کارت محصول: بالا آمدن کارت و بزرگ‌نمایی عکس با رفتن موس */
+  .mt-on .p-card { transition: transform .5s cubic-bezier(.22, 1, .36, 1), box-shadow .5s ease; }
+  .mt-on .p-card .p-media img { transition: transform .9s cubic-bezier(.22, 1, .36, 1), opacity .5s ease; }
+  .mt-on .p-card:hover .p-media img { transform: scale(1.05); }
+
+  /* ۵) پرواز عکس محصول تا آیکون سبد و پرش عدد سبد */
+  .mt-fly { position: fixed; z-index: 120; width: 72px; height: 72px; object-fit: cover; border-radius: 16px; pointer-events: none; box-shadow: 0 14px 30px -10px rgb(0 0 0 / .35); }
+
+  /* ۶) هدر شیشه‌ای هنگام اسکرول */
+  .mt-on .site-header { transition: background-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease; }
+  .mt-on .site-header.is-scrolled { background: rgb(var(--c-header) / .78); backdrop-filter: blur(16px) saturate(1.5); -webkit-backdrop-filter: blur(16px) saturate(1.5); }
+
+  /* ۷) پارالاکس عکس هیرو و لوک‌بوک */
+  .mt-on [data-mt-parallax] { will-change: transform; }
+
+  /* ۸) واکنش دکمه‌ها و تپش قلب علاقه‌مندی */
+  .mt-on .btn, .mt-on .icon-btn, .mt-on .p-tool, .mt-on .p-add-mini { transition: transform .25s cubic-bezier(.22, 1, .36, 1), background-color .2s, color .2s, border-color .2s, box-shadow .25s; }
+  .mt-on .btn:active, .mt-on .icon-btn:active, .mt-on .p-tool:active, .mt-on .p-add-mini:active { transform: scale(.94); }
+  .mt-on .btn-primary:hover { box-shadow: 0 12px 24px -14px rgb(var(--c-primary) / .9); }
+  .mt-on [data-wish].mt-beat { animation: mt-beat .55s cubic-bezier(.22, 1, .36, 1); }
+  @keyframes mt-beat { 30% { transform: scale(1.3); } 60% { transform: scale(.92); } }
+  .mt-on [data-wish][aria-pressed="true"] svg { animation: mt-pop .4s cubic-bezier(.22, 1, .36, 1); }
+  @keyframes mt-pop { from { transform: scale(.4); } }
+}
+
+/* ۹) نوار چسبان «افزودن به سبد» در صفحه‌ی محصول، فقط در گوشی (بدون حرکت هم کار می‌کند) */
+.mt-sticky-buy { display: none; }
+@media (max-width: 767px) {
+  .mt-on .mt-sticky-buy {
+    display: flex; align-items: center; gap: .75rem; position: fixed; inset-inline: .75rem; bottom: .75rem; z-index: 50;
+    padding: .5rem; padding-inline-start: .5rem; border-radius: 999px; background: rgb(var(--c-surface)); border: 1px solid rgb(var(--c-line));
+    box-shadow: 0 18px 40px -18px rgb(0 0 0 / .45); transform: translateY(140%); visibility: hidden;
+    transition: transform .45s cubic-bezier(.22, 1, .36, 1), visibility 0s .45s;
+  }
+  .mt-on .mt-sticky-buy.is-show { transform: none; visibility: visible; transition: transform .45s cubic-bezier(.22, 1, .36, 1), visibility 0s; }
+  .mt-sticky-buy img { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #fff; }
+  .mt-sticky-buy-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.4; }
+  .mt-sticky-buy-txt strong { font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mt-sticky-buy-txt span { font-size: .8rem; color: rgb(var(--c-muted)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mt-sticky-buy .btn { flex: none; white-space: nowrap; }
+}

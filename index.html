@@ -14,7 +14,15 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.4.1-11170301">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+
+  <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <script>document.documentElement.classList.add('js');</script>
@@ -637,45 +645,76 @@
         <p class="section-sub">از کمد روزمره تا لباس مهمانی؛ دسته‌ی دلخواهتان را انتخاب کنید.</p>
         <a class="link-more" href="shop.html">همه‌ی محصولات <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
-      <ul class="fc-cats" role="list">
-        <li class="fc-big"><a class="fc-cat" href="shop.html?cat=women">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-women-hero.webp" alt="" width="1000" height="1500" loading="lazy" decoding="async"></span>
-          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>زنانه</strong><small>مانتو، پیراهن، بافت و کفش</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+      <!-- هر دایره یک دسته است: لینک (?cat=…)، عکس و نام را عوض کنید؛ دایره‌ی آخر «حراج» است -->
+      <ul class="cat-bubbles" role="list">
+        <li><a class="cat-bubble" href="shop.html?cat=women-coat">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/coat.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>مانتو و پالتو</strong>
         </a></li>
-        <li class=""><a class="fc-cat" href="shop.html?cat=men">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-men.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
-          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>مردانه</strong><small>کت، پیراهن و کتانی</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        <li><a class="cat-bubble" href="shop.html?cat=women-dress">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/w-dress-425.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>پیراهن زنانه</strong>
         </a></li>
-        <li class=""><a class="fc-cat" href="shop.html?cat=kids">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-kids.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
-          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>بچگانه</strong><small>دخترانه و پسرانه</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        <li><a class="cat-bubble" href="shop.html?cat=women-knit">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/w-knit-075.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>بافت و ژاکت</strong>
         </a></li>
-        <li class=""><a class="fc-cat" href="shop.html?cat=bags-shoes">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-bags.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
-          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>کیف و کفش</strong><small>کیف دستی، بوت و کتانی</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        <li><a class="cat-bubble" href="shop.html?cat=women-bag">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/w-bag-068.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>کیف</strong>
         </a></li>
-        <li class=""><a class="fc-cat" href="shop.html?cat=accessories">
-          <span class="fc-cat-media"><img src="assets/images/clothing/home/cat-accessories.webp" alt="" width="800" height="1000" loading="lazy" decoding="async"></span>
-          <span class="fc-cat-foot"><span class="fc-cat-text"><strong>اکسسوری</strong><small>شال، عینک و کمربند</small></span><span class="fc-cat-go"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        <li><a class="cat-bubble" href="shop.html?cat=women-shoe">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/w-shoe-381.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>کفش</strong>
+        </a></li>
+        <li><a class="cat-bubble" href="shop.html?cat=men-shirt">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/m-shirt-456.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>پیراهن مردانه</strong>
+        </a></li>
+        <li><a class="cat-bubble" href="shop.html?cat=men-jacket">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/m-jacket-034.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>کاپشن مردانه</strong>
+        </a></li>
+        <li><a class="cat-bubble" href="shop.html?cat=kids">
+          <span class="cat-bubble-ring"><img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></span>
+          <strong>بچگانه</strong>
+        </a></li>
+        <li><a class="cat-bubble cat-bubble--sale" href="shop.html?sale=1">
+          <span class="cat-bubble-ring"><span class="cat-bubble-icon" aria-hidden="true">٪</span></span>
+          <strong>حراج</strong>
         </a></li>
       </ul>
     </div>
   </section>
   <!-- ===== پایان: دسته‌بندی‌ها ===== -->
 
-  <!-- ===== شروع: محصولات با زبانه (جدیدترین، پرفروش، حراج) ===== -->
-  <section class="section pt-0" aria-labelledby="picks-title">
+  <!-- ===== شروع: تازه‌های فروشگاه (زبانه‌های جدیدترین، پرفروش و حراج؛ هر زبانه یک کارت ویژه و ۶ محصول) ===== -->
+  <section class="section pt-0 picks" aria-labelledby="picks-title">
     <div class="container-site">
-      <div class="section-head reveal">
-        <h2 class="section-title" id="picks-title">تازه‌های فروشگاه</h2>
-        <div class="tabs" role="tablist" aria-label="دسته‌بندی محصولات" data-tabs>
-          <button type="button" class="tab" role="tab" id="tab-new" aria-selected="true" aria-controls="panel-new">جدیدترین</button>
-          <button type="button" class="tab" role="tab" id="tab-best" aria-selected="false" aria-controls="panel-best" tabindex="-1">پرفروش‌ترین</button>
-          <button type="button" class="tab" role="tab" id="tab-sale" aria-selected="false" aria-controls="panel-sale" tabindex="-1">حراج</button>
+      <div class="picks-panel">
+        <div class="picks-head">
+          <div>
+            <p class="picks-kicker"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg> هر هفته چیزهای تازه</p>
+            <h2 class="section-title" id="picks-title">تازه‌های فروشگاه</h2>
+          </div>
+          <div class="tabs picks-tabs" role="tablist" aria-label="دسته‌بندی محصولات" data-tabs>
+            <button type="button" class="tab" role="tab" id="tab-new" aria-selected="true" aria-controls="panel-new"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg> جدیدترین</button>
+            <button type="button" class="tab" role="tab" id="tab-best" aria-selected="false" aria-controls="panel-best" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> پرفروش‌ترین</button>
+            <button type="button" class="tab" role="tab" id="tab-sale" aria-selected="false" aria-controls="panel-sale" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg> حراج</button>
+          </div>
         </div>
-      </div>
-      <div class="tab-panel" role="tabpanel" id="panel-new" aria-labelledby="tab-new" tabindex="0">
-        <div class="p-grid">
+        <div class="tab-panel picks-body" role="tabpanel" id="panel-new" aria-labelledby="tab-new" tabindex="0">
+          <div class="picks-grid">
+            <a class="picks-spot" href="shop.html?sort=newest">
+              <img src="assets/images/clothing/home/cat-women-hero.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+              <span class="picks-spot-body">
+                <span class="picks-spot-kick"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg> تازه رسیده</span>
+                <strong>کالکشن جدید فصل</strong>
+                <span class="picks-spot-text">تازه‌ترین مدل‌ها، همین هفته به فروشگاه رسیده‌اند.</span>
+                <span class="picks-spot-cta">همه‌ی جدیدترین‌ها <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+            
 <article class="p-card" data-product data-product-id="cl-m-bag-280" data-product-name="کیف کراس‌بادی سرمه‌ای" data-product-price="2150000" data-product-image="assets/images/clothing/products/m-bag-280.webp"
   data-cat="کیف مردانه" data-brand="چرم دلا" data-price-sort="2150000" data-rating-sort="4.3" data-badges="sale|new" data-tags="men|bags-shoes|men-bag|formal" data-colors="سرمه‌ای|طوسی روشن">
   <div class="p-media">
@@ -866,10 +905,120 @@
     </div>
   </div>
 </article>
-</div>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-092" data-product-name="کیف اسناد چرم" data-product-price="4410000" data-product-image="assets/images/clothing/products/m-bag-092.webp"
+  data-cat="کیف مردانه" data-brand="چرم دلا" data-price-sort="4410000" data-rating-sort="4.2" data-badges="sale|new|bestseller" data-tags="men|bags-shoes|men-bag|formal" data-colors="سرمه‌ای|طوسی روشن|کرم">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-092.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-sale">٪۲۰ تخفیف</li>
+
+      <li class="badge badge-new">جدید</li>
+
+      <li class="badge badge-soft">پرفروش</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن کیف اسناد چرم به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن کیف اسناد چرم به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">چرم دلا · کیف مردانه</p>
+    <h3 class="p-title"><a href="product-m-bag-092.html">کیف اسناد چرم</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۲</strong> (۶۰ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن، کرم">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#DECEB4" title="کرم"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">قیمت قبلی: </span><span class="num">۵<span class="num-sep">٬</span>۵۱۰<span class="num-sep">٬</span>۰۰۰</span></del>
+        <span><span class="price-now"><span class="num">۴<span class="num-sep">٬</span>۴۱۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
-      <div class="tab-panel" role="tabpanel" id="panel-best" aria-labelledby="tab-best" tabindex="0" hidden>
-        <div class="p-grid">
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف اسناد چرم به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-pants-041" data-product-name="شلوار کتان مشکی" data-product-price="1990000" data-product-image="assets/images/clothing/products/m-pants-041.webp"
+  data-cat="شلوار مردانه" data-brand="کوک" data-price-sort="1990000" data-rating-sort="4.1" data-badges="new" data-tags="men|men-pants|casual" data-colors="مشکی|طوسی" data-sizes="30|32|34|36|38">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-pants-041.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-pants-041.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-new">جدید</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن شلوار کتان مشکی به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن شلوار کتان مشکی به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">کوک · شلوار مردانه</p>
+    <h3 class="p-title"><a href="product-m-pants-041.html">شلوار کتان مشکی</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۱</strong> (۱۳ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: مشکی، طوسی">
+      <li><span class="swatch" style="background:#191919" title="مشکی"></span></li><li><span class="swatch" style="background:#8C8C8A" title="طوسی"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">۱<span class="num-sep">٬</span>۹۹۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن شلوار کتان مشکی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+          </div>
+        </div>
+        <div class="tab-panel picks-body" role="tabpanel" id="panel-best" aria-labelledby="tab-best" tabindex="0" hidden>
+          <div class="picks-grid">
+            <a class="picks-spot" href="shop.html?sort=rating">
+              <img src="assets/images/clothing/home/lookbook-model.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+              <span class="picks-spot-body">
+                <span class="picks-spot-kick"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg> محبوب مشتری‌ها</span>
+                <strong>انتخاب‌های پرطرفدار</strong>
+                <span class="picks-spot-text">محصولاتی که بیشترین خرید را داشته‌اند.</span>
+                <span class="picks-spot-cta">همه‌ی پرفروش‌ها <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+            
 <article class="p-card" data-product data-product-id="cl-hoodie" data-product-name="هودی پنبه‌ای اورسایز" data-product-price="1190000" data-product-image="assets/images/clothing/products/hoodie.webp"
   data-cat="هودی و سویشرت" data-brand="سرو" data-price-sort="1190000" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="men|men-hoodie|casual|sport|autumn|winter" data-colors="بژ|طوسی" data-sizes="S|M|L|XL">
   <div class="p-media">
@@ -1063,10 +1212,120 @@
     </div>
   </div>
 </article>
-</div>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-092" data-product-name="کیف اسناد چرم" data-product-price="4410000" data-product-image="assets/images/clothing/products/m-bag-092.webp"
+  data-cat="کیف مردانه" data-brand="چرم دلا" data-price-sort="4410000" data-rating-sort="4.2" data-badges="sale|new|bestseller" data-tags="men|bags-shoes|men-bag|formal" data-colors="سرمه‌ای|طوسی روشن|کرم">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-092.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-092.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-sale">٪۲۰ تخفیف</li>
+
+      <li class="badge badge-new">جدید</li>
+
+      <li class="badge badge-soft">پرفروش</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن کیف اسناد چرم به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن کیف اسناد چرم به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">چرم دلا · کیف مردانه</p>
+    <h3 class="p-title"><a href="product-m-bag-092.html">کیف اسناد چرم</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۲</strong> (۶۰ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، طوسی روشن، کرم">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C4C4C2" title="طوسی روشن"></span></li><li><span class="swatch" style="background:#DECEB4" title="کرم"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">قیمت قبلی: </span><span class="num">۵<span class="num-sep">٬</span>۵۱۰<span class="num-sep">٬</span>۰۰۰</span></del>
+        <span><span class="price-now"><span class="num">۴<span class="num-sep">٬</span>۴۱۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
-      <div class="tab-panel" role="tabpanel" id="panel-sale" aria-labelledby="tab-sale" tabindex="0" hidden>
-        <div class="p-grid">
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف اسناد چرم به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-b-jacket-209" data-product-name="کاپشن لحافی کلاه‌دار" data-product-price="2440000" data-product-image="assets/images/clothing/products/b-jacket-209.webp"
+  data-cat="کاپشن بچگانه" data-brand="کوک" data-price-sort="2440000" data-rating-sort="4.2" data-badges="bestseller" data-tags="kids|boys-jacket|autumn|winter" data-colors="سرمه‌ای|بژ" data-sizes="۲ سال|۴ سال|۶ سال|۸ سال">
+  <div class="p-media">
+    <a class="p-media-link" href="product-b-jacket-209.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/b-jacket-209.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-soft">پرفروش</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن کاپشن لحافی کلاه‌دار به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن کاپشن لحافی کلاه‌دار به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">کوک · کاپشن بچگانه</p>
+    <h3 class="p-title"><a href="product-b-jacket-209.html">کاپشن لحافی کلاه‌دار</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۲</strong> (۱۳۸ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، بژ">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#C8B296" title="بژ"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <span><span class="price-now"><span class="num">۲<span class="num-sep">٬</span>۴۴۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کاپشن لحافی کلاه‌دار به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+          </div>
+        </div>
+        <div class="tab-panel picks-body" role="tabpanel" id="panel-sale" aria-labelledby="tab-sale" tabindex="0" hidden>
+          <div class="picks-grid">
+            <a class="picks-spot" href="shop.html?sale=1">
+              <img src="assets/images/clothing/home/style-party.webp" alt="" width="800" height="1000" loading="lazy" decoding="async">
+              <span class="picks-spot-body">
+                <span class="picks-spot-kick"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg> تخفیف ویژه</span>
+                <strong>حراج پایان فصل</strong>
+                <span class="picks-spot-text">تا وقتی موجودی هست، با قیمت کمتر بخرید.</span>
+                <span class="picks-spot-cta">همه‌ی حراجی‌ها <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </span>
+            </a>
+            
 <article class="p-card" data-product data-product-id="cl-wool-coat" data-product-name="پالتو بلند پشمی" data-product-price="3880000" data-product-image="assets/images/clothing/products/coat.webp"
   data-cat="مانتو و پالتو" data-brand="آتلیه نیلا" data-price-sort="3880000" data-rating-sort="4.6" data-badges="sale" data-tags="women|women-coat|autumn|formal|winter" data-colors="شتری|مشکی|طوسی" data-sizes="S|M|L|XL">
   <div class="p-media">
@@ -1262,17 +1521,117 @@
     </div>
   </div>
 </article>
-</div>
+
+<article class="p-card" data-product data-product-id="cl-m-belt-125" data-product-name="کیف پول بلند زرشکی" data-product-price="700000" data-product-image="assets/images/clothing/products/m-belt-125.webp"
+  data-cat="کمربند و کیف پول" data-brand="چرم دلا" data-price-sort="700000" data-rating-sort="4.5" data-badges="sale" data-tags="men|accessories|men-belt|formal" data-colors="زرشکی|فیروزه‌ای|شیری">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-belt-125.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-belt-125.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-sale">٪۲۵ تخفیف</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن کیف پول بلند زرشکی به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن کیف پول بلند زرشکی به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">چرم دلا · کمربند و کیف پول</p>
+    <h3 class="p-title"><a href="product-m-belt-125.html">کیف پول بلند زرشکی</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۵</strong> (۸۲ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: زرشکی، فیروزه‌ای، شیری">
+      <li><span class="swatch" style="background:#731E28" title="زرشکی"></span></li><li><span class="swatch" style="background:#3CA0AA" title="فیروزه‌ای"></span></li><li><span class="swatch" style="background:#ECE4D4" title="شیری"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">قیمت قبلی: </span><span class="num">۹۳۰<span class="num-sep">٬</span>۰۰۰</span></del>
+        <span><span class="price-now"><span class="num">۷۰۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
       </div>
-      <p class="mt-10 text-center"><a class="btn btn-outline" href="shop.html">مشاهده‌ی همه‌ی محصولات</a></p>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف پول بلند زرشکی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+<article class="p-card" data-product data-product-id="cl-m-bag-063" data-product-name="کیف سامسونتی کروکو مشکی" data-product-price="3250000" data-product-image="assets/images/clothing/products/m-bag-063.webp"
+  data-cat="کیف مردانه" data-brand="چرم دلا" data-price-sort="3250000" data-rating-sort="4.6" data-badges="sale" data-tags="men|bags-shoes|men-bag|formal" data-colors="سرمه‌ای|شیری|کرم">
+  <div class="p-media">
+    <a class="p-media-link" href="product-m-bag-063.html" tabindex="-1" aria-hidden="true">
+      <img src="assets/images/clothing/products/m-bag-063.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
+
+    </a>
+
+    <ul role="list" class="p-badges" aria-label="ویژگی‌ها">
+
+      <li class="badge badge-sale">٪۲۵ تخفیف</li>
+
+    </ul>
+
+    <div class="p-tools">
+      <button type="button" class="p-tool" data-wish aria-pressed="false" aria-label="افزودن کیف سامسونتی کروکو مشکی به علاقه‌مندی‌ها"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="p-tool" data-compare aria-pressed="false" aria-label="افزودن کیف سامسونتی کروکو مشکی به مقایسه"><svg class="icon" aria-hidden="true"><use href="#i-compare"/></svg></button>
+    </div>
+
+    <div class="p-quick">
+      <button type="button" class="btn btn-sm p-add" data-add-to-cart><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg> <span data-cart-label>افزودن سریع</span></button>
+    </div>
+
+  </div>
+
+  <div class="p-body">
+    <p class="p-cat">چرم دلا · کیف مردانه</p>
+    <h3 class="p-title"><a href="product-m-bag-063.html">کیف سامسونتی کروکو مشکی</a></h3>
+
+    <p class="rating"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg> <strong>۴٫۶</strong> (۱۹ نظر)</p>
+
+    <ul role="list" class="swatches" aria-label="رنگ‌ها: سرمه‌ای، شیری، کرم">
+      <li><span class="swatch" style="background:#222A42" title="سرمه‌ای"></span></li><li><span class="swatch" style="background:#ECE4D4" title="شیری"></span></li><li><span class="swatch" style="background:#DECEB4" title="کرم"></span></li>
+    </ul>
+
+    <div class="p-foot">
+      <div class="price" data-card-price>
+
+        <del><span class="sr-only">قیمت قبلی: </span><span class="num">۴<span class="num-sep">٬</span>۳۳۰<span class="num-sep">٬</span>۰۰۰</span></del>
+        <span><span class="price-now"><span class="num">۳<span class="num-sep">٬</span>۲۵۰<span class="num-sep">٬</span>۰۰۰</span></span> <span class="currency">تومان</span></span>
+      </div>
+
+      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن کیف سامسونتی کروکو مشکی به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+
+    </div>
+  </div>
+</article>
+
+          </div>
+        </div>
+        <p class="picks-more"><a class="btn btn-primary" href="shop.html">مشاهده‌ی همه‌ی محصولات <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
     </div>
   </section>
-  <!-- ===== پایان: محصولات با زبانه ===== -->
+  <!-- ===== پایان: تازه‌های فروشگاه ===== -->
 
-  <!-- ===== شروع: پیشنهاد شگفت‌انگیز (تم روشن طرح ۱؛ تایمر هر روز تا نیمه‌شب؛ محصولات با شناسه در pick products) ===== -->
+  <!-- ===== شروع: پیشنهاد شگفت‌انگیز (تایمر هر روز تا نیمه‌شب؛ محصولات با شناسه در pick products)
+       رنگ باکس: am-sunset (غروب)، am-berry (توت)، am-gold (شب و طلا)، am-emerald (زمردی)
+       برای طرح کرم، دو کلاس «am-x am-sunset» را پاک کنید. ===== -->
   <section class="section pt-0" aria-labelledby="a-amaze-title">
     <div class="container-site reveal">
-      <div class="c-amaze c-amaze--cream" data-rail data-rail-auto="4000">
+      <div class="c-amaze c-amaze--cream am-x am-sunset" data-rail data-rail-auto="4000">
         <div class="c-amaze-intro">
           <span class="c-amaze-art c-amaze-art--icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg></span>
           <h2 class="c-amaze-title" id="a-amaze-title">شگفت‌انگیزهای<br>امروز</h2>
@@ -1805,7 +2164,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.4.1-11170301" defer></script>
+  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+
+  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

@@ -1,0 +1,70 @@
+/* =========================================================================
+   رنگ‌بندی‌های باکس «شگفت‌انگیز» صفحه‌ی اصلی
+
+   انتخاب رنگ: در فایل صفحه‌ی اصلی، به div باکس (class="c-amaze c-amaze--cream …")
+   دو کلاس am-x و یکی از رنگ‌ها را اضافه کنید:
+     am-x am-sunset    غروب (نارنجی تا سرخابی)
+     am-x am-berry     توت (بنفش و صورتی)
+     am-x am-gold      شب و طلا (لوکس)
+     am-x am-emerald   زمردی (سبز)
+   بدون این دو کلاس، همان طرح کرم اولیه نمایش داده می‌شود.
+   مثال: <div class="c-amaze c-amaze--cream am-x am-gold" …>
+   ========================================================================= */
+.c-amaze.am-x { position: relative; isolation: isolate; box-shadow: none; }
+.c-amaze.am-x::before,
+.c-amaze.am-x::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.c-amaze.am-x::before { width: 28rem; height: 28rem; inset-inline-start: -8rem; top: -12rem; background: radial-gradient(closest-side, var(--am-glow1), transparent); }
+.c-amaze.am-x::after { width: 22rem; height: 22rem; inset-inline-end: -6rem; bottom: -12rem; background: radial-gradient(closest-side, var(--am-glow2), transparent); }
+.c-amaze.am-x .c-amaze-intro { color: var(--am-ink); }
+.c-amaze.am-x .c-amaze-title { color: var(--am-title); text-shadow: 0 2px 18px rgb(0 0 0 / .12); }
+.c-amaze.am-x .c-amaze-art--icon { background: var(--am-badge); color: var(--am-badge-ink); box-shadow: 0 0 0 6px rgb(255 255 255 / .12), 0 10px 24px -10px rgb(0 0 0 / .35); }
+.c-amaze.am-x .c-amaze-cd span { background: rgb(255 255 255 / .14) !important; color: var(--am-ink) !important; box-shadow: inset 0 0 0 1px rgb(255 255 255 / .28); backdrop-filter: blur(6px); }
+.c-amaze.am-x .c-amaze-cd strong { color: var(--am-digit); }
+.c-amaze.am-x .c-amaze-all { color: var(--am-title); }
+.c-amaze.am-x .rail-btn { background: rgb(255 255 255 / .16); border-color: rgb(255 255 255 / .35); color: #fff; }
+.c-amaze.am-x .rail-btn:hover { background: #fff; color: var(--am-solid); border-color: #fff; }
+.c-amaze.am-x .c-amaze-track { padding-block: .5rem; }
+.c-amaze.am-x .c-amaze-track > li { border: 0; box-shadow: 0 10px 20px -16px rgb(0 0 0 / .35); transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s; }
+.c-amaze.am-x .c-amaze-track > li:hover { transform: translateY(-3px); box-shadow: 0 14px 24px -18px rgb(0 0 0 / .4); }
+.c-amaze.am-x .c-am-off { background: var(--am-pill); color: #fff; }
+.c-amaze.am-x .c-am-now { color: var(--am-solid); }
+.c-amaze.am-x .c-am-bar b { background: linear-gradient(90deg, var(--am-pill-a), var(--am-pill-b)); position: relative; overflow: hidden; }
+.c-amaze.am-x .c-am-add { color: var(--am-solid); }
+.c-amaze.am-x .c-am-add:hover, .c-amaze.am-x .c-am-add.is-added { background: var(--am-solid); color: #fff; }
+
+/* حرکت‌ها: فقط وقتی انیمیشن‌های قالب روشن است و کاربر «کاهش حرکت» را نخواسته */
+@media (prefers-reduced-motion: no-preference) {
+  .mt-on .c-amaze.am-x .c-amaze-art--icon { animation: am-x-pulse 2.4s ease-in-out infinite; }
+  .mt-on .c-amaze.am-x .c-am-bar b::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .7), transparent); transform: translateX(-100%); animation: am-x-shine 2.2s ease-in-out infinite; }
+}
+@keyframes am-x-pulse { 50% { transform: scale(1.08); box-shadow: 0 0 0 12px rgb(255 255 255 / .06), 0 10px 24px -10px rgb(0 0 0 / .35); } }
+@keyframes am-x-shine { 60%, 100% { transform: translateX(100%); } }
+
+/* غروب: نارنجی آتشین تا سرخابی */
+.c-amaze.am-sunset {
+  background: linear-gradient(115deg, #E8572A 0%, #C2264B 55%, #7A1F5C 100%);
+  --am-ink: #fff; --am-title: #fff; --am-digit: #FFE2A8; --am-solid: #C2264B;
+  --am-badge: #FFE2A8; --am-badge-ink: #C2264B; --am-pill: linear-gradient(90deg, #E8572A, #C2264B);
+  --am-pill-a: #FF9A3C; --am-pill-b: #E2264F; --am-glow1: rgb(255 196 90 / .55); --am-glow2: rgb(255 80 140 / .45);
+}
+/* توت: بنفش و سرخابی */
+.c-amaze.am-berry {
+  background: linear-gradient(120deg, #5B1E5F 0%, #8E2A6B 50%, #D2416E 100%);
+  --am-ink: #fff; --am-title: #fff; --am-digit: #FFC7DA; --am-solid: #8E2A6B;
+  --am-badge: #FFC7DA; --am-badge-ink: #5B1E5F; --am-pill: linear-gradient(90deg, #D2416E, #8E2A6B);
+  --am-pill-a: #FF7BA5; --am-pill-b: #B4337A; --am-glow1: rgb(255 120 180 / .45); --am-glow2: rgb(160 90 255 / .4);
+}
+/* شب و طلا: لوکس */
+.c-amaze.am-gold {
+  background: linear-gradient(125deg, #1E1612 0%, #3A2416 60%, #5A3416 100%);
+  --am-ink: #F6E7CF; --am-title: #F2C46D; --am-digit: #F2C46D; --am-solid: #A8641E;
+  --am-badge: linear-gradient(135deg, #F7D58B, #C98B2E); --am-badge-ink: #2A1A10; --am-pill: linear-gradient(90deg, #E0A548, #B8701F);
+  --am-pill-a: #F7D58B; --am-pill-b: #C98B2E; --am-glow1: rgb(242 196 109 / .35); --am-glow2: rgb(200 120 50 / .35);
+}
+/* زمردی: سبز تیره و نعنایی */
+.c-amaze.am-emerald {
+  background: linear-gradient(120deg, #0F3D34 0%, #17614F 55%, #2E8C6E 100%);
+  --am-ink: #EFFFF8; --am-title: #fff; --am-digit: #B8F5D8; --am-solid: #17614F;
+  --am-badge: #B8F5D8; --am-badge-ink: #0F3D34; --am-pill: linear-gradient(90deg, #E8572A, #D2416E);
+  --am-pill-a: #6EE7B7; --am-pill-b: #17A673; --am-glow1: rgb(120 240 190 / .35); --am-glow2: rgb(255 200 120 / .3);
+}
