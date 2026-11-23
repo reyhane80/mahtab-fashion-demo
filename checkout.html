@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -732,7 +734,7 @@
       <a href="shop.html" class="btn btn-primary">مشاهده‌ی محصولات</a>
       <div class="checkout-suggest p-grid">
 <article class="p-card" data-product data-product-id="cl-hoodie" data-product-name="هودی پنبه‌ای اورسایز" data-product-price="1190000" data-product-image="assets/images/clothing/products/hoodie.webp"
-  data-cat="هودی و سویشرت" data-brand="سرو" data-price-sort="1190000" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="men|men-hoodie|casual|sport|autumn|winter" data-colors="بژ|طوسی" data-sizes="S|M|L|XL">
+  data-cat="هودی و سویشرت" data-brand="سرو" data-price-sort="1190000" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="men|men-hoodie|casual|sport|autumn|winter" data-colors="بژ|طوسی" data-hexes="#D9CBB6|#8C8C88" data-sizes="S|M|L|XL">
   <div class="p-media">
     <a class="p-media-link" href="product-hoodie.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/hoodie.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -782,7 +784,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-boot-318" data-product-name="چکمه‌ی بلند مشکی" data-product-price="3030000" data-product-image="assets/images/clothing/products/w-boot-318.webp"
-  data-cat="بوت و نیم‌بوت" data-brand="چرم دلا" data-price-sort="3030000" data-rating-sort="4.5" data-badges="bestseller" data-tags="women|bags-shoes|women-boot|autumn|winter" data-colors="مشکی|فیروزه‌ای" data-sizes="37|38|39|40">
+  data-cat="بوت و نیم‌بوت" data-brand="چرم دلا" data-price-sort="3030000" data-rating-sort="4.5" data-badges="bestseller" data-tags="women|bags-shoes|women-boot|autumn|winter" data-colors="مشکی|فیروزه‌ای" data-hexes="#191919|#3CA0AA" data-sizes="37|38|39|40">
   <div class="p-media">
     <a class="p-media-link" href="product-w-boot-318.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-boot-318.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -829,7 +831,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-sneaker" data-product-name="کتانی چرم سفید" data-product-price="2190000" data-product-image="assets/images/clothing/products/sneaker.webp"
-  data-cat="کتانی" data-brand="چرم دلا" data-price-sort="2190000" data-rating-sort="4.6" data-badges="bestseller" data-tags="men|women|bags-shoes|men-sneaker|women-shoe|sport|casual|summer" data-colors="سفید|کرم" data-sizes="39|40|41|42|43">
+  data-cat="کتانی" data-brand="چرم دلا" data-price-sort="2190000" data-rating-sort="4.6" data-badges="bestseller" data-tags="men|women|bags-shoes|men-sneaker|women-shoe|sport|casual|summer" data-colors="سفید|کرم" data-hexes="#F4F4F2|#E9DFCC" data-sizes="39|40|41|42|43">
   <div class="p-media">
     <a class="p-media-link" href="product-sneaker.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/sneaker.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -876,7 +878,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-b-jacket-246" data-product-name="بادگیر طرح‌دار بچگانه" data-product-price="2210000" data-product-image="assets/images/clothing/products/b-jacket-246.webp"
-  data-cat="کاپشن بچگانه" data-brand="سروناز" data-price-sort="2210000" data-rating-sort="4.6" data-badges="sale|bestseller" data-tags="kids|boys-jacket|autumn|winter" data-colors="سرمه‌ای|زغالی|شیری" data-sizes="۲ سال|۴ سال|۶ سال|۸ سال">
+  data-cat="کاپشن بچگانه" data-brand="سروناز" data-price-sort="2210000" data-rating-sort="4.6" data-badges="sale|bestseller" data-tags="kids|boys-jacket|autumn|winter" data-colors="سرمه‌ای|زغالی|شیری" data-hexes="#222A42|#404042|#ECE4D4" data-sizes="۲ سال|۴ سال|۶ سال|۸ سال">
   <div class="p-media">
     <a class="p-media-link" href="product-b-jacket-246.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/b-jacket-246.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1070,9 +1072,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

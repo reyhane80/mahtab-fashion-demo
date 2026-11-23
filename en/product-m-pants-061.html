@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-m-pants-061" data-product-name="Loose Jeans" data-product-price="106" data-product-image="assets/images/clothing/products/m-pants-061.webp">
+    <div class="pd-info" data-product data-product-id="cl-m-pants-061" data-product-name="Loose Jeans" data-product-price="106" data-product-image="assets/images/clothing/products/m-pants-061.webp" data-colors="Navy|Black|Light Gray" data-hexes="#222A42|#191919|#C4C4C2" data-sizes="30|32|34|36|38">
       <p class="pd-cat"><a href="shop.html?brand=">Sarv</a> · Men&#39;s Trousers</p>
       <h1 class="pd-title">Loose Jeans</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">Loose Jeans with a simple design that fits any style.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> This product is currently out of stock.</p>
 
       <fieldset class="pd-option">
         <legend>Color: <span data-color-label>Navy</span></legend>
@@ -901,7 +904,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-m-pants-461" data-product-name="Black Jeans" data-product-price="87" data-product-image="assets/images/clothing/products/m-pants-461.webp"
-  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="87" data-rating-sort="4.1" data-badges="" data-tags="men|men-pants|casual" data-colors="Black|Cream|Beige" data-sizes="30|32|34|36|38">
+  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="87" data-rating-sort="4.1" data-badges="" data-tags="men|men-pants|casual" data-colors="Black|Cream|Beige" data-hexes="#191919|#DECEB4|#C8B296" data-sizes="30|32|34|36|38">
   <div class="p-media">
     <a class="p-media-link" href="product-m-pants-461.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-pants-461.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -942,7 +945,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-pants-053" data-product-name="Gray Chinos" data-product-price="79" data-product-image="assets/images/clothing/products/m-pants-053.webp"
-  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="79" data-rating-sort="4.4" data-badges="" data-tags="men|men-pants|casual" data-colors="Light Gray|Beige|Ivory" data-sizes="30|32|34|36|38">
+  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="79" data-rating-sort="4.4" data-badges="" data-tags="men|men-pants|casual" data-colors="Light Gray|Beige|Ivory" data-hexes="#C4C4C2|#C8B296|#ECE4D4" data-sizes="30|32|34|36|38">
   <div class="p-media">
     <a class="p-media-link" href="product-m-pants-053.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-pants-053.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -983,7 +986,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-pants-062" data-product-name="Olive Chinos" data-product-price="57" data-product-image="assets/images/clothing/products/m-pants-062.webp"
-  data-cat="Men&#39;s Trousers" data-brand="Sarv" data-price-sort="57" data-rating-sort="4.5" data-badges="sale" data-tags="men|men-pants|casual" data-colors="Navy|Light Blue|White" data-sizes="30|32|34|36|38">
+  data-cat="Men&#39;s Trousers" data-brand="Sarv" data-price-sort="57" data-rating-sort="4.5" data-badges="sale" data-tags="men|men-pants|casual" data-colors="Navy|Light Blue|White" data-hexes="#222A42|#A0BEDE|#F4F4F2" data-sizes="30|32|34|36|38">
   <div class="p-media">
     <a class="p-media-link" href="product-m-pants-062.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-pants-062.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1031,7 +1034,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-pants-041" data-product-name="Black Chinos" data-product-price="100" data-product-image="assets/images/clothing/products/m-pants-041.webp"
-  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="100" data-rating-sort="4.1" data-badges="new" data-tags="men|men-pants|casual" data-colors="Black|Gray" data-sizes="30|32|34|36|38">
+  data-cat="Men&#39;s Trousers" data-brand="Kook" data-price-sort="100" data-rating-sort="4.1" data-badges="new" data-tags="men|men-pants|casual" data-colors="Black|Gray" data-hexes="#191919|#8C8C8A" data-sizes="30|32|34|36|38">
   <div class="p-media">
     <a class="p-media-link" href="product-m-pants-041.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-pants-041.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1203,9 +1206,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

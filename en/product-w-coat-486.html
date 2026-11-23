@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-w-coat-486" data-product-name="Mustard Cape" data-product-price="194" data-product-image="assets/images/clothing/products/w-coat-486.webp">
+    <div class="pd-info" data-product data-product-id="cl-w-coat-486" data-product-name="Mustard Cape" data-product-price="194" data-product-image="assets/images/clothing/products/w-coat-486.webp" data-colors="Brown|Beige" data-hexes="#5F3C28|#C8B296" data-sizes="S|M|L|XL">
       <p class="pd-cat"><a href="shop.html?brand=">Atelier Nila</a> · Coats &amp; Jackets</p>
       <h1 class="pd-title">Mustard Cape</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">Mustard Cape in soft tones that go with most of your wardrobe.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> This product is currently out of stock.</p>
 
       <fieldset class="pd-option">
         <legend>Color: <span data-color-label>Brown</span></legend>
@@ -874,7 +877,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-wool-coat" data-product-name="Long Wool Coat" data-product-price="194" data-product-image="assets/images/clothing/products/coat.webp"
-  data-cat="Coats &amp; Jackets" data-brand="Atelier Nila" data-price-sort="194" data-rating-sort="4.6" data-badges="sale" data-tags="women|women-coat|autumn|formal|winter" data-colors="Camel|Black|Gray" data-sizes="S|M|L|XL">
+  data-cat="Coats &amp; Jackets" data-brand="Atelier Nila" data-price-sort="194" data-rating-sort="4.6" data-badges="sale" data-tags="women|women-coat|autumn|formal|winter" data-colors="Camel|Black|Gray" data-hexes="#B08A66|#1D1D1D|#8C8C88" data-sizes="S|M|L|XL" data-soldout="/XL;Black/M;">
   <div class="p-media">
     <a class="p-media-link" href="product-coat.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/coat.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -922,7 +925,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-coat-146" data-product-name="Olive Hooded Raincoat" data-product-price="220" data-product-image="assets/images/clothing/products/w-coat-146.webp"
-  data-cat="Coats &amp; Jackets" data-brand="Atelier Nila" data-price-sort="220" data-rating-sort="4.4" data-badges="new" data-tags="women|women-coat|autumn|formal|winter" data-colors="Jade|Blue" data-sizes="S|M|L|XL">
+  data-cat="Coats &amp; Jackets" data-brand="Atelier Nila" data-price-sort="220" data-rating-sort="4.4" data-badges="new" data-tags="women|women-coat|autumn|formal|winter" data-colors="Jade|Blue" data-hexes="#789682|#345C96" data-sizes="S|M|L|XL">
   <div class="p-media">
     <a class="p-media-link" href="product-w-coat-146.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-coat-146.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -969,7 +972,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-coat-404" data-product-name="Women&#39;s White Blazer" data-product-price="199" data-product-image="assets/images/clothing/products/w-coat-404.webp"
-  data-cat="Coats &amp; Jackets" data-brand="Parnian" data-price-sort="199" data-rating-sort="4.4" data-badges="sale|bestseller" data-tags="women|women-coat|autumn|formal|winter" data-colors="White|Light Blue" data-sizes="S|M|L|XL">
+  data-cat="Coats &amp; Jackets" data-brand="Parnian" data-price-sort="199" data-rating-sort="4.4" data-badges="sale|bestseller" data-tags="women|women-coat|autumn|formal|winter" data-colors="White|Light Blue" data-hexes="#F4F4F2|#A0BEDE" data-sizes="S|M|L|XL">
   <div class="p-media">
     <a class="p-media-link" href="product-w-coat-404.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-coat-404.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1019,7 +1022,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-raincoat" data-product-name="Waterproof Hooded Raincoat" data-product-price="110" data-product-image="assets/images/clothing/products/trench.webp"
-  data-cat="Coats &amp; Jackets" data-brand="Sarvnaz" data-price-sort="110" data-rating-sort="4.2" data-badges="sale|new" data-tags="women|women-coat|autumn|casual|winter" data-colors="Neon|Navy" data-sizes="S|M|L|XL">
+  data-cat="Coats &amp; Jackets" data-brand="Sarvnaz" data-price-sort="110" data-rating-sort="4.2" data-badges="sale|new" data-tags="women|women-coat|autumn|casual|winter" data-colors="Neon|Navy" data-hexes="#E2EF2C|#22283A" data-sizes="S|M|L|XL">
   <div class="p-media">
     <a class="p-media-link" href="product-trench.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/trench.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1194,9 +1197,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

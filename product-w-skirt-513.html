@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-w-skirt-513" data-product-name="دامن جین زاپ‌دار" data-product-price="1490000" data-product-image="assets/images/clothing/products/w-skirt-513.webp">
+    <div class="pd-info" data-product data-product-id="cl-w-skirt-513" data-product-name="دامن جین زاپ‌دار" data-product-price="1490000" data-product-image="assets/images/clothing/products/w-skirt-513.webp" data-colors="آبی|طوسی" data-hexes="#345C96|#8C8C8A" data-sizes="36|38|40|42">
       <p class="pd-cat"><a href="shop.html?brand=">آتلیه نیلا</a> · دامن</p>
       <h1 class="pd-title">دامن جین زاپ‌دار</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">دامن جین زاپ‌دار؛ انتخابی شیک برای محل کار و مهمانی‌های ساده.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> این محصول در حال حاضر ناموجود است.</p>
 
       <fieldset class="pd-option">
         <legend>رنگ: <span data-color-label>آبی</span></legend>
@@ -920,7 +923,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-w-skirt-354" data-product-name="دامن جین دکمه‌دار" data-product-price="1590000" data-product-image="assets/images/clothing/products/w-skirt-354.webp"
-  data-cat="دامن" data-brand="پرنیان" data-price-sort="1590000" data-rating-sort="4.3" data-badges="" data-tags="women|women-skirt|party|spring" data-colors="سرمه‌ای|شیری|مشکی" data-sizes="36|38|40|42">
+  data-cat="دامن" data-brand="پرنیان" data-price-sort="1590000" data-rating-sort="4.3" data-badges="" data-tags="women|women-skirt|party|spring" data-colors="سرمه‌ای|شیری|مشکی" data-hexes="#222A42|#ECE4D4|#191919" data-sizes="36|38|40|42">
   <div class="p-media">
     <a class="p-media-link" href="product-w-skirt-354.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-skirt-354.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -961,7 +964,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-pleated-skirt" data-product-name="دامن پلیسه بلند" data-product-price="1590000" data-product-image="assets/images/clothing/products/skirt.webp"
-  data-cat="دامن" data-brand="سروناز" data-price-sort="1590000" data-rating-sort="4.4" data-badges="new" data-tags="women|women-skirt|party|formal|spring" data-colors="سرمه‌ای|مشکی|بژ" data-sizes="S|M|L|XL">
+  data-cat="دامن" data-brand="سروناز" data-price-sort="1590000" data-rating-sort="4.4" data-badges="new" data-tags="women|women-skirt|party|formal|spring" data-colors="سرمه‌ای|مشکی|بژ" data-hexes="#22283A|#1D1D1D|#CDB99B" data-sizes="S|M|L|XL">
   <div class="p-media">
     <a class="p-media-link" href="product-skirt.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/skirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1008,7 +1011,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-skirt-355" data-product-name="دامن جین کوتاه" data-product-price="1240000" data-product-image="assets/images/clothing/products/w-skirt-355.webp"
-  data-cat="دامن" data-brand="پرنیان" data-price-sort="1240000" data-rating-sort="4.1" data-badges="sale" data-tags="women|women-skirt|party|spring" data-colors="طوسی روشن|سفید" data-sizes="36|38|40|42">
+  data-cat="دامن" data-brand="پرنیان" data-price-sort="1240000" data-rating-sort="4.1" data-badges="sale" data-tags="women|women-skirt|party|spring" data-colors="طوسی روشن|سفید" data-hexes="#C4C4C2|#F4F4F2" data-sizes="36|38|40|42">
   <div class="p-media">
     <a class="p-media-link" href="product-w-skirt-355.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-skirt-355.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1056,7 +1059,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-skirt-029" data-product-name="دامن جین" data-product-price="1870000" data-product-image="assets/images/clothing/products/w-skirt-029.webp"
-  data-cat="دامن" data-brand="پرنیان" data-price-sort="1870000" data-rating-sort="4.7" data-badges="" data-tags="women|women-skirt|party|spring" data-colors="یشمی|آبی روشن|زغالی" data-sizes="36|38|40|42">
+  data-cat="دامن" data-brand="پرنیان" data-price-sort="1870000" data-rating-sort="4.7" data-badges="" data-tags="women|women-skirt|party|spring" data-colors="یشمی|آبی روشن|زغالی" data-hexes="#789682|#A0BEDE|#404042" data-sizes="36|38|40|42">
   <div class="p-media">
     <a class="p-media-link" href="product-w-skirt-029.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-skirt-029.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1222,9 +1225,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

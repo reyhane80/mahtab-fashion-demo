@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-w-bag-467" data-product-name="کیف دوشی چرم قهوه‌ای" data-product-price="2320000" data-product-image="assets/images/clothing/products/w-bag-467.webp">
+    <div class="pd-info" data-product data-product-id="cl-w-bag-467" data-product-name="کیف دوشی چرم قهوه‌ای" data-product-price="2320000" data-product-image="assets/images/clothing/products/w-bag-467.webp" data-colors="قهوه‌ای|زغالی" data-hexes="#5F3C28|#404042">
       <p class="pd-cat"><a href="shop.html?brand=">چرم دلا</a> · کیف زنانه</p>
       <h1 class="pd-title">کیف دوشی چرم قهوه‌ای</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">کیف دوشی چرم قهوه‌ای؛ انتخابی شیک برای محل کار و مهمانی‌های ساده.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> این محصول در حال حاضر ناموجود است.</p>
 
       <fieldset class="pd-option">
         <legend>رنگ: <span data-color-label>قهوه‌ای</span></legend>
@@ -835,7 +838,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-w-bag-510" data-product-name="کیف کلاچ کروکو" data-product-price="3310000" data-product-image="assets/images/clothing/products/w-bag-510.webp"
-  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="3310000" data-rating-sort="4.3" data-badges="" data-tags="women|bags-shoes|women-bag|party|spring" data-colors="زغالی|مشکی|فیروزه‌ای">
+  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="3310000" data-rating-sort="4.3" data-badges="" data-tags="women|bags-shoes|women-bag|party|spring" data-colors="زغالی|مشکی|فیروزه‌ای" data-hexes="#404042|#191919|#3CA0AA">
   <div class="p-media">
     <a class="p-media-link" href="product-w-bag-510.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-bag-510.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -876,7 +879,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-leather-bag" data-product-name="کیف دستی چرم طبیعی" data-product-price="3150000" data-product-image="assets/images/clothing/products/bag.webp"
-  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="3150000" data-rating-sort="4.4" data-badges="" data-tags="women|bags-shoes|women-bag|party|formal|spring" data-colors="عسلی|مشکی">
+  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="3150000" data-rating-sort="4.4" data-badges="" data-tags="women|bags-shoes|women-bag|party|formal|spring" data-colors="عسلی|مشکی" data-hexes="#A86B3C|#1D1D1D">
   <div class="p-media">
     <a class="p-media-link" href="product-bag.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/bag.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -917,7 +920,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-backpack" data-product-name="کوله‌پشتی زنانه ضدآب" data-product-price="1890000" data-product-image="assets/images/clothing/products/backpack.webp"
-  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="1890000" data-rating-sort="4.3" data-badges="new" data-tags="women|bags-shoes|women-backpack|casual|sport|spring" data-colors="طوسی|مشکی|کرم">
+  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="1890000" data-rating-sort="4.3" data-badges="new" data-tags="women|bags-shoes|women-backpack|casual|sport|spring" data-colors="طوسی|مشکی|کرم" data-hexes="#8C8C88|#1D1D1D|#EADFCB">
   <div class="p-media">
     <a class="p-media-link" href="product-backpack.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/backpack.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -964,7 +967,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-w-bag-068" data-product-name="کیف دستی حصیری چرم" data-product-price="1090000" data-product-image="assets/images/clothing/products/w-bag-068.webp"
-  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="1090000" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="women|bags-shoes|women-bag|party|spring" data-colors="سرمه‌ای|کرم">
+  data-cat="کیف زنانه" data-brand="چرم دلا" data-price-sort="1090000" data-rating-sort="4.5" data-badges="sale|bestseller" data-tags="women|bags-shoes|women-bag|party|spring" data-colors="سرمه‌ای|کرم" data-hexes="#222A42|#DECEB4">
   <div class="p-media">
     <a class="p-media-link" href="product-w-bag-068.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/w-bag-068.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1139,9 +1142,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

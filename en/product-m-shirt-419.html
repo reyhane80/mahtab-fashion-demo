@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-m-shirt-419" data-product-name="Navy Plaid Shirt" data-product-price="45" data-product-image="assets/images/clothing/products/m-shirt-419.webp">
+    <div class="pd-info" data-product data-product-id="cl-m-shirt-419" data-product-name="Navy Plaid Shirt" data-product-price="45" data-product-image="assets/images/clothing/products/m-shirt-419.webp" data-colors="Charcoal|Ivory|White" data-hexes="#404042|#ECE4D4|#F4F4F2" data-sizes="M|L|XL|XXL">
       <p class="pd-cat"><a href="shop.html?brand=">Sarv</a> · Men&#39;s Shirts</p>
       <h1 class="pd-title">Navy Plaid Shirt</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">Navy Plaid Shirt: classic and durable for everyday use.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> This product is currently out of stock.</p>
 
       <fieldset class="pd-option">
         <legend>Color: <span data-color-label>Charcoal</span></legend>
@@ -880,7 +883,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-men-shirt" data-product-name="Men&#39;s Oxford Shirt" data-product-price="73" data-product-image="assets/images/clothing/products/shirt.webp"
-  data-cat="Men&#39;s Shirts" data-brand="Sarv" data-price-sort="73" data-rating-sort="4.4" data-badges="new" data-tags="men|men-shirt|formal|casual|spring" data-colors="Light Blue|White" data-sizes="M|L|XL|XXL">
+  data-cat="Men&#39;s Shirts" data-brand="Sarv" data-price-sort="73" data-rating-sort="4.4" data-badges="new" data-tags="men|men-shirt|formal|casual|spring" data-colors="Light Blue|White" data-hexes="#A9BCD0|#F4F4F2" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-shirt.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/shirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -927,7 +930,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-117" data-product-name="White Dress Shirt" data-product-price="83" data-product-image="assets/images/clothing/products/m-shirt-117.webp"
-  data-cat="Men&#39;s Shirts" data-brand="Parnian" data-price-sort="83" data-rating-sort="4.2" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="White|Charcoal" data-sizes="M|L|XL|XXL">
+  data-cat="Men&#39;s Shirts" data-brand="Parnian" data-price-sort="83" data-rating-sort="4.2" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="White|Charcoal" data-hexes="#F4F4F2|#404042" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-117.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-117.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -968,7 +971,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-452" data-product-name="White Spread-Collar Shirt" data-product-price="104" data-product-image="assets/images/clothing/products/m-shirt-452.webp"
-  data-cat="Men&#39;s Shirts" data-brand="Kook" data-price-sort="104" data-rating-sort="4.6" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="Light Gray|Cream|Navy" data-sizes="M|L|XL|XXL">
+  data-cat="Men&#39;s Shirts" data-brand="Kook" data-price-sort="104" data-rating-sort="4.6" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="Light Gray|Cream|Navy" data-hexes="#C4C4C2|#DECEB4|#222A42" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-452.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-452.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1009,7 +1012,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-456" data-product-name="Green Gingham Shirt" data-product-price="86" data-product-image="assets/images/clothing/products/m-shirt-456.webp"
-  data-cat="Men&#39;s Shirts" data-brand="Parnian" data-price-sort="86" data-rating-sort="4.3" data-badges="new" data-tags="men|men-shirt|formal|spring" data-colors="Gray|White" data-sizes="M|L|XL|XXL">
+  data-cat="Men&#39;s Shirts" data-brand="Parnian" data-price-sort="86" data-rating-sort="4.3" data-badges="new" data-tags="men|men-shirt|formal|spring" data-colors="Gray|White" data-hexes="#8C8C8A|#F4F4F2" data-sizes="M|L|XL|XXL" data-soldout="/XXL;">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-456.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-456.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1181,9 +1184,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

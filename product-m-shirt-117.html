@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-m-shirt-117" data-product-name="پیراهن سفید رسمی" data-product-price="1650000" data-product-image="assets/images/clothing/products/m-shirt-117.webp">
+    <div class="pd-info" data-product data-product-id="cl-m-shirt-117" data-product-name="پیراهن سفید رسمی" data-product-price="1650000" data-product-image="assets/images/clothing/products/m-shirt-117.webp" data-colors="سفید|زغالی" data-hexes="#F4F4F2|#404042" data-sizes="M|L|XL|XXL">
       <p class="pd-cat"><a href="shop.html?brand=">پرنیان</a> · پیراهن مردانه</p>
       <h1 class="pd-title">پیراهن سفید رسمی</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">پیراهن سفید رسمی با کیفیت دوخت بالا و ظاهری مرتب.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> این محصول در حال حاضر ناموجود است.</p>
 
       <fieldset class="pd-option">
         <legend>رنگ: <span data-color-label>سفید</span></legend>
@@ -920,7 +923,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-men-shirt" data-product-name="پیراهن آکسفورد مردانه" data-product-price="1450000" data-product-image="assets/images/clothing/products/shirt.webp"
-  data-cat="پیراهن مردانه" data-brand="سرو" data-price-sort="1450000" data-rating-sort="4.4" data-badges="new" data-tags="men|men-shirt|formal|casual|spring" data-colors="آبی روشن|سفید" data-sizes="M|L|XL|XXL">
+  data-cat="پیراهن مردانه" data-brand="سرو" data-price-sort="1450000" data-rating-sort="4.4" data-badges="new" data-tags="men|men-shirt|formal|casual|spring" data-colors="آبی روشن|سفید" data-hexes="#A9BCD0|#F4F4F2" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-shirt.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/shirt.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -967,7 +970,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-452" data-product-name="پیراهن سفید یقه‌دیپلمات" data-product-price="2080000" data-product-image="assets/images/clothing/products/m-shirt-452.webp"
-  data-cat="پیراهن مردانه" data-brand="کوک" data-price-sort="2080000" data-rating-sort="4.6" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="طوسی روشن|کرم|سرمه‌ای" data-sizes="M|L|XL|XXL">
+  data-cat="پیراهن مردانه" data-brand="کوک" data-price-sort="2080000" data-rating-sort="4.6" data-badges="" data-tags="men|men-shirt|formal|spring" data-colors="طوسی روشن|کرم|سرمه‌ای" data-hexes="#C4C4C2|#DECEB4|#222A42" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-452.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-452.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1008,7 +1011,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-456" data-product-name="پیراهن ریزچهارخانه سبز" data-product-price="1710000" data-product-image="assets/images/clothing/products/m-shirt-456.webp"
-  data-cat="پیراهن مردانه" data-brand="پرنیان" data-price-sort="1710000" data-rating-sort="4.3" data-badges="new" data-tags="men|men-shirt|formal|spring" data-colors="طوسی|سفید" data-sizes="M|L|XL|XXL">
+  data-cat="پیراهن مردانه" data-brand="پرنیان" data-price-sort="1710000" data-rating-sort="4.3" data-badges="new" data-tags="men|men-shirt|formal|spring" data-colors="طوسی|سفید" data-hexes="#8C8C8A|#F4F4F2" data-sizes="M|L|XL|XXL" data-soldout="/XXL;">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-456.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-456.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1055,7 +1058,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-shirt-420" data-product-name="پیراهن چهارخانه آبی" data-product-price="1020000" data-product-image="assets/images/clothing/products/m-shirt-420.webp"
-  data-cat="پیراهن مردانه" data-brand="سرو" data-price-sort="1020000" data-rating-sort="4.2" data-badges="sale|new" data-tags="men|men-shirt|formal|spring" data-colors="سرمه‌ای|سبز|کرم" data-sizes="M|L|XL|XXL">
+  data-cat="پیراهن مردانه" data-brand="سرو" data-price-sort="1020000" data-rating-sort="4.2" data-badges="sale|new" data-tags="men|men-shirt|formal|spring" data-colors="سرمه‌ای|سبز|کرم" data-hexes="#222A42|#3C8250|#DECEB4" data-sizes="M|L|XL|XXL">
   <div class="p-media">
     <a class="p-media-link" href="product-m-shirt-420.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-shirt-420.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1230,9 +1233,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>

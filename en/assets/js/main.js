@@ -1040,7 +1040,10 @@
             return;
           }
           if (error) error.hidden = true;
-          if (product) product.dataset.productVariant = chosen.value;
+          if (product) {
+            const color = product.querySelector('input[name="pd-color"]:checked');
+            product.dataset.productVariant = [color ? color.value : '', chosen.value].filter(Boolean).join(' · ');
+          }
         }
         if (qtyInput) {
           const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
@@ -1864,6 +1867,19 @@
      همان ساختار و کلاس‌های p-card را می‌سازد تا با بقیه‌ی سایت یکدست باشد.
      ------------------------------------------------------------------------ */
   // کارت محصول ساخته‌شده با جاوااسکریپت (علاقه‌مندی‌ها)؛ همان ساختار کارت فروشگاه
+  // ویژگی‌های رنگ، سایز و موجودی برای پنجره‌ی انتخاب سریع (مثل partials/stock-attrs.html)
+  function stockAttrs(p) {
+    const a = [];
+    if (p.colors && p.colors.length) {
+      a.push(` data-colors="${escapeHtml(p.colors.map((c) => c.name).join('|'))}"`);
+      a.push(` data-hexes="${escapeHtml(p.colors.map((c) => c.hex).join('|'))}"`);
+    }
+    if (p.sizes && p.sizes.length) a.push(` data-sizes="${escapeHtml(p.sizes.join('|'))}"`);
+    if (p.soldOut && p.soldOut.length) a.push(` data-soldout="${escapeHtml(p.soldOut.map((x) => `${x.color || ''}/${x.size || ''};`).join(''))}"`);
+    if (p.outOfStock) a.push(' data-out="1"');
+    return a.join('');
+  }
+
   function simpleProductCard(p, extraButton) {
     const sale = p.salePrice || null;
     const now = sale || p.finalPrice || p.price;
@@ -1874,12 +1890,13 @@
     if ((p.badges || []).includes('new')) badges.push('<li class="badge badge-new">New</li>');
     const colors = (p.colors || []).slice(0, 4).map((c) => `<li><span class="swatch" style="background:${escapeHtml(c.hex || '')}" title="${escapeHtml(c.name || '')}"></span></li>`).join('');
     const cat = [p.brand, p.category].filter(Boolean).map(escapeHtml).join(' · ');
-    return `<article class="p-card" data-product data-product-id="${p.id}" data-product-name="${escapeHtml(p.name)}" data-product-price="${now}" data-product-image="${img}">
+    return `<article class="p-card${p.outOfStock ? ' is-out' : ''}" data-product data-product-id="${p.id}" data-product-name="${escapeHtml(p.name)}" data-product-price="${now}" data-product-image="${img}"${stockAttrs(p)}>
   <div class="p-media">
     <a class="p-media-link" href="product-${p.image}.html" tabindex="-1" aria-hidden="true">
       <img src="${img}" alt="" width="900" height="1200" loading="lazy" decoding="async">
     </a>
     ${badges.length ? `<ul role="list" class="p-badges">${badges.join('')}</ul>` : ''}
+    ${p.outOfStock ? '<span class="p-out">Out of stock</span>' : ''}
     <div class="p-tools">${extraButton || ''}</div>
   </div>
   <div class="p-body">
@@ -1889,7 +1906,7 @@
     ${colors ? `<ul role="list" class="swatches">${colors}</ul>` : ''}
     <div class="p-foot">
       <div class="price">${sale ? `<del><span class="sr-only">Previous price: </span>${priceHtml(p.price)}</del>` : ''}<span><span class="price-now">${priceHtml(now)}</span> <span class="currency"></span></span></div>
-      <button type="button" class="p-add-mini" data-add-to-cart aria-label="افزودن ${escapeHtml(p.name)} به سبد"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
+      <button type="button" class="p-add-mini" data-add-to-cart${p.outOfStock ? ' disabled aria-disabled="true"' : ''} aria-label="${p.outOfStock ? `${escapeHtml(p.name)}: Out of stock` : `افزودن ${escapeHtml(p.name)} به سبد`}"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></button>
     </div>
   </div>
 </article>`;
@@ -1916,6 +1933,240 @@
     window.addEventListener('load', queue);
     update();
   }
+
+  /* ------------------------------------------------------------------------
+     موجودی رنگ و سایز
+     روی هر محصول (کارت یا صفحه‌ی محصول):
+       data-out="1"                   کل محصول ناموجود است
+       data-soldout="رنگ/سایز;..."    ترکیب‌های ناموجود؛ مثلاً «/XL;» یعنی سایز XL در همه‌ی رنگ‌ها،
+                                      «طوسی/;» یعنی رنگ طوسی در همه‌ی سایزها و «مشکی/M;» فقط مشکیِ سایز M
+     این مقادیر از soldOut و outOfStock در فایل داده‌ی محصولات ساخته می‌شوند.
+     ------------------------------------------------------------------------ */
+  const stockRules = (el) =>
+    (el.dataset.soldout || '')
+      .split(';')
+      .map((r) => r.split('/'))
+      .filter(([c, z]) => c || z)
+      .map(([c, z]) => ({ c: (c || '').trim(), z: (z || '').trim() }));
+  const isSoldOut = (rules, color, size) => rules.some((r) => (!r.c || r.c === color) && (!r.z || r.z === size));
+  const colorSoldOut = (rules, color, sizes) => (sizes.length ? sizes.every((z) => isSoldOut(rules, color, z)) : isSoldOut(rules, color, ''));
+  const OUT_LABEL = 'Out of stock';
+  const markOut = (holder) => {
+    holder.classList.add('is-out');
+    // برچسب «ناموجود» روی عکس کارت، اگر در HTML نوشته نشده باشد
+    const media = holder.querySelector('.p-media');
+    if (media && !media.querySelector('.p-out')) media.insertAdjacentHTML('beforeend', `<span class="p-out">${OUT_LABEL}</span>`);
+    holder.querySelectorAll('[data-add-to-cart]').forEach((b) => {
+      b.disabled = true;
+      b.setAttribute('aria-disabled', 'true');
+      const l = b.querySelector('[data-cart-label]');
+      if (l) l.textContent = OUT_LABEL;
+      if (b.hasAttribute('aria-label')) b.setAttribute('aria-label', `${holder.dataset.productName || ''}: ${OUT_LABEL}`);
+    });
+  };
+  function initStock() {
+    document.querySelectorAll('[data-product][data-out]').forEach(markOut);
+
+    // صفحه‌ی محصول: سایزها و رنگ‌های ناموجود غیرفعال می‌شوند
+    const info = document.querySelector('.pd-info[data-product]');
+    if (!info) return;
+    if (info.dataset.out) {
+      const note = info.querySelector('[data-pd-stock]');
+      if (note) note.hidden = false;
+      info.querySelectorAll('input[name="pd-size"], input[name="pd-color"], #pd-qty, [data-qty-up], [data-qty-down]').forEach((i) => (i.disabled = true));
+      return;
+    }
+    const rules = stockRules(info);
+    if (!rules.length) return;
+    const sizeInputs = [...info.querySelectorAll('input[name="pd-size"]')];
+    const colorInputs = [...info.querySelectorAll('input[name="pd-color"]')];
+    const sizes = sizeInputs.map((i) => i.value);
+    const sync = () => {
+      const color = (colorInputs.find((i) => i.checked) || {}).value || '';
+      sizeInputs.forEach((i) => {
+        const sold = isSoldOut(rules, color, i.value);
+        i.disabled = sold;
+        i.closest('label').classList.toggle('is-sold', sold);
+        i.closest('label').title = sold ? OUT_LABEL : '';
+        if (sold && i.checked) i.checked = false;
+      });
+    };
+    colorInputs.forEach((i) => {
+      const sold = colorSoldOut(rules, i.value, sizes);
+      i.closest('label').classList.toggle('is-sold', sold);
+      if (sold) {
+        i.disabled = true;
+        i.closest('label').title = OUT_LABEL;
+        if (i.checked) {
+          i.checked = false;
+          const next = colorInputs.find((x) => !x.disabled);
+          if (next) {
+            next.checked = true;
+            next.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+      }
+      i.addEventListener('change', sync);
+    });
+    sync();
+  }
+
+  /* ------------------------------------------------------------------------
+     انتخاب سریع رنگ و سایز: «افزودن» روی کارت محصولی که سایز (یا چند رنگ) دارد،
+     به‌جای افزودن مستقیم، این پنجره را باز می‌کند. محصول بدون سایز مستقیم اضافه می‌شود.
+     ------------------------------------------------------------------------ */
+  function initQuickPick() {
+    const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+    const list = (v) => (v || '').split('|').map((x) => x.trim()).filter(Boolean);
+    const needsPick = (p) => list(p.dataset.sizes).length > 0 || list(p.dataset.colors).length > 1;
+    let dlg = null;
+    let box;
+    let current = null;
+
+    const build = () => {
+      dlg = document.createElement('dialog');
+      dlg.className = 'qp';
+      dlg.setAttribute('aria-labelledby', 'qp-title');
+      dlg.innerHTML = `
+<div class="qp-box" data-product>
+  <button type="button" class="qp-close" data-qp-close aria-label="Close">${icon('close')}</button>
+  <div class="qp-media"><img alt="" width="300" height="400" data-qp-img></div>
+  <div class="qp-body">
+    <p class="qp-title" id="qp-title" data-qp-name></p>
+    <p class="price qp-price" data-qp-price></p>
+    <fieldset class="qp-opt" data-qp-colors-wrap>
+      <legend>Color: <span data-qp-color-label></span></legend>
+      <div class="qp-colors" data-qp-colors></div>
+    </fieldset>
+    <fieldset class="qp-opt" data-qp-sizes-wrap>
+      <legend>Size</legend>
+      <div class="qp-sizes" data-qp-sizes></div>
+      <p class="form-error" data-qp-error hidden>Please choose a size.</p>
+    </fieldset>
+    <button type="button" class="btn btn-primary btn-block qp-add" data-add-to-cart data-qp-add>${icon('bag')} <span data-cart-label>Add to cart</span></button>
+    <a class="qp-more" href="#" data-qp-link>View product details ${icon('arrow')}</a>
+  </div>
+</div>`;
+      document.body.appendChild(dlg);
+      box = dlg.querySelector('.qp-box');
+      rebindAddToCart(dlg);
+
+      dlg.addEventListener('click', (e) => {
+        if (e.target === dlg || e.target.closest('[data-qp-close]')) dlg.close();
+      });
+      dlg.addEventListener('change', (e) => {
+        if (e.target.name === 'qp-color') {
+          dlg.querySelector('[data-qp-color-label]').textContent = e.target.value;
+          syncSizes();
+        }
+        if (e.target.name === 'qp-size') dlg.querySelector('[data-qp-error]').hidden = true;
+      });
+      // بدون سایز انتخاب‌شده، افزودن انجام نمی‌شود
+      const add = dlg.querySelector('[data-qp-add]');
+      add.addEventListener(
+        'click',
+        (e) => {
+          const color = (dlg.querySelector('input[name="qp-color"]:checked') || {}).value || '';
+          const sizeInputs = dlg.querySelectorAll('input[name="qp-size"]');
+          const size = (dlg.querySelector('input[name="qp-size"]:checked') || {}).value || '';
+          if (sizeInputs.length && !size) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            dlg.querySelector('[data-qp-error]').hidden = false;
+            const first = dlg.querySelector('input[name="qp-size"]:not(:disabled)');
+            if (first) first.focus();
+            return;
+          }
+          box.dataset.productVariant = [color, size].filter(Boolean).join(' · ');
+        },
+        true
+      );
+      add.addEventListener('click', () => {
+        setTimeout(() => dlg.open && dlg.close(), 900);
+      });
+      dlg.addEventListener('close', () => {
+        if (current) current.focus();
+      });
+    };
+
+    const syncSizes = () => {
+      const rules = stockRules(box);
+      const color = (dlg.querySelector('input[name="qp-color"]:checked') || {}).value || '';
+      dlg.querySelectorAll('input[name="qp-size"]').forEach((i) => {
+        const sold = isSoldOut(rules, color, i.value);
+        i.disabled = sold;
+        i.closest('label').classList.toggle('is-sold', sold);
+        i.closest('label').title = sold ? OUT_LABEL : '';
+        if (sold && i.checked) i.checked = false;
+      });
+    };
+
+    const open = (p, button) => {
+      if (!dlg) build();
+      current = button;
+      ['productId', 'productName', 'productPrice', 'productImage', 'soldout'].forEach((k) => {
+        if (p.dataset[k]) box.dataset[k] = p.dataset[k];
+        else delete box.dataset[k];
+      });
+      delete box.dataset.productVariant;
+      const rules = stockRules(p);
+      const img = p.querySelector('img');
+      dlg.querySelector('[data-qp-img]').src = img ? img.currentSrc || img.src : p.dataset.productImage;
+      dlg.querySelector('[data-qp-name]').textContent = p.dataset.productName || '';
+      const priceSrc = p.querySelector('.price, .c-am-price, .dl-price');
+      dlg.querySelector('[data-qp-price]').innerHTML = priceSrc
+        ? priceSrc.innerHTML
+        : `<span><span class="price-now">${priceHtml(parseInt(p.dataset.productPrice, 10) || 0)}</span> <span class="currency"></span></span>`;
+      const link = p.querySelector('a[href*="product-"]');
+      const more = dlg.querySelector('[data-qp-link]');
+      more.hidden = !link;
+      if (link) more.href = link.href;
+
+      const colors = list(p.dataset.colors);
+      const hexes = list(p.dataset.hexes);
+      const sizes = list(p.dataset.sizes);
+      const firstColor = colors.find((c) => !colorSoldOut(rules, c, sizes)) || '';
+      dlg.querySelector('[data-qp-colors-wrap]').hidden = colors.length === 0;
+      dlg.querySelector('[data-qp-color-label]').textContent = firstColor;
+      dlg.querySelector('[data-qp-colors]').innerHTML = colors
+        .map((c, i) => {
+          const sold = colorSoldOut(rules, c, sizes);
+          return `<label class="qp-color${sold ? ' is-sold' : ''}" style="--sw:${escapeHtml(hexes[i] || '#ccc')}"${sold ? ` title="${OUT_LABEL}"` : ''}><input type="radio" name="qp-color" value="${escapeHtml(c)}"${c === firstColor ? ' checked' : ''}${sold ? ' disabled' : ''}><span aria-hidden="true"></span><span class="sr-only">${escapeHtml(c)}${sold ? ` (${OUT_LABEL})` : ''}</span></label>`;
+        })
+        .join('');
+      dlg.querySelector('[data-qp-sizes-wrap]').hidden = sizes.length === 0;
+      dlg.querySelector('[data-qp-sizes]').innerHTML = sizes
+        .map((z) => `<label class="qp-size"><input type="radio" name="qp-size" value="${escapeHtml(z)}"><span>${escapeHtml(z)}</span></label>`)
+        .join('');
+      dlg.querySelector('[data-qp-error]').hidden = true;
+      syncSizes();
+      dlg.showModal();
+      const focusTarget = dlg.querySelector('input[name="qp-size"]:not(:disabled)') || dlg.querySelector('[data-qp-add]');
+      if (focusTarget) focusTarget.focus();
+    };
+
+    // در مرحله‌ی capture، پیش از افزودن مستقیم، کلیک را می‌گیرد
+    document.addEventListener(
+      'click',
+      (e) => {
+        const button = e.target.closest('[data-add-to-cart]');
+        if (!button || button.closest('.qp, .pd-info')) return;
+        const p = button.closest('[data-product]');
+        if (!p) return;
+        if (p.dataset.out) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          return;
+        }
+        if (!needsPick(p)) return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        open(p, button);
+      },
+      true
+    );
+  }
+
 
   function readEmbeddedProducts() {
     const el = document.getElementById('product-data');
@@ -2250,6 +2501,9 @@
   initProductColorLabel();
   initProductVariants();
   initProductAddToCart();
+  initStock();
+  // پنجره‌ی انتخاب سریع فعلاً فقط در دموی پوشاک؛ برای همه‌ی دموها شرط را بردارید
+  if (document.documentElement.dataset.demo === 'clothing') initQuickPick();
   initSliders();
   initCardRails();
   initAuth();

@@ -14,14 +14,16 @@
   <link rel="stylesheet" href="assets/css/fonts/vazirmatn.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fonts/vazirmatn.css"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.6.0-11230556">
   <!-- رنگ‌بندی‌های باکس «شگفت‌انگیز» (راهنما داخل همین فایل) -->
-  <link rel="stylesheet" href="assets/css/amazing.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/amazing.css?v=1.6.0-11230556">
   <!-- «تازه‌های فروشگاه» و دایره‌های «خرید بر اساس دسته» در صفحه‌ی اصلی -->
-  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/home-sections.css?v=1.6.0-11230556">
+  <!-- پنجره‌ی انتخاب سریع رنگ و سایز، و نمایش کالاهای ناموجود -->
+  <link rel="stylesheet" href="assets/css/quick-pick.css?v=1.6.0-11230556">
 
   <!-- انیمیشن‌ها؛ برای خاموش کردن، در assets/js/motion.js مقدار MAHTAB_MOTION را false کنید -->
-  <link rel="stylesheet" href="assets/css/motion.css?v=1.5.0-11220443">
+  <link rel="stylesheet" href="assets/css/motion.css?v=1.6.0-11230556">
 
   <!-- تغییرات شخصی خود را در custom.css بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -630,7 +632,7 @@
     <!-- ===== پایان: گالری ===== -->
 
     <!-- ===== شروع: اطلاعات محصول ===== -->
-    <div class="pd-info" data-product data-product-id="cl-m-sneaker-409" data-product-name="White Running Shoes" data-product-price="150" data-product-image="assets/images/clothing/products/m-sneaker-409.webp">
+    <div class="pd-info" data-product data-product-id="cl-m-sneaker-409" data-product-name="White Running Shoes" data-product-price="150" data-product-image="assets/images/clothing/products/m-sneaker-409.webp" data-colors="White|Gray|Light Blue" data-hexes="#F4F4F2|#8C8C8A|#A0BEDE" data-sizes="41|42|43|44">
       <p class="pd-cat"><a href="shop.html?brand=">Parnian</a> · Sneakers</p>
       <h1 class="pd-title">White Running Shoes</h1>
 
@@ -643,6 +645,7 @@
       </div>
 
       <p class="pd-short">White Running Shoes: classic and durable for everyday use.</p>
+      <p class="pd-stock-out" data-pd-stock hidden><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> This product is currently out of stock.</p>
 
       <fieldset class="pd-option">
         <legend>Color: <span data-color-label>White</span></legend>
@@ -941,7 +944,7 @@
       <div class="p-grid">
         
 <article class="p-card" data-product data-product-id="cl-sneaker" data-product-name="White Leather Sneakers" data-product-price="110" data-product-image="assets/images/clothing/products/sneaker.webp"
-  data-cat="Sneakers" data-brand="Della Leather" data-price-sort="110" data-rating-sort="4.6" data-badges="bestseller" data-tags="men|women|bags-shoes|men-sneaker|women-shoe|sport|casual|summer" data-colors="White|Cream" data-sizes="39|40|41|42|43">
+  data-cat="Sneakers" data-brand="Della Leather" data-price-sort="110" data-rating-sort="4.6" data-badges="bestseller" data-tags="men|women|bags-shoes|men-sneaker|women-shoe|sport|casual|summer" data-colors="White|Cream" data-hexes="#F4F4F2|#E9DFCC" data-sizes="39|40|41|42|43">
   <div class="p-media">
     <a class="p-media-link" href="product-sneaker.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/sneaker.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -988,7 +991,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-sneaker-361" data-product-name="Gray Running Shoes" data-product-price="125" data-product-image="assets/images/clothing/products/m-sneaker-361.webp"
-  data-cat="Sneakers" data-brand="Parnian" data-price-sort="125" data-rating-sort="4.4" data-badges="sale" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Jade|Navy" data-sizes="41|42|43|44">
+  data-cat="Sneakers" data-brand="Parnian" data-price-sort="125" data-rating-sort="4.4" data-badges="sale" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Jade|Navy" data-hexes="#789682|#222A42" data-sizes="41|42|43|44">
   <div class="p-media">
     <a class="p-media-link" href="product-m-sneaker-361.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-sneaker-361.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1036,7 +1039,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-sneaker-402" data-product-name="Lightweight Black Sneakers" data-product-price="102" data-product-image="assets/images/clothing/products/m-sneaker-402.webp"
-  data-cat="Sneakers" data-brand="Kook" data-price-sort="102" data-rating-sort="4.5" data-badges="sale" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Light Blue|Charcoal" data-sizes="41|42|43|44">
+  data-cat="Sneakers" data-brand="Kook" data-price-sort="102" data-rating-sort="4.5" data-badges="sale" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Light Blue|Charcoal" data-hexes="#A0BEDE|#404042" data-sizes="41|42|43|44">
   <div class="p-media">
     <a class="p-media-link" href="product-m-sneaker-402.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-sneaker-402.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1084,7 +1087,7 @@
 </article>
 
 <article class="p-card" data-product data-product-id="cl-m-sneaker-176" data-product-name="White and Navy Sneakers" data-product-price="89" data-product-image="assets/images/clothing/products/m-sneaker-176.webp"
-  data-cat="Sneakers" data-brand="Sarv" data-price-sort="89" data-rating-sort="4.7" data-badges="sale|bestseller" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Light Gray|Turquoise|Navy" data-sizes="41|42|43|44">
+  data-cat="Sneakers" data-brand="Sarv" data-price-sort="89" data-rating-sort="4.7" data-badges="sale|bestseller" data-tags="men|bags-shoes|men-sneaker|sport|summer" data-colors="Light Gray|Turquoise|Navy" data-hexes="#C4C4C2|#3CA0AA|#222A42" data-sizes="41|42|43|44">
   <div class="p-media">
     <a class="p-media-link" href="product-m-sneaker-176.html" tabindex="-1" aria-hidden="true">
       <img src="assets/images/clothing/products/m-sneaker-176.webp" alt="" width="900" height="1200" loading="lazy" decoding="async">
@@ -1259,9 +1262,9 @@
 </footer>
 <!-- ===== پایان: فوتر ===== -->
 
-  <script src="assets/js/main.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/main.js?v=1.6.0-11230556" defer></script>
 
-  <script src="assets/js/motion.js?v=1.5.0-11220443" defer></script>
+  <script src="assets/js/motion.js?v=1.6.0-11230556" defer></script>
 
   <!-- اسکریپت‌های شخصی خود را در custom.js بنویسید (همیشه آخر بارگذاری می‌شود) -->
   <script src="assets/js/custom.js" defer></script>
